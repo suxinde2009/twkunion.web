@@ -2,8 +2,30 @@ zh-CN:
   mongoid:
     models:
       user: 用户
+      topic: 专题
+      article: 文章
+      topic_article: 专题文章
+      topic_video: 专题视频
+      topic_photo: 专题图片
+      topic_download: 专题资源
     attributes:
       user:
         email: Email
         username: 用户名
         confirmed_at: 激活时间
+      topic:
+        title: 标题
+        slug: 英文标识
+        description: 简介
+        created_at: 创建时间
+        updated_at: 更新时间
+        rating: 推荐指数
+        published_at: 发布于
+        icon: 小图标
+        logo: Logo
+        banner: Banner
+        full_screen: 大图
+        articles_count: 文章
+        videos_count: 视频
+        photos_count: 图片
+        downloads_count: 资源下载

@@ -8,18 +8,36 @@ User.blueprint do
   confirmed_at  { Time.zone.now }
 end
 
-Authentication.blueprint do
-  # Attributes here
-end
-
 Message.blueprint do
   # Attributes here
 end
 
 Topic.blueprint do
-  # Attributes here
+  title { Faker::LoremCN.sentence }
+  slug { "topic#{sn}" }
+  description { Faker::LoremCN.paragraph }
+  rating { rand(1..10) }
 end
 
 Article.blueprint do
+  # Attributes here
+end
+TopicDownload.blueprint do
+  # Attributes here
+end
+
+TopicPhoto.blueprint do
+  # Attributes here
+end
+
+TopicVideo.blueprint do
+  # Attributes here
+end
+
+Activity.blueprint do
+  # Attributes here
+end
+
+Comment.blueprint do
   # Attributes here
 end

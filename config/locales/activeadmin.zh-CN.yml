@@ -38,3 +38,5 @@ zh-CN:
     blank_slate:
       content: "暂时还没有%{resource_name}."
       link: "新建一个"
+
+    create_model: "%{model}"

@@ -12,3 +12,9 @@ require  Rails.root.join('db', 'seeds_mandatory')
 
 p 'create test users.....'
 30.times { User.make! }
+
+p 'create test topics...'
+10.times do
+  topic = Topic.make!
+  topic.publish!
+end
