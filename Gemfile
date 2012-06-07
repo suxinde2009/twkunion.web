@@ -16,6 +16,7 @@ gem 'inherited_resources',  '~> 1.3.1'
 gem 'kaminari',             '~> 0.13.0'
 gem 'nested_form',          '~> 0.2.0'
 gem 'symbolize',            '~> 4.2.0', require: 'symbolize/mongoid'
+gem 'rails_config'
 
 # gem 'carrierwave', '~> 0.6.0'
 gem 'carrierwave-mongoid',  '~> 0.2.0', require: 'carrierwave/mongoid'
@@ -39,6 +40,9 @@ gem "social-share-button", '0.0.3'
 
 # Admin sustem
 gem 'activeadmin-mongoid'
+
+# Rich text support
+gem 'rails_kindeditor', github: 'jerryshen/rails_kindeditor'
 
 
 # Gems used only for assets and not required

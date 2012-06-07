@@ -15,6 +15,14 @@ GIT
       oauth2 (~> 0.5.1)
 
 GIT
+  remote: git://github.com/jerryshen/rails_kindeditor.git
+  revision: 312fa9d61cc02dd11c8b071acc6ff49071b08521
+  specs:
+    rails_kindeditor (0.3.2)
+      carrierwave
+      mini_magick
+
+GIT
   remote: git://github.com/nmerouze/machinist_mongo.git
   revision: fa4819c4e1233a4e3ce527b68af8aeee85dfc6c3
   branch: machinist2
@@ -252,6 +260,8 @@ GEM
     rails-dev-tweaks (0.6.1)
       actionpack (~> 3.1)
       railties (~> 3.1)
+    rails_config (0.3.0)
+      activesupport (>= 3.0)
     railties (3.2.5)
       actionpack (= 3.2.5)
       activesupport (= 3.2.5)
@@ -376,6 +386,8 @@ DEPENDENCIES
   omniauth-weibo-oauth2 (~> 0.2.0)
   rails (= 3.2.5)
   rails-dev-tweaks (~> 0.6.1)
+  rails_config
+  rails_kindeditor!
   rspec (~> 2.9.0)
   rspec-rails (~> 2.9.0)
   sass-rails (~> 3.2.5)
