@@ -64,4 +64,26 @@ Twkunion::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+
+  # Email settings
+  config.action_mailer.default_url_options = { host: 'twkunion.com' }
+  config.action_mailer.asset_host = 'twkunion.com'
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default charset: 'utf-8'
+  config.action_mailer.smtp_settings = {
+    address:        'smtp.exmail.qq.com',
+    port:           25,
+    domain:         'twkunion.com',
+    user_name:      'info@twkunion.com',
+    password:       'info2012',
+    authentication: :login
+  }
+
+  config.middleware.use ExceptionNotifier,
+                        email_prefix: '[twkunion]',
+                        sender_address: %{'Notifier' <info@twkunion.com>},
+                        exception_recipients: %w{hansay99@gmail.com}
 end

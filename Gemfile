@@ -5,10 +5,12 @@ gem 'rails', '3.2.5'
 # mongo support
 gem 'mongo',      '1.6.2'
 gem 'mongoid',    '2.4.10'
+gem 'mongoid_auto_increment_id', '0.4.0'
 gem 'bson_ext',   '1.6.2'
 
 # Core functions
 gem 'devise',               '~> 2.1.0'
+# gem 'devise_invitable',     '~> 1.0.2'
 gem 'simple_form',          '~> 2.0.2'
 gem 'inherited_resources',  '~> 1.3.1'
 gem 'kaminari',             '~> 0.13.0'
@@ -31,6 +33,12 @@ gem 'weibo2',                         git: 'git://github.com/fmmp3/weibo2.git'
 
 # Exception notifier
 gem 'exception_notification_rails3', '~> 1.2.0', require: 'exception_notifier'
+
+# Social Share
+gem "social-share-button", '0.0.3'
+
+# Admin sustem
+gem 'activeadmin-mongoid'
 
 
 # Gems used only for assets and not required

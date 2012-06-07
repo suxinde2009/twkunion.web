@@ -1,0 +1,9 @@
+zh-CN:
+  mongoid:
+    models:
+      user: 用户
+    attributes:
+      user:
+        email: Email
+        username: 用户名
+        confirmed_at: 激活时间
