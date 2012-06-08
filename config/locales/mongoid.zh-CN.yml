@@ -37,3 +37,10 @@ zh-CN:
         category: 分类
         author: 作者
         source: 来源
+      topic_video:
+        title: 标题
+        source: 来源
+        cover: 封面
+        topic_id: 专题
+        widget: 视频嵌入代码
+        url: 视频源地址

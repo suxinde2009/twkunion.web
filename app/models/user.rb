@@ -1,5 +1,7 @@
 class User
   include Mongoid::Document
+  include Mongoid::Timestamps
+  
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -57,4 +59,6 @@ class User
   field :authentication_token, :type => String
 
   mount_uploader :avatar, UserAvatarUploader
+
+  validates :username, presence: true
 end

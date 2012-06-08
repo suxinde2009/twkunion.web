@@ -4,8 +4,13 @@ class TopicVideo
 
   field :title
   field :source
+  field :widget
+  field :cover
+  field :url
 
-  validates :title, :source, :topic_id, presence: true
+  validates :title, :source, :cover, :widget, :topic_id, presence: true
 
-  belongs_to :topic
+  belongs_to :topic, index: true
+
+  mount_uploader :cover, OriginalUploader
 end
