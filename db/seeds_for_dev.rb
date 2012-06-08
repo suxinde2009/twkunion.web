@@ -20,4 +20,5 @@ p 'create test topics and resources...'
 
   10.times { TopicArticle.make!(topic: topic) }
   5.times { TopicVideo.make!(topic: topic) }
+  5.times { TopicPhoto.make!(topic: topic) }
 end

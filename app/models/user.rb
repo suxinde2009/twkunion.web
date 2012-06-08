@@ -16,32 +16,32 @@ class User
           :omniauthable, omniauth_providers: [:weibo, :qq_connect]
 
   ## Database authenticatable
-  field :email,              :type => String, :null => false, :default => ""
-  field :encrypted_password, :type => String, :null => false, :default => ""
+  field :email,              null: false, default: ''
+  field :encrypted_password, null: false, default: ''
 
   ## Custom Columns
   field :username
   field :avatar
 
   ## Recoverable
-  field :reset_password_token,   :type => String
-  field :reset_password_sent_at, :type => Time
+  field :reset_password_token
+  field :reset_password_sent_at, type: Time
 
   ## Rememberable
-  field :remember_created_at, :type => Time
+  field :remember_created_at, type: Time
 
   ## Trackable
-  field :sign_in_count,      :type => Integer, :default => 0
-  field :current_sign_in_at, :type => Time
-  field :last_sign_in_at,    :type => Time
-  field :current_sign_in_ip, :type => String
-  field :last_sign_in_ip,    :type => String
+  field :sign_in_count,      type: Integer, default: 0
+  field :current_sign_in_at, type: Time
+  field :last_sign_in_at,    type: Time
+  field :current_sign_in_ip
+  field :last_sign_in_ip
 
   ## Confirmable
-  field :confirmation_token,   :type => String
-  field :confirmed_at,         :type => Time
-  field :confirmation_sent_at, :type => Time
-  field :unconfirmed_email,    :type => String # Only if using reconfirmable
+  field :confirmation_token
+  field :confirmed_at,         type: Time
+  field :confirmation_sent_at, type: Time
+  field :unconfirmed_email # Only if using reconfirmable
 
   ## Inviteable
   # field :invitation_token, type: String, limit: 60
@@ -56,9 +56,20 @@ class User
   # field :locked_at,       :type => Time
 
   ## Token authenticatable
-  field :authentication_token, :type => String
+  field :authentication_token
 
   mount_uploader :avatar, UserAvatarUploader
 
   validates :username, presence: true
+
+  has_many :activities, dependent: :destroy
+  has_and_belongs_to_many :liked_topics, class_name: 'Topic', inverse_of: :fans
+
+  def like!(target)
+    liked_topics.push(target) unless target.nil?
+  end
+
+  def unlike!(target)
+    liked_topics.delete(target) unless target.nil?
+  end
 end

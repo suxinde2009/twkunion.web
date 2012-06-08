@@ -38,7 +38,9 @@ TopicDownload.blueprint do
 end
 
 TopicPhoto.blueprint do
-  # Attributes here
+  title { Faker::LoremCN.sentence }
+  data { Pathname.glob(Rails.root.join('lib/assets/images/*')).sample.open }
+  topic { Topic.make! }
 end
 
 TopicVideo.blueprint do

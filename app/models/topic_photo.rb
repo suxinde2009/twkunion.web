@@ -5,7 +5,9 @@ class TopicPhoto
   field :title
   field :data
 
-  validates :title, :data, presence: true
+  validates :title, :data, :topic_id, presence: true
 
   belongs_to :topic
+
+  mount_uploader :data, TopicPhotoUploader
 end

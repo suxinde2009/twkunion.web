@@ -2,6 +2,7 @@
 ActiveAdmin.register Topic do
   menu label: '专题', priority: 2
 
+  ## Customizing index screen for topic
   index do
     column :id
     column :title
@@ -29,6 +30,7 @@ ActiveAdmin.register Topic do
     default_actions
   end
 
+  ## Customizing form screen for topic
   form do |f|
     f.inputs '基本属性' do
       f.input :title
