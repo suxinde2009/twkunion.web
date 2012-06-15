@@ -59,3 +59,15 @@ end
 Comment.blueprint do
   # Attributes here
 end
+
+BbsTopic.blueprint do
+  # Attributes here
+end
+
+BbsBoard.blueprint do
+  # Attributes here
+end
+
+BbsReply.blueprint do
+  # Attributes here
+end
