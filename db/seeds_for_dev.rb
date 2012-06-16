@@ -22,3 +22,12 @@ p 'create test topics and resources...'
   5.times { TopicVideo.make!(topic: topic) }
   5.times { TopicPhoto.make!(topic: topic) }
 end
+
+p 'create bbs related...'
+5.times do
+  main_board = BbsBoard.make!(admin: User.all.sample)
+  3.times do
+    child_board = BbsBoard.make!(ancestry: main_board.id.to_s, admin: User.all.sample)
+    5.times { BbsTopic.make!(user: User.all.sample, bbs_board: child_board) }
+  end
+end

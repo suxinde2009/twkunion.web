@@ -16,6 +16,7 @@ gem 'inherited_resources',  '~> 1.3.1'
 gem 'kaminari',             '~> 0.13.0'
 gem 'nested_form',          '~> 0.2.0'
 gem 'symbolize',            '~> 4.2.0', require: 'symbolize/mongoid'
+gem 'mongoid-ancestry',     '~> 0.2.2'
 gem 'rails_config'
 
 # gem 'carrierwave', '~> 0.6.0'

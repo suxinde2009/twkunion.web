@@ -60,12 +60,18 @@ Comment.blueprint do
   # Attributes here
 end
 
-BbsTopic.blueprint do
-  # Attributes here
+BbsBoard.blueprint do
+  name { Faker::LoremCN.word }
+  logo { Pathname.glob(Rails.root.join('lib/assets/images/*')).sample.open }
+  description { Faker::LoremCN.paragraph }
+  admin { User.make! }
 end
 
-BbsBoard.blueprint do
-  # Attributes here
+BbsTopic.blueprint do
+  title { Faker::LoremCN.sentence }
+  content { Faker::LoremCN.paragraphs(6).join(',') }
+  user { Uesr.make! }
+  bbs_board { BbsBoard.make! }
 end
 
 BbsReply.blueprint do
