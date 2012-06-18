@@ -30,6 +30,11 @@ GIT
     machinist_mongo (2.0.0.beta.1)
       machinist (~> 2.0.0.beta2)
 
+PATH
+  remote: vendor/plugins/rails_ueditor
+  specs:
+    rails_ueditor (0.0.1)
+
 GEM
   remote: http://ruby.taobao.org/
   specs:
@@ -392,6 +397,7 @@ DEPENDENCIES
   rails-dev-tweaks (~> 0.6.1)
   rails_config
   rails_kindeditor!
+  rails_ueditor!
   rspec (~> 2.9.0)
   rspec-rails (~> 2.9.0)
   sass-rails (~> 3.2.5)

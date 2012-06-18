@@ -10,6 +10,12 @@ Twkunion::Application.routes.draw do
   devise_scope :user do
     resources :authentications, except: [:new, :create, :edit, :show]
   end
+
+  namespace :bbs do
+    root :to => 'home#index'
+
+    resources :boards, only: [:show]
+  end
   
   root :to => 'home#index'
 end

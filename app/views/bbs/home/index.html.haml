@@ -1,0 +1,38 @@
+#left-wrap
+  = render 'slider'
+
+  #tag-forum-wrap.tag-forum-index
+    - @main_boards.each do |board|
+      .tag-forum.tag-forum-index-border
+        .tag-forum-label
+          .badge-wrap.badge-forum
+            .badge= board.name
+          %ul
+            %li#forumtrigger-06202c.current-tag-forum-label
+              %a{:href => "%23%E7%8C%AB%E7%94%B5%E7%A3%81%E7%82%AE"}
+                %span 4
+                \#猫电磁炮
+              %em
+            %li#forumtrigger-ed3dea
+              %a{:href => "%23%E7%8C%AB%E7%94%B5%E7%A3%81%E7%82%AE%E7%9A%84%E6%BB%91%E9%9B%AA%E5%9C%BA"}
+                %span 1
+                \#猫电磁炮的滑雪场
+              %em
+            / %li.index-digger-tag
+            /   %a{:href => "~nico翻唱歌手的资源"} nico翻唱歌手的资源
+            /[if IE 8 ] <li class="ie-sucker"></li>
+        .forum-list-wrap.main_board
+          .notice= link_to '进入「猫电磁炮」的频道', '#', class: 'tag-forum-goto'
+          - board.children.each do |child|
+            .child_board.clearfix
+              .head_img= link_to image_tag(child.logo, size: '280x120'), bbs_board_path(child)
+              %h1= link_to child.name, bbs_board_path(child), class: 'topic_title'
+              %p.description= child.description.truncate(80)
+              %p
+                %span.admin
+                  版主：
+                  = link_to child.admin_name, '#'
+                %span.topics
+                  总帖数/精华帖：#{child.bbs_topics_count} / 0
+
+= render 'sidebar'

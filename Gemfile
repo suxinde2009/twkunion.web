@@ -44,6 +44,7 @@ gem 'activeadmin-mongoid'
 
 # Rich text support
 gem 'rails_kindeditor', github: 'jerryshen/rails_kindeditor'
+gem 'rails_ueditor', path: 'vendor/plugins/rails_ueditor'
 
 
 # Gems used only for assets and not required

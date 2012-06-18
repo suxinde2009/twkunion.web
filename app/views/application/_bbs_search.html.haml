@@ -1,0 +1,9 @@
+%form#search-form{:action => "search.tora", :method => "get"}
+  #search-wrap
+    #search-input
+      %input#search{:name => "keywords", :placeholder => "在这里进行搜索喵w～", :type => "text"}
+    %input.search-btn{:name => "", :type => "submit", :value => "搜索啦～"}
+      #search-opt
+        %fieldset#search-custum-opt
+          / <legend>搜索范围</legend>
+        %a.level-upper{:href => "search.tora"} 这边有更多选项哦~
