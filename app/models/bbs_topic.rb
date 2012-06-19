@@ -11,6 +11,7 @@ class BbsTopic
   field :last_updated_at, type: Time
   field :sticky
   field :is_recommended, type: Boolean, default: false
+  field :bbs_replies_count, type: Integer, default: 0
 
   validates :user_id, :title, :content, presence: true
 
@@ -23,13 +24,15 @@ class BbsTopic
   delegate :name, to: :bbs_board, prefix: true
   delegate :username, to: :user, prefix: true
 
+  scope :default_order, desc(:updated_at)
+
   # Here you can use three methods to set sticky for a single topic
   ## mark_sticky_under_global
   ## mark_sticky_under_main_board
   ## mark_sticky_under_child_board
-  STICKY_TYPES.each do |type|
-    define_method("mark_sticky_under#{type}!") do |method|
-      update_attribute(sticky: method)
-    end
+  STICKY_TYPES.each do |method|
+    define_method("mark_sticky_under_#{method}!") {
+      update_attribute(:sticky, method)
+    }
   end
 end
