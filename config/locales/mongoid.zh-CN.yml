@@ -1,5 +1,11 @@
 zh-CN:
   mongoid:
+    symbolizes:
+      bbs_topic:
+        sticky:
+          global: 全局置顶
+          main_board: 主板块置顶
+          child_board: 子板块置顶
     models:
       user: 用户
       topic: 专题
@@ -63,3 +69,4 @@ zh-CN:
         sticky: 置顶
         is_recommended: 精华
         created_at: 发布时间
+        bbs_replies_count: 回复数
