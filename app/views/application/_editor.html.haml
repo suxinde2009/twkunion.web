@@ -1,0 +1,109 @@
+/ ubbeditor
+.qbeditor
+  .quicktag
+    .edit_title.edit_button{:title => "标题"}
+    .edit_bold.edit_button{:title => "加粗"}
+    .edit_underline.edit_button{:title => "下划线"}
+    .edit_del.edit_button{:title => "删除线"}
+    .edit_hidden.edit_button{:title => "隐藏文字"}
+    .edit_splitter
+    .edit_color.edit_button{:title => "字体颜色"}
+      .edit_color_item.edit_item{:style => "width: 210px;"}
+        %a.edit_color_yellow{:href => "color_yellow", :style => "background: yellow;"}
+        %a.edit_color_orange{:href => "color_orange", :style => "background: orange;"}
+        %a.edit_color_red{:href => "color_red", :style => "background: red;"}
+        %a.edit_color_blue{:href => "color_blue", :style => "background: blue;"}
+        %a.edit_color_green{:href => "color_green", :style => "background: green;"}
+        %a.edit_color_purple{:href => "color_purple", :style => "background: purple;"}
+        %a.edit_color_white{:href => "color_white", :style => "background: white;"}
+        %a.edit_color_gray{:href => "color_gray", :style => "background: gray;"}
+    .edit_bg.edit_button{:title => "背景颜色"}
+      .edit_color_item.edit_item{:style => "width: 210px;"}
+        %a.edit_bg_yellow{:href => "color_yellow", :style => "background: yellow;"}
+        %a.edit_bg_orange{:href => "color_orange", :style => "background: orange;"}
+        %a.edit_bg_red{:href => "color_red", :style => "background: red;"}
+        %a.edit_bg_blue{:href => "color_blue", :style => "background: blue;"}
+        %a.edit_bg_green{:href => "color_green", :style => "background: green;"}
+        %a.edit_bg_purple{:href => "color_purple", :style => "background: purple;"}
+        %a.edit_bg_white{:href => "color_white", :style => "background: white;"}
+        %a.edit_bg_gray{:href => "color_gray", :style => "background: gray;"}
+    .edit_size.edit_button{:title => "字体大小"}
+      .edit_size_item.edit_item
+        %div
+          %a.edit_size10{:href => "size10", :style => "font-size: 10px;"} 10px
+        %div
+          %a.edit_size12{:href => "size12", :style => "font-size: 12px;"} 12px
+        %div
+          %a.edit_size14{:href => "size14", :style => "font-size: 14px;"} 14px
+        %div
+          %a.edit_size16{:href => "size16", :style => "font-size: 16px;"} 16px
+        %div
+          %a.edit_size20{:href => "size20", :style => "font-size: 20px;"} 20px
+        %div
+          %a.edit_size24{:href => "size24", :style => "font-size: 24px;"} 24px
+    .edit_splitter
+    .edit_img.edit_button{:title => "插入图片"}
+      .edit_size_item.edit_item{:style => "width: 300px;"}
+        %input#img-linker.edit_linker.br-left.placeholder{:name => "img-linker", :placeholder => "输入图片 URL", :size => "40", :tabindex => "4", :type => "text", :value => ""}
+          %input.btn.b_azure.br-right.edit_insert{:name => "", :type => "button", :value => "添加"}
+    .edit_link.edit_button{:title => "插入超链接"}
+      .edit_size_item.edit_item{:style => "width: 300px;"}
+        %input#url-linker.edit_linker.br-left.placeholder{:name => "img-linker", :placeholder => "输入链接 URL", :size => "40", :tabindex => "4", :type => "text", :value => ""}
+          %input.btn.b_azure.br-right.edit_insert{:name => "", :type => "button", :value => "添加"}
+    .edit_code.edit_button{:title => "插入代码"}
+    .edit_emot.edit_button
+      .edit_emot_item.edit_item{:style => "width: 305px;"}
+        %ul
+          %li
+            %a.edit_em01{:href => "em01"}
+              %img{:alt => "", :src => "http://cdn31.mukkyu.com/images/emoticons/001.jpg"}/
+          %li
+            %a.edit_em02{:href => "em02"}
+              %img{:alt => "", :src => "http://cdn31.mukkyu.com/images/emoticons/002.jpg"}/
+          %li
+            %a.edit_em03{:href => "em03"}
+              %img{:alt => "", :src => "http://cdn31.mukkyu.com/images/emoticons/003.jpg"}/
+          %li
+            %a.edit_em04{:href => "em04"}
+              %img{:alt => "", :src => "http://cdn31.mukkyu.com/images/emoticons/004.jpg"}/
+          %li
+            %a.edit_em05{:href => "em05"}
+              %img{:alt => "", :src => "http://cdn31.mukkyu.com/images/emoticons/005.jpg"}/
+          %li
+            %a.edit_em06{:href => "em06"}
+              %img{:alt => "", :src => "http://cdn31.mukkyu.com/images/emoticons/006.jpg"}/
+          %li
+            %a.edit_em07{:href => "em07"}
+              %img{:alt => "", :src => "http://cdn31.mukkyu.com/images/emoticons/007.jpg"}/
+          %li
+            %a.edit_em08{:href => "em08"}
+              %img{:alt => "", :src => "http://cdn31.mukkyu.com/images/emoticons/008.jpg"}/
+          %li
+            %a.edit_em09{:href => "em09"}
+              %img{:alt => "", :src => "http://cdn31.mukkyu.com/images/emoticons/009.jpg"}/
+          %li
+            %a.edit_em10{:href => "em10"}
+              %img{:alt => "", :src => "http://cdn31.mukkyu.com/images/emoticons/010.jpg"}/
+          %li
+            %a.edit_em11{:href => "em11"}
+              %img{:alt => "", :src => "http://cdn31.mukkyu.com/images/emoticons/011.jpg"}/
+          %li
+            %a.edit_em12{:href => "em12"}
+              %img{:alt => "", :src => "http://cdn31.mukkyu.com/images/emoticons/012.jpg"}/
+          %li
+            %a.edit_em13{:href => "em13"}
+              %img{:alt => "", :src => "http://cdn31.mukkyu.com/images/emoticons/013.jpg"}/
+          %li
+            %a.edit_em14{:href => "em14"}
+              %img{:alt => "", :src => "http://cdn31.mukkyu.com/images/emoticons/014.jpg"}/
+    .edit_splitter
+    .edit_indent_left.edit_button{:title => "左缩进"}
+    .edit_indent_right.edit_button{:title => "右缩进"}
+    .edit_align_left.edit_button{:title => "左对齐"}
+    .edit_align_center.edit_button{:title => "居中"}
+    .edit_align_right.edit_button{:title => "右对齐"}
+    .edit_splitter
+    .edit_quote.edit_button{:title => "引用区块"}
+    %div{:style => "float:none;clear:both;"}
+  %textarea#write-content.mpeditor{:name => "ubb", :rows => "15"}
+/ /qbeditor

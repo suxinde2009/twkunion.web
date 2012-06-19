@@ -1,0 +1,38 @@
+= simple_form_for resource, url: bbs_topics_path do |f|
+  #left-wrap
+    #write-wrap
+      %h2 发表新文章
+      = f.input :title, input_html: { id: 'write-title' }
+      = f.input :content, as: :text, input_html: { id: 'write-content' }
+      = f.button :submit, '发布文章', class: 'btn b_blue'
+      / %input.btn.b_blue{:name => "preview", :type => "submit", :value => "预览"}
+  / #right-wrap
+  /   #write-misc-wrap
+  /     %h2 文章选项
+  /     %p#post-options
+  /       %label{:for => "sticky-post"}
+  /         %input#sticky-post{:name => "top", :type => "checkbox", :value => "1"} 在我的文章里置顶
+  /       %label{:for => "no-repost"}
+  /         %input#no-repost{:name => "nocopy", :type => "checkbox", :value => "1"} 禁止转载
+  /       %br
+  /         %label{:for => "no-cmmt"}
+  /           %input#no-cmmt{:name => "lock", :type => "checkbox", :value => "1"} 禁止回复
+  /         %label{:for => "no-half-cmmt"}
+  /           %input#no-half-cmmt{:checked => "checked", :name => "halflock", :type => "checkbox", :value => "1"} 禁止匿名回复
+  /         %br
+  /           %label{:for => "is-protected"}
+  /             %input#is-protected{:name => "secure", :type => "checkbox", :value => "1"} 加密
+  /           %input#post-password.placeholder{:autocomplete => "off", :name => "apassword", :placeholder => "在这里输入密码", :size => "30", :tabindex => "4", :type => "text", :value => ""}
+  /     %input#post-tag.br-left.placeholder{:name => "tag", :placeholder => "在此插入新标签，用逗号分隔", :size => "30", :tabindex => "4", :type => "text", :value => "#J.C.STAFF,#动画"}
+  /       %input#post_addtags.btn.b_azure.br-right{:type => "button", :value => "添加标签"}
+  /         %p#errormsg-tags.error-msg 错误：标签含有XXX内容
+  /         #post-taglist.post-tags-edit
+  /           %ul
+  /             %li
+  /               %a{:href => "deltag"}
+  /               \#J.C.STAFF
+  /               %input{:name => "tagx[]", :type => "hidden", :value => "#J.C.STAFF"}/
+  /             %li
+  /               %a{:href => "deltag"}
+  /               \#动画
+  /               %input{:name => "tagx[]", :type => "hidden", :value => "#动画"}/

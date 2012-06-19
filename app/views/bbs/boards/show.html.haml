@@ -1,0 +1,54 @@
+#tag-forum-wrap
+  .tag-forum
+    /[if lt IE 9]
+      <div id="tag-forum-header" style="background-image:url(bbs/event-digger-forum-bg.jpg) no-repeat right top">
+    / [if !IE]><!
+    #tag-forum-header{:style => "background: -webkit-gradient(linear, left top, right top, from(rgba(227, 242, 255, 1)), to(rgba(227, 242, 255, 0))), url(http://cdn31.mukkyu.com/mages/event-digger-forum-bg.jpg) no-repeat right top;background: -webkit-linear-gradient(left, rgba(227, 242, 255, 1) 0%,rgba(227, 242, 255, 0) 100%), url(http://cdn31.mukkyu.com/images/event-digger-forum-bg.jpg) no-repeat right 0;background: -moz-linear-gradient(left, rgba(227, 242, 255, 1) 0%, rgba(227, 242, 255, 0) 100%), url(http://cdn31.mukkyu.com/images/event-digger-forum-bg.jpg) no-repeat right 0;background: linear-gradient(top, rgba(227, 242, 255, 1) 0%,rgba(227, 242, 255, 0) 100%), url(http://cdn31.mukkyu.com/images/event-digger-forum-bg.jpg) no-repeat right 0;"}
+      / <![endif]
+      #tag-forum-statement
+        %p.tag-forum-title= resource.name
+        %p.tag-forum-meta= resource.description
+        %p.tag-forum-new-post= link_to '发帖', new_bbs_topic_path(bbs_board_id: resource.id)
+    %table#forum_table.ipb_table.topic_list{:cellspacing => "0"}
+      %tbody
+        / ANNOUNCEMENTS
+        %tr.header
+          %th.col_f_topic 帖子主题
+          %th.col_f_starter.short 帖子发起者
+          %th.col_f_views.stats 统计
+          %th.col_f_post 主题收录者
+        - @topics.each do |topic|
+          %tr.row1
+            %td= link_to topic.title, bbs_topic_path(topic), class: 'topic_title'
+            %td.short.altrow
+              %ul.last_post
+                %li= link_to topic.user_username, '#'
+                %li= time_ago_in_words(topic.updated_at)
+            %td.stats
+              %ul
+                %li.linkcolor 0
+                %li.views.desc 152
+            %td.altrow
+              %ul.last_post
+                %li
+                  %a{:href => "@6nVa1"}
+                    由依喵
+                %li 1天前
+                %li.digger-counter +1
+    .page-nav-wrap.page-nav-tag-forum
+      / discutter pagenav
+      %form{:action => "?", :method => "get"}
+        .page-nav
+          共64页，跳转到
+          %input{:maxlength => "4", :name => "page", :type => "text"}
+            %a.btn_jumpto{:href => "#jumpto"} Go
+            %span.current-page
+              %a.avoidclick{:href => "current_page"} 1
+            %span
+              %a{:href => "?page=2"} 2
+            %span
+              %a{:href => "?page=3"} 3
+            %span
+              %a{:href => "?page=64"} 最末页 »
+            %span
+              %a{:href => "?page=2"} 下一页 >

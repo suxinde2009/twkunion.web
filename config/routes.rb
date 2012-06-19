@@ -15,6 +15,7 @@ Twkunion::Application.routes.draw do
     root :to => 'home#index'
 
     resources :boards, only: [:show]
+    resources :topics
   end
   
   root :to => 'home#index'

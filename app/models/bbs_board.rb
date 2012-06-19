@@ -18,6 +18,8 @@ class BbsBoard
 
   belongs_to :admin, class_name: 'User'
 
+  has_many :topics, class_name: 'BbsTopic'
+
   delegate :name, to: :admin, prefix: true
 
   default_scope asc(:ancestry)
