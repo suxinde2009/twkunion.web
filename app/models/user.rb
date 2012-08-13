@@ -23,6 +23,7 @@ class User
   field :username
   field :name
   field :avatar
+  field :bio
   field :is_admin, type: Boolean, default: false
 
   ## Recoverable

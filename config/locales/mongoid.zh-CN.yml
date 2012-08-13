@@ -24,6 +24,7 @@ zh-CN:
         password: 密码
         password_confirmation: 重输密码
         remember_me: 记住我的登录信息
+        current_password: 旧密码
         confirmed_at: 激活时间
       topic:
         title: 标题

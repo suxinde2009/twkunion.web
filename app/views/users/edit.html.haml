@@ -1,0 +1,26 @@
+- content_for :full do
+  .group
+    %a.pro-motion.not-pro{:href => "/account/pro"}
+      %strong Go Pro!
+      %em Add power features for just $20/year
+    .group
+      .full
+        %h1
+          %a{:href => "/account"} 个人资料
+          %span.sep /
+          Profile
+        %p Edit your name, avatar, etc.
+
+
+= render '/application/tabs/settings'
+
+.session-form.alt
+  = simple_form_for resource, url: profile_settings_path, html: { method: :put, class: 'gen-form with-messages' } do |f|
+
+    = f.input :name, input_html: { class: 'form-text' }, hint: 'xxx'
+    = f.input :username, input_html: { class: 'form-text' }, hint: 'xxxx'
+    = f.input :bio, as: :text, input_html: { class: 'form-text', cols: 20, rows: 40 }
+
+    .form-btns
+      = f.button :submit, '保存设置', class: 'form-sub'
+      = link_to '移除我的帐号', registration_path(resource), confirm: "Are you sure?", method: :delete, class: 'link'

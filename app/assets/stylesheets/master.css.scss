@@ -280,7 +280,7 @@ div.col-33-last {
   padding-top: 4px;
   background: url(icon-signup.png) no-repeat 0 50%;
   }
-body#user-profile #nav li#t-profile a,
+#nav li#t-profile a,
 body#shots #nav li#t-shots a,
 body#players #nav li#t-players a,
 body#explore #nav li#t-explore a,
@@ -361,7 +361,7 @@ body#explore #nav li#t-explore:hover ul.tabs li a,
 #nav li#t-activity ul.tabs li a,
 body#incoming-activity #nav li#t-activity:hover ul.tabs li a {
   padding: 5px 15px;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: normal;
   color: $color-text-xlight;
   background: none;
@@ -2221,7 +2221,8 @@ form.gen-form div.ctrl-group {
   color: #333;
   }
 form.gen-form div.form-btns {
-  padding: 10px 0 0 250px;
+  // padding: 10px 0 0 250px;
+  padding: 10px 0 0 90px;
   }
 form.gen-form div.form-btns-only {
   text-align: center;

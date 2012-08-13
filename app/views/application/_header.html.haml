@@ -5,14 +5,25 @@
       %form#search{:action => "/search"}
         %input#search-text{:name => "q", :placeholder => "搜索...", :type => "text", :value => ""}/
     %ul#nav
-      %li#t-signin= link_to '登录', new_user_session_path
-      %li#t-search
-        = link_to image_tag('adapt-icon-search.png', alt: 'search'), '#search'
+      - if user_signed_in?
+        %li#t-profile
+          = link_to '#', class: 'url', rel: 'contact', title: current_user.name do
+            = image_tag current_user.avatar.small, size: '16x16', alt: current_user.name, class: 'photo fn'
+          %ul.tabs
+            %li= link_to '个人资料', '#'
+            %li= link_to '帐户设置', edit_user_registration_path
+            %li.separate= link_to '登出', destroy_user_session_path, method: :delete
+      - else
+        %li#t-signin= link_to '登录', new_user_session_path
+
+      %li#t-search= link_to image_tag('adapt-icon-search.png', alt: 'search'), '#search'
       %li= link_to '首页', root_path
       %li= link_to '应用', '#'
       %li= link_to '专题', '#'
       %li= link_to '下载', '#'
       %li= link_to '论坛', '#'
-      %li#t-signup
-        = link_to new_user_registration_path do
-          %span 免费注册
+
+      - unless user_signed_in?
+        %li#t-signup
+          = link_to new_user_registration_path do
+            %span 免费注册
