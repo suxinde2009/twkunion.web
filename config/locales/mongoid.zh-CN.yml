@@ -23,6 +23,7 @@ zh-CN:
         name: 昵称
         password: 密码
         password_confirmation: 重输密码
+        remember_me: 记住我的登录信息
         confirmed_at: 激活时间
       topic:
         title: 标题

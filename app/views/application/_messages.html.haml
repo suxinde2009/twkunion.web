@@ -1,2 +1,6 @@
-.ajax.notice.hide
-  %h2
+- if notice
+  .ajax.notice.info
+    %h2= notice
+- elsif alert
+  .ajax.notice.error
+    %h2= alert

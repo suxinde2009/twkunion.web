@@ -5,8 +5,7 @@
       %form#search{:action => "/search"}
         %input#search-text{:name => "q", :placeholder => "搜索...", :type => "text", :value => ""}/
     %ul#nav
-      %li#t-signin
-        %a{:href => "/session/new?return_to=%2Fsignup%2Fdesigners"} 登录
+      %li#t-signin= link_to '登录', new_user_session_path
       %li#t-search
         = link_to image_tag('adapt-icon-search.png', alt: 'search'), '#search'
       %li= link_to '首页', root_path

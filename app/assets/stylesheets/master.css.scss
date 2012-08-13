@@ -2013,6 +2013,13 @@ form.gen-form label {
   line-height: 1.5em;
   font-weight: normal;
   text-align: right;
+
+  &.boolean {
+    width: 220px;
+    input {
+      margin-right: 10px;
+    }
+  }
   }
 form.gen-form label.label-top {
   margin-top: 0;
