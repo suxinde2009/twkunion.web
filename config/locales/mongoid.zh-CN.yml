@@ -20,6 +20,9 @@ zh-CN:
       user:
         email: Email
         username: 用户名
+        name: 昵称
+        password: 密码
+        password_confirmation: 重输密码
         confirmed_at: 激活时间
       topic:
         title: 标题

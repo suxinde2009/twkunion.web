@@ -2007,7 +2007,7 @@ form.with-messages div.last {
 form.gen-form label {
   display: block;
   float: left;
-  width: 230px;
+  width: 70px;
   margin: .7em 20px 2px 0;
   font-size: 1em;
   line-height: 1.5em;
@@ -2125,7 +2125,7 @@ form.gen-form div.radios fieldset label span.desc {
   color: $color-text-light;
   }
 form.gen-form p.message {
-  margin: 1px 0 0 250px;
+  margin: 1px 0 0 92px;
   font-size: 11px;
   line-height: 1.5em;
   color: $color-text-light;
@@ -2138,6 +2138,12 @@ form.gen-form p.message code {
   font-family: Monaco, monospace;
   font-size: 1.1em;
   }
+form.gen-form p.error {
+  color: #DF3B3B;
+  margin: 1px 0 0 92px;
+  font-size: 11px;
+  line-height: 1.5em;
+}
 form.gen-form div.form-important {
   margin: 5px 0 5px 250px;
   padding: 5px 10px;
@@ -2166,9 +2172,9 @@ form.gen-form fieldset.check label {
   }
 form.gen-form input.form-text {
   width: 400px;
-  padding: 5px 8px;
+  padding: 8px 8px;
   font-family: $font-face;
-  font-size: 1.4em;
+  font-size: 1.25em;
   color: #333;
   border: none;
   border-bottom: 1px solid #fff;
@@ -2532,6 +2538,26 @@ a.auth-twitter,
   @include rounded(6px);
   @include transition(all);
   }
+
+a.auth-weibo {
+  display: block;
+  float: left;
+  position: relative;
+  margin: 0 10px 10px 0;
+  padding: 10px 14px 10px 39px;
+  font-size: 14px;
+  font-weight: normal;
+  text-decoration: none;
+  color: rgba(255,255,255,.9);
+  border: none;
+  background: url(icons/weibo_16x16.png) no-repeat 12px 50%;
+  background:
+    url(icons/weibo_16x16.png) no-repeat 12px 50%,
+    url(glass-light.png) repeat-x 0 50%;
+  background-color: #333;
+  @include rounded(6px);
+  @include transition(all);
+}
 a.auth-top {
   display: inline-block;
   float: none;
@@ -2543,13 +2569,13 @@ a.auth-top {
   border: 1px solid #ccc;
   background-color: rgba(0,0,0,.05);
   }
-a.auth-twitter:hover,
-input.auth-twitter:hover {
+a.auth-weibo:hover,
+input.auth-weibo:hover {
   color: #fff;
   background-color: #197ea7;
   }
-a.auth-twitter:active,
-input.auth-twitter:active {
+a.auth-weibo:active,
+input.auth-weibo:active {
   background-color: #15739a;
   }
 a.auth-generic,

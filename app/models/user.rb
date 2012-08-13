@@ -60,11 +60,13 @@ class User
   ## Token authenticatable
   field :authentication_token
 
-  attr_accessible :email, :username, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :name, :username, :password, :password_confirmation, :remember_me
 
   mount_uploader :avatar, UserAvatarUploader
 
-  validates :username, presence: true
+  validates :username, presence: true, uniqueness: true
+
+  validates :name, presence: true
 
   has_many :activities, dependent: :destroy
   has_and_belongs_to_many :liked_topics, class_name: 'Topic', inverse_of: :fans
