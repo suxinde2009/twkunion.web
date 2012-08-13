@@ -1,20 +1,19 @@
 source 'http://ruby.taobao.org'
 
-gem 'rails', '3.2.5'
+gem 'rails', '3.2.7'
 
 # mongo support
-gem 'mongo',      '1.6.2'
-gem 'mongoid',    '2.4.10'
+gem 'mongoid',    '2.4.11'
 gem 'mongoid_auto_increment_id', '0.4.0'
 gem 'bson_ext',   '1.6.2'
 
 # Core functions
-gem 'devise',               '~> 2.1.0'
+gem 'devise',               '~> 2.1.2'
 # gem 'devise_invitable',     '~> 1.0.2'
 gem 'simple_form',          '~> 2.0.2'
 gem 'inherited_resources',  '~> 1.3.1'
 gem 'kaminari',             '~> 0.13.0'
-gem 'nested_form',          '~> 0.2.0'
+gem 'nested_form',          '~> 0.2.2'
 gem 'symbolize',            '~> 4.2.0', require: 'symbolize/mongoid'
 gem 'mongoid-ancestry',     '~> 0.2.2'
 gem 'rails_config'
@@ -39,8 +38,9 @@ gem 'exception_notification_rails3', '~> 1.2.0', require: 'exception_notifier'
 # Social Share
 gem "social-share-button", '0.0.3'
 
-# Admin sustem
-gem 'activeadmin-mongoid'
+# Admin support
+gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'activeadmin-mongoid', '~> 0.0.2.jpmckinney.0'
 
 # Rich text support
 gem 'rails_kindeditor', github: 'jerryshen/rails_kindeditor'

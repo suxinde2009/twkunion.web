@@ -1,0 +1,19 @@
+#header.group
+  #header-inner.group
+    #logo= link_to image_tag('logo-bw.gif', alt: 'twkunion'), root_path
+    #dashboard
+      %form#search{:action => "/search"}
+        %input#search-text{:name => "q", :placeholder => "搜索...", :type => "text", :value => ""}/
+    %ul#nav
+      %li#t-signin
+        %a{:href => "/session/new?return_to=%2Fsignup%2Fdesigners"} 登录
+      %li#t-search
+        = link_to image_tag('adapt-icon-search.png', alt: 'search'), '#search'
+      %li= link_to '首页', root_path
+      %li= link_to '应用', '#'
+      %li= link_to '专题', '#'
+      %li= link_to '下载', '#'
+      %li= link_to '论坛', '#'
+      %li#t-signup
+        = link_to new_user_registration_path do
+          %span 免费注册

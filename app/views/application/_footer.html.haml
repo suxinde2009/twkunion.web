@@ -1,0 +1,42 @@
+#footer
+  #footer-inner
+    %p.logo
+      = link_to image_tag('logo-footer-hd.png', width: 80, alt: 'twkunion'), root_path
+      Show and tell for designers.
+    %h4#pixels-total.group
+      = image_tag 'ball-46.png', alt: 'illustration'
+      %strong 51,457,757,720
+      pixels dribbbled
+    %ul#footer-nav
+      %li
+        %a#f-home{:href => "/site/about"} About
+      %li
+        %a{:href => "/site/faq"} FAQ
+      %li
+        %a{:href => "/site/contact"} Contact
+      %li
+        %a{:href => "/site/advertise"} Advertise
+      %li
+        %a{:href => "/site/testimonials"} Testimonials
+      %li
+        %a{:href => "/site/handbook"} Handbook
+      %li
+        %a{:href => "/site/terms"} Terms
+      %li
+        %a{:href => "/site/privacy"} Privacy
+      %li
+        %a{:href => "/api"} API
+      %li
+        %a{:href => "http://equipment.dribbble.com/"} Equipment
+    %p
+      Copyright © 2009-2012 Dribbble LLC. All screenshots © their respective owners.
+      %br/
+      Handcrafted in Salem, Massachusetts. Hosted by
+      = succeed "." do
+        %a{:href => "http://mediatemple.net/"} (mt) Media Temple
+    %p
+      %a.footer-twitter{:href => "http://twitter.com/dribbble"} Twitter
+      %a.footer-meetup{:href => "http://meetup.com/dribbble"} Meetups
+      %a.footer-newsletter{:href => "http://eepurl.com/hPDIU"} Newsletter
+      %a.footer-blog{:href => "http://blog.dribbble.com"} Blog
+/ /footer

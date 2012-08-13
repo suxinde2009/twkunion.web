@@ -1,0 +1,11 @@
+.full
+  %h1
+    Sign up as a Prospect
+  %p Prospects are designers who wish to be drafted (invited) to upload their work and comment.
+  .sign-prompt
+    %a.auth-twitter.auth-top{:href => "/auth/Twitter?door=designers&signup=true"} Sign up with Twitter
+    %span
+      I don't have Twitter but would like to
+      = succeed "." do
+        %strong
+          %a.show-signup{:href => "#designer-signup"} create a Dribbble account

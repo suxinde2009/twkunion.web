@@ -1,4 +1,7 @@
 # encoding: utf-8
 
 p 'create admin user'
-AdminUser.create(email: 'admin@twkunion.com', password: 'password')
+admin = User.new(email: 'admin@twkunion.com', username: 'admin', password: 'password')
+admin.confirm!
+
+admin.mark_as_admin!

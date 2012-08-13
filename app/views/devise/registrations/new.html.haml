@@ -1,0 +1,69 @@
+- content_for :full do
+  .full
+    %h1
+      注册成为吞迷
+    %p 吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是。
+    .sign-prompt
+      %a.auth-twitter.auth-top{:href => "/auth/Twitter?door=designers&signup=true"} Sign up with Twitter
+      %span
+        I don't have Twitter but would like to
+        = succeed "." do
+          %strong
+            %a.show-signup{:href => "#designer-signup"} create a Dribbble account
+
+.signup-form
+  = simple_form_for resource, as: resource_name, url: registration_path(resource_name), html: { class: 'hide gen-form with-messages signup' } do |f|
+    %h2.section Create a Dribbble Account
+    = f.input :name, input_html: { class: 'form-text' }, hint: '文字简介'
+    = f.input :username, input_html: { class: 'form-text' }, hint: 'Your Dribbble URL: http://dribbble.com/<strong><span id="username">USERNAME</span></strong>'
+    = f.input :email, input_html: { class: 'form-text' }
+    = f.input :password, input_html: { class: 'form-text' }, hint: 'Minimum 6 characters'
+
+    .form-btns
+      = f.button :submit, 'Create Account', class: 'form-sub'
+
+.col-about.col-about-full
+  %h2.section 作为一个吞迷，您可以拥有以下权限。。。
+  %ol.gridsies.gridsies-halfsies.group
+    %li
+      = image_tag 'about-find.png', alt: 'About-find', class: 'fig'
+      %h3 查找和关注
+      %p 查找感兴趣的游戏专题，并且可以进行关注，方便日后得到游戏的更新提醒。
+    %li
+      = image_tag 'about-like.png', alt: 'About-like', class: 'fig'
+      %h3 Save your faves
+      %p Create an inspiration stream from your favorite shots.
+    %li
+      = image_tag 'about-bucket.png', alt: 'About-bucket', class: 'fig'
+      %h3 Create buckets
+      %p
+        Save and organize shots from any player into
+        = succeed "." do
+          %a{:href => "/site/faq#faq-buckets", :target => "_blank"} Buckets
+    %li
+      = image_tag 'about-prospect.png', alt: 'About-prospect', class: 'fig'
+      %h3 Get Drafted
+      %p Let the community know you'd like to be a player (members who upload and comment).
+    %li
+      = image_tag 'pro-badge.png', alt: 'Pro-badge', class: 'fig'
+      %h3 Go Pro
+      %p
+        Unlock
+        %a{:href => "/designers"} Find Designers
+        to search talent by location, skills, and availability.
+
+- content_for :javascript do
+  :javascript
+    $('.show-signup').click(function() {
+      $('form.signup, .col-about').toggle();
+      return false;
+    });
+    $('#user_username')
+      // Show the input username in the user url (or default text if none)
+      .keyup(function() {
+        var value = $(this).val();
+        if (value == '') {
+          value = 'USERNAME';
+        }
+        $('#username').text(value);
+      });
