@@ -21,7 +21,9 @@ class User
 
   ## Custom Columns
   field :username
+  field :name
   field :avatar
+  field :is_admin, type: Boolean, default: false
 
   ## Recoverable
   field :reset_password_token
@@ -58,6 +60,8 @@ class User
   ## Token authenticatable
   field :authentication_token
 
+  attr_accessible :email, :username, :password, :password_confirmation, :remember_me
+
   mount_uploader :avatar, UserAvatarUploader
 
   validates :username, presence: true
@@ -71,5 +75,11 @@ class User
 
   def unlike!(target)
     liked_topics.delete(target) unless target.nil?
+  end
+
+  %w(admin user).each do |method|
+    define_method("mark_as_#{method}!") {
+      update_attribute(:is_admin, method == 'admin' ? true : false)
+    }
   end
 end
