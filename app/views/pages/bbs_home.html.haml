@@ -1,0 +1,41 @@
+- content_for :full do
+  .full.home_banner
+    %h1.compact
+      %strong 如果你还没有注册成为吞迷，
+      又怎么能称的上游戏达人呢？
+
+- content_for :sidebar do
+  = render '/application/sidebars/bbs'
+
+#recommended_wrap
+
+#forum-wrap
+  .forum
+    .forum-header.group
+      %h2 吞食天地大同盟
+      %p xxxxxx
+    .forum-list
+      %p.notice 本板块的最新消息，我们马上要出最新的版本了。希望大家踊跃参与。
+      .child-board.group
+        .head_img= image_tag('examples/02.jpg')
+        %h3= link_to '吞食天地大同盟子板块1', '#'
+        %p.description
+          子板块的简介，成立时间啥的。
+        %p
+          %span.admin
+            版主：
+            = link_to '西唯', '#'
+          %span.topics
+            总帖数/精华帖：0 / 0
+
+      .child-board.group
+        .head_img= image_tag('examples/02.jpg')
+        %h3= link_to '吞食天地大同盟子板块1', '#'
+        %p.description
+          子板块的简介，成立时间啥的。
+        %p
+          %span.admin
+            版主：
+            = link_to '西唯', '#'
+          %span.topics
+            总帖数/精华帖：0 / 0     

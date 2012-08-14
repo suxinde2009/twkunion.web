@@ -23,7 +23,8 @@
       = main_nav :topics do
         = link_to '专题', topics_path
       %li= link_to '下载', '#'
-      %li= link_to '论坛', '#'
+      = main_nav :bbs do
+        = link_to '论坛', '/bbs_home'
 
       - unless user_signed_in?
         %li#t-signup

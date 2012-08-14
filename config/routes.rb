@@ -24,6 +24,8 @@ Twkunion::Application.routes.draw do
     resources :boards, only: [:show]
     resources :topics
   end
+
+  get 'bbs_home' => 'pages#bbs_home'
   
   root :to => 'home#index'
 end

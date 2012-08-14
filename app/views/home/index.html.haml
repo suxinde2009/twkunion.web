@@ -95,7 +95,8 @@
             %a.url{:href => "/oykun", :rel => "contact", :title => "Oykun"}
               %img.photo.fn{:alt => "Avatar-aug", :src => "http://dribbble.s3.amazonaws.com/users/14827/avatars/original/avatar-aug.png?1344892053"} Oykun
 
-
+- content_for :extra do
+  = render 'extra'
 
 - content_for :javascript do
   :javascript

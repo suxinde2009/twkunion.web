@@ -99,3 +99,12 @@ dl.fd dt {
   &.number_4 { background: url("num_4.png") no-repeat scroll 0 3px transparent !important; }
   &.number_5 { background: url("num_5.png") no-repeat scroll 0 3px transparent !important; }
 }
+
+#extra {
+  border-top: 2px solid #DDDDDD;
+  float: none;
+  margin: 55px 0 0;
+  padding: 45px 0 0;
+  width: auto;
+  clear: both
+}
