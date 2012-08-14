@@ -1,0 +1,42 @@
+.topic_info {
+  margin-top: 15px;
+
+  .cover {
+    float: left;
+    img { border: 1px solid #3C3C3C; }
+  }
+
+  .desc {
+    color: #666666;
+    display: block;
+    overflow: hidden;
+    text-indent: 20px;
+    padding: 2px 0 0 10px;
+    line-height: 20px;
+  }
+}
+
+ul.stats_bar {
+
+  li {
+    float: left;
+    height: 38px;
+    line-height: 38px;
+    vertical-align: middle;
+    display: block;
+
+    span { color: #EA4C89; }
+  }
+
+  a.download_btn {
+    font-size: 0;
+    width: 211px;
+    height: 38px;
+    display: block;
+    background: image-url("download_btn.png") no-repeat scroll 0 0 transparent;
+
+    &:hover, &:active {
+      background: image-url("download_btn_active.png") no-repeat scroll 0 0 transparent;
+    }
+  }
+}

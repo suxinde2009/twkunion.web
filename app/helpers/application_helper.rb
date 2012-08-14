@@ -8,4 +8,16 @@ module ApplicationHelper
       link_to(text, url_options)
     end
   end
+
+  def main_nav(name, options = {}, &block)
+    if @main_nav == name
+      if options[:class]
+        options[:class] += ' active'
+      else
+        options[:class] = 'active'
+      end
+    end
+    content = capture(&block)
+    content_tag(:li, content, options)
+  end
 end

@@ -21,7 +21,8 @@
 
           = yield :full
 
-          #main= yield
+          #main{ class: @main_full.blank? ? '' : 'main-full' }
+            = yield
           
           #secondary= yield :sidebar
         //content

@@ -1,0 +1,27 @@
+#event_slider
+  .images
+    %div= link_to image_tag('examples/01.jpg'), '#', class: 'coin-slides'
+    %div= link_to image_tag('examples/01.jpg'), '#', class: 'coin-slides'
+    %div= link_to image_tag('examples/01.jpg'), '#', class: 'coin-slides'
+    %div= link_to image_tag('examples/01.jpg'), '#', class: 'coin-slides'
+    %div= link_to image_tag('examples/01.jpg'), '#', class: 'coin-slides'
+  .slidetabs
+    %div= link_to '1 Twk2nd发布', '#'
+    %div= link_to '2 试玩版延后消息', '#'
+    %div= link_to '3 12月大回馈', '#'
+    %div= link_to '4 庆祝春节活动', '#'
+    %div= link_to '5 iPad大放送', '#'
+
+- content_for :javascript do
+  :javascript
+    $(function(){
+      $(".slidetabs").tabs(".images > div", {
+        effect: 'fade',
+        fadeOutSpeed: 200,
+        rotate: true
+      }).slideshow({
+        autoplay: true,
+        interval: 5000,
+        clickable: false
+      });
+    })
