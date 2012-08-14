@@ -17,6 +17,7 @@
 }
 
 ul.stats_bar {
+  margin-bottom: 10px;
 
   li {
     float: left;
@@ -24,6 +25,7 @@ ul.stats_bar {
     line-height: 38px;
     vertical-align: middle;
     display: block;
+    margin-right: 5px;
 
     span { color: #EA4C89; }
   }
