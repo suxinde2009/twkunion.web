@@ -1,3 +1,6 @@
+- content_for :sidebar do
+  = render '/application/sidebars/registration'
+
 - content_for :full do
   .full
     = image_tag 'banner_sign.png'
@@ -16,9 +19,6 @@
 
     .form-btns
       = f.button :submit, '提交帐户信息', class: 'form-sub'
-
-- content_for :sidebar do
-  = render '/application/sidebars/registration'
 
 - content_for :javascript do
   :javascript

@@ -8,6 +8,8 @@ class UsersController < InheritedResources::Base
    end
   end
 
+  def notifications; end
+
   protected
 
   def resource

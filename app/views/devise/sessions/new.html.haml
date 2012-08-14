@@ -1,8 +1,10 @@
-- content_for :full do
-  .full
-    %h1
-      注册成为吞迷
-    %p 吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是。
+- content_for :sidebar do
+  = render '/application/sidebars/registration'
+  
+.full
+  %h1
+    注册成为吞迷
+  %p 吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是。
 
 .signup-form
   = simple_form_for resource, as: resource_name, url: session_path(resource_name), html: { class: 'gen-form with-messages signup' } do |f|
@@ -13,6 +15,3 @@
 
     .form-btns
       = f.button :submit, '登录', class: 'form-sub'
-
-- content_for :sidebar do
-  = render '/application/sidebars/registration'

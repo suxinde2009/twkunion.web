@@ -1,0 +1,33 @@
+- content_for :sidebar do
+  = render '/application/sidebars/newsletter'
+
+- content_for :full do
+  .group
+    %a.pro-motion.not-pro{:href => "/account/pro"}
+      %strong Go Pro!
+      %em Add power features for just $20/year
+    .group
+      .full
+        %h1
+          %a{:href => "/account"} Account
+          %span.sep /
+          Notifications
+        %p Get notified of activity at Dribbble
+
+= render '/application/tabs/settings'
+
+.session-form
+  = simple_form_for resource, url: profile_settings_path, html: { method: :put, class: 'gen-form plain' } do |f|
+
+    %h2 以下情况发生时，请给我发送邮件提醒。。。
+
+    %fieldset
+      %label
+        %input#notification_mention{:name => "notifications[]", :type => "checkbox", :value => "mention"}
+          someone mentions me
+    %fieldset
+      %label
+        %input#notification_follow{:name => "notifications[]", :type => "checkbox", :value => "follow"}
+          someone follows me
+    .form-btns
+      %input.form-sub{:name => "commit", :type => "submit", :value => "Save"}

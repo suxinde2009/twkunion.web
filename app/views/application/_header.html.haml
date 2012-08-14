@@ -11,7 +11,7 @@
             = image_tag current_user.avatar.small, size: '16x16', alt: current_user.name, class: 'photo fn'
           %ul.tabs
             %li= link_to '个人资料', '#'
-            %li= link_to '帐户设置', edit_user_registration_path
+            %li= link_to '帐户设置', edit_profile_path
             %li.separate= link_to '登出', destroy_user_session_path, method: :delete
       - else
         %li#t-signin= link_to '登录', new_user_session_path

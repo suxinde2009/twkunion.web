@@ -2565,6 +2565,13 @@ a.auth-weibo {
   background-color: #333;
   @include rounded(6px);
   @include transition(all);
+
+  &.gray {
+    background-color: rgba(0, 0, 0, 0.05);
+    border: 1px solid #CCCCCC;
+    color: #555555;
+    padding-right: 26px;
+  }
 }
 a.auth-top {
   display: inline-block;

@@ -1,0 +1,17 @@
+%h3
+  %span.meta 头像设置
+
+#avatar-preview.group
+  = simple_form_for resource, url: profile_settings_path, html: { method: :put, id: 'delete-avatar-form' } do |f|
+
+    = image_tag current_user.avatar.medium, alt: current_user.username
+    = link_to '马上更改头像', '#', class: 'action edit-avatar', id: 'edit_avatar_link'
+    = f.input :remove_avatar, as: :hidden, input_html: { value: '1' }
+    = f.button :submit, '删除', id: 'delete-avatar-button', class: 'form-btn'
+
+  = simple_form_for resource, url: profile_settings_path, html: { method: :put, id: 'avatar-form', class: 'group hide' } do |f|
+
+    = f.input :avatar, as: :file, hint: 'JPG, GIF or PNG. Max size of 700K'
+    #add-btn
+      = f.button :submit, '更新', class: 'form-sub'
+      = link_to '取消', '#cancel-avatar', class: 'form-btn', id: 'cancel-avatar'
