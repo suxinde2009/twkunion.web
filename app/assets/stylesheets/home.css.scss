@@ -1,3 +1,14 @@
+h3.special {
+  margin: 0 !important;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #DDDDDD;
+  font-size: 14px;
+
+  span.special-flag {
+    padding: 6px 18px 4px 8px !important;
+  }
+}
+
 .topic_info {
   margin-top: 15px;
 
@@ -27,6 +38,8 @@ ul.stats_bar {
     display: block;
     margin-right: 5px;
 
+    &.raty { margin-right: 15px; }
+
     span { color: #EA4C89; }
   }
 
@@ -41,4 +54,48 @@ ul.stats_bar {
       background: image-url("download_btn_active.png") no-repeat scroll 0 0 transparent;
     }
   }
+}
+
+ul.articles {
+  margin-bottom: 20px;
+  li {
+    width: 310px;
+    padding-left: 20px;
+    margin-bottom: 3px;
+    border-bottom: 1px dashed #ddd;
+    float: left;
+    background: image-url("article_header.png") no-repeat scroll 0 2px transparent;
+    color: #666;
+
+    &:nth-child(even) { }
+    &:nth-child(odd)  { margin-right: 35px; }
+
+    h3 { font-weight: lighter !important; float: left; }
+    span.time { float: right; } 
+  }
+}
+
+ol.multi-grid.full {
+  float: none;
+  width: 100%;
+
+  li {
+    margin: 0 0 20px 15px !important;
+  }
+}
+
+div#fixed {
+  display: block;
+  float: right;
+  margin-top: 2px;
+}
+
+dl.fd dt {
+  margin-bottom: 5px !important;
+  padding-left: 22px !important;
+  &.number_1 { background: url("num_1.png") no-repeat scroll 0 3px transparent !important; }
+  &.number_2 { background: url("num_2.png") no-repeat scroll 0 3px transparent !important; }
+  &.number_3 { background: url("num_3.png") no-repeat scroll 0 3px transparent !important; }
+  &.number_4 { background: url("num_4.png") no-repeat scroll 0 3px transparent !important; }
+  &.number_5 { background: url("num_5.png") no-repeat scroll 0 3px transparent !important; }
 }

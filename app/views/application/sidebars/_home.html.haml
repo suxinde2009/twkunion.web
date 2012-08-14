@@ -17,85 +17,12 @@
         %i |
         %strong 9
         followers
-  %li.group
-    .follow-prompt
-      %form{:action => "/design_positive/followers", :method => "post"}
-        %div{:style => "margin:0;padding:0;display:inline"}
-          %input{:name => "authenticity_token", :type => "hidden", :value => "I8us46tDZo4N49RXkKaG6iONJig7x6tZERB4shcpCJo="}/
-        %a.action.follow{:href => "#", :title => "You are not following Scott Lambert. Click to follow."}
-          %span Follow
-    %h4.vcard
-      %a.url{:href => "/design_positive", :length => "18", :rel => "contact", :title => "Scott Lambert"}
-        %img.photo.fn{:alt => "Design-positive-brand-strategy-vietnam", :src => "http://dribbble.s3.amazonaws.com/users/157264/avatars/original/design-positive-brand-strategy-vietnam.jpg?1338616153"} Scott Lambert
-      %span.user-meta
-        %strong 1
-        shot
-        %i |
-        %strong 6
-        followers
-  %li.group
-    .follow-prompt
-      %form{:action => "/Inxide/followers", :method => "post"}
-        %div{:style => "margin:0;padding:0;display:inline"}
-          %input{:name => "authenticity_token", :type => "hidden", :value => "I8us46tDZo4N49RXkKaG6iONJig7x6tZERB4shcpCJo="}/
-        %a.action.follow{:href => "#", :title => "You are not following Michał Zagórski. Click to follow."}
-          %span Follow
-    %h4.vcard
-      %a.url{:href => "/Inxide", :length => "18", :rel => "contact", :title => "Michał Zagórski"}
-        %img.photo.fn{:alt => "Photo", :src => "http://dribbble.s3.amazonaws.com/users/190664/avatars/original/photo.png?1344867661"} Michał Zagórski
-      %span.user-meta
-        %strong 1
-        shot
-        %i |
-        %strong 2
-        followers
-  %li.group
-    .follow-prompt
-      %form{:action => "/dachs/followers", :method => "post"}
-        %div{:style => "margin:0;padding:0;display:inline"}
-          %input{:name => "authenticity_token", :type => "hidden", :value => "I8us46tDZo4N49RXkKaG6iONJig7x6tZERB4shcpCJo="}/
-        %a.action.follow{:href => "#", :title => "You are not following Laszlo Feja. Click to follow."}
-          %span Follow
-    %h4.vcard
-      %a.url{:href => "/dachs", :length => "18", :rel => "contact", :title => "Laszlo Feja"}
-        %img.photo.fn{:alt => "Unbenannt-1", :src => "http://dribbble.s3.amazonaws.com/users/113377/avatars/original/Unbenannt-1.png?1331301510"} Laszlo Feja
-      %a.badge-link{:href => "/account/pro"}
-        %span.badge.badge-pro Pro
-      %span.user-meta
-        %strong 2
-        shots
-        %i |
-        %strong 14
-        followers
-  %li.group
-    .follow-prompt
-      %form{:action => "/piet/followers", :method => "post"}
-        %div{:style => "margin:0;padding:0;display:inline"}
-          %input{:name => "authenticity_token", :type => "hidden", :value => "I8us46tDZo4N49RXkKaG6iONJig7x6tZERB4shcpCJo="}/
-        %a.action.follow{:href => "#", :title => "You are not following Piet van Dongen. Click to follow."}
-          %span Follow
-    %h4.vcard
-      %a.url{:href => "/piet", :length => "18", :rel => "contact", :title => "Piet van Dongen"}
-        %img.photo.fn{:alt => "Piet", :src => "http://dribbble.s3.amazonaws.com/users/10755/avatars/original/Piet.png?1305133713"} Piet van Dongen
-      %span.user-meta
-        %strong 3
-        shots
-        %i |
-        %strong 6
-        followers
-  %li.group
-    .follow-prompt
-      %form{:action => "/ronas/followers", :method => "post"}
-        %div{:style => "margin:0;padding:0;display:inline"}
-          %input{:name => "authenticity_token", :type => "hidden", :value => "I8us46tDZo4N49RXkKaG6iONJig7x6tZERB4shcpCJo="}/
-        %a.action.follow{:href => "#", :title => "You are not following Rona. Click to follow."}
-          %span Follow
-    %h4.vcard
-      %a.url{:href => "/ronas", :length => "18", :rel => "contact", :title => "Rona"}
-        %img.photo.fn{:alt => "Img_1098", :src => "http://dribbble.s3.amazonaws.com/users/120221/avatars/original/IMG_1098.JPG?1344678815"} Rona
-      %span.user-meta
-        %strong 5
-        shots
-        %i |
-        %strong 7
-        followers
+
+%h3.title 专题排行
+
+%dl.fd
+  - 3.times do |x|
+    %dt{ class: "number_#{x+1}" } 吞食天地2nd 进化
+    - if x == 0
+      = image_tag 'examples/02.jpg'
+    %dd 在本作中玩家扮演刘备，从黄巾之乱开始，一直到最后篡改历史一统天下，总共分为八章...

@@ -23,11 +23,85 @@
         和策略选项，体现了一定的战术性。
     %ul.stats_bar.group
       %li= link_to '下载', '#', class: 'download_btn'
+      %li.raty
+        推荐指数：
+        #fixed
       %li
         关注：
         %span 27581
 
     %ul.articles.group
-      %li
-        %h3 吞食天地2nd  beta 1.0初章发布
-        %span.time 2008-7-22
+      - 3.times do
+        %li
+          %h3 吞食天地2nd  beta 1.0初章发布
+          %span.time 2008-7-22
+        %li
+          %h3 吞食天地大同盟官方正式成立
+          %span.time 2008-8-22
+
+    %ol.multi-grid.full.group
+      %li.multi-thumb
+        %a.zoom{:href => "/shots/687211-iPhone-App", "original-title" => ""}
+          %strong{:style => "opacity: 0;"}
+            %span 98
+          %img{:alt => "iPhone App", :src => "http://dribbble.s3.amazonaws.com/users/124059/screenshots/687211/400_teaser.png"}
+        .tipsy-player
+          %span.tipsy-player-link
+            %a.url{:href => "/virgilpana", :rel => "contact", :title => "Virgil Pana"}
+              %img.photo.fn{:alt => "Untitled-3", :src => "http://dribbble.s3.amazonaws.com/users/124059/avatars/original/Untitled-3.png?1333130134"} Virgil Pana
+      %li.multi-thumb
+        %a.zoom{:href => "/shots/687318-Mount-Chapel-v2", "original-title" => ""}
+          %strong
+            %span 81
+          %img{:alt => "Mount Chapel v2", :src => "http://dribbble.s3.amazonaws.com/users/7179/screenshots/687318/visitt_teaser.jpg"}
+        .tipsy-player
+          %span.tipsy-player-link
+            %a.url{:href => "/ogvidius", :rel => "contact", :title => "Jonathan Ogden"}
+              %img.photo.fn{:alt => "Ogface", :src => "http://dribbble.s3.amazonaws.com/users/7179/avatars/original/ogface.jpg?1332340761"} Jonathan Ogden
+      %li.multi-thumb
+        %a.zoom{:href => "/shots/687216-Dribbble-Backpacks", "original-title" => ""}
+          %strong
+            %span 61
+          %img{:alt => "Dribbble Backpacks", :src => "http://dribbble.s3.amazonaws.com/users/76269/screenshots/687216/dribbble_backpacks_teaser.png"}
+        .tipsy-player
+          %span.tipsy-player-link
+            %a.url{:href => "/Sanadas", :rel => "contact", :title => "Sanadas young"}
+              %img.photo.fn{:alt => "1capf5xs0", :src => "http://dribbble.s3.amazonaws.com/users/76269/avatars/original/1CAPF5XS0.jpg?1343869894"} Sanadas young
+      %li.multi-thumb
+        %a.zoom{:href => "/shots/687525-Minoltazoom8-Camera", "original-title" => ""}
+          %strong
+            %span 55
+          %img{:alt => "Minoltazoom8 Camera", :src => "http://dribbble.s3.amazonaws.com/users/75656/screenshots/687525/minoltazoom8_camera_teaser.png"}
+        .tipsy-player
+          %span.tipsy-player-link
+            %a.url{:href => "/pacoxiao", :rel => "contact", :title => "Paco"}
+              %img.photo.fn{:alt => "Tou2", :src => "http://dribbble.s3.amazonaws.com/users/75656/avatars/original/tou2.png?1331274526"} Paco
+      %li.multi-thumb
+        %a.zoom{:href => "/shots/687097-Tiny-UI-Elements", "original-title" => ""}
+          %strong{:style => "opacity: 0;"}
+            %span 54
+          %img{:alt => "Tiny UI Elements", :src => "http://dribbble.s3.amazonaws.com/users/77765/screenshots/687097/ui_elements_psd_teaser.png"}
+        .tipsy-player
+          %span.tipsy-player-link
+            %a.url{:href => "/cosmin-negoita", :rel => "contact", :title => "Cosmin Negoita"}
+              %img.photo.fn{:alt => "Dribbble_av", :src => "http://dribbble.s3.amazonaws.com/users/77765/avatars/original/dribbble_av.png?1344065295"} Cosmin Negoita
+      %li.multi-thumb
+        %a.zoom{:href => "/shots/687425-It-s-alive-it-s-on-the-App-Store", "original-title" => ""}
+          %strong
+            %span 53
+          %img{:alt => "It's alive, it's on the App Store!", :src => "http://dribbble.s3.amazonaws.com/users/14827/screenshots/687425/untitled-5_teaser.png"}
+        .tipsy-player
+          %span.tipsy-player-link
+            %a.url{:href => "/oykun", :rel => "contact", :title => "Oykun"}
+              %img.photo.fn{:alt => "Avatar-aug", :src => "http://dribbble.s3.amazonaws.com/users/14827/avatars/original/avatar-aug.png?1344892053"} Oykun
+
+
+
+- content_for :javascript do
+  :javascript
+    $(function() {
+      $('div#fixed').raty({
+        readOnly: true,
+        start:    3
+      });
+    })

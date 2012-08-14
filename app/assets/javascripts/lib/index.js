@@ -3,3 +3,4 @@
 //= require lib/jquery.form
 //= require lib/jquery.tipsy
 //= require lib/jquery.touchSwipe
+//= require lib/jquery.raty.min

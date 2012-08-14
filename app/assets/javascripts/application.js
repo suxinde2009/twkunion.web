@@ -14,3 +14,5 @@
 //= require jquery_ujs
 //= require lib
 //= require script
+
+$.fn.raty.defaults.path = '/assets/raty';
