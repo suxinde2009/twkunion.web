@@ -5,6 +5,9 @@ ActiveAdmin.register Topic do
   ## Customizing index screen for topic
   index do
     column :id
+    column :logo do |topic|
+      image_tag topic.logo
+    end
     column :title
     column :slug
     column :rating

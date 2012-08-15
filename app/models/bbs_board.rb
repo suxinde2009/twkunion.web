@@ -14,8 +14,6 @@ class BbsBoard
   validates :name, :logo, :description, presence: true
   validates :name, uniqueness: true
 
-  mount_uploader :logo, OriginalUploader
-
   belongs_to :admin, class_name: 'User'
 
   has_many :topics, class_name: 'BbsTopic'

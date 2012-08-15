@@ -19,7 +19,7 @@ class Topic
   field :icon
   field :logo
   field :banner
-  field :full_screen
+  # field :full_screen
 
   validates :title, :slug, :description, presence: true
   validates :slug, uniqueness: true

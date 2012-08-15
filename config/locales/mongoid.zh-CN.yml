@@ -16,6 +16,7 @@ zh-CN:
       topic_download: 专题资源
       bbs_board: 论坛板块
       bbs_topic: 论坛帖子
+      photo: 图片锦集
     attributes:
       user:
         email: Email

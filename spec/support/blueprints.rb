@@ -8,15 +8,12 @@ User.blueprint do
   confirmed_at  { Time.zone.now }
 end
 
-Message.blueprint do
-  # Attributes here
-end
-
 Topic.blueprint do
   title { Faker::LoremCN.sentence }
   slug { "topic#{sn}" }
   description { Faker::LoremCN.paragraph }
   rating { rand(1..10) }
+  logo { "/assets/examples/02.jpg" }
 end
 
 Article.blueprint do
@@ -47,7 +44,8 @@ TopicVideo.blueprint do
   title { Faker::LoremCN.sentence }
   source { "source_#{sn}" }
   url { Faker::Internet.http_url }
-  cover { Pathname.glob(Rails.root.join('lib/assets/images/*')).sample.open }
+  # cover { Pathname.glob(Rails.root.join('lib/assets/images/*')).sample.open }
+  cover { "/assets/examples/02.jpg" }
   widget { '<embed src="http://www.tudou.com/v/sEZiugaHS9g/&resourceId=0_05_05_99/v.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque" width="480" height="400"></embed>' }
   topic { Topic.make! }
 end
@@ -62,7 +60,8 @@ end
 
 BbsBoard.blueprint do
   name { Faker::LoremCN.word }
-  logo { Pathname.glob(Rails.root.join('lib/assets/images/*')).sample.open }
+  # logo { Pathname.glob(Rails.root.join('lib/assets/images/*')).sample.open }
+  logo { "/assets/examples/02.jpg" }
   description { Faker::LoremCN.paragraph }
   admin { User.make! }
 end
@@ -75,5 +74,9 @@ BbsTopic.blueprint do
 end
 
 BbsReply.blueprint do
+  # Attributes here
+end
+
+Photo.blueprint do
   # Attributes here
 end

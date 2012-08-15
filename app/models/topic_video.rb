@@ -12,7 +12,5 @@ class TopicVideo
 
   belongs_to :topic, index: true
 
-  mount_uploader :cover, OriginalUploader
-
   delegate :title, to: :topic, prefix: true
 end

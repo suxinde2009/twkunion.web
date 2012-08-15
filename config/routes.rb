@@ -17,7 +17,7 @@ Twkunion::Application.routes.draw do
     get 'profile/edit' => 'users#edit', as: :edit_profile
     put 'profile/update' => 'users#update', as: :profile_settings
   end
-
+  
   namespace :bbs do
     root :to => 'home#index'
 
