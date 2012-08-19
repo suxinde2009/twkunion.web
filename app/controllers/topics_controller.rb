@@ -1,5 +1,9 @@
-class TopicsController < ApplicationController
+class TopicsController < InheritedResources::Base
   main_nav_highlight :topics
 
-  def index; end
+  def show
+    @sec_nav = :home
+    
+    show!
+  end
 end

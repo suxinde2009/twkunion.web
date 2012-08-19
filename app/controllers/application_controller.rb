@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
     before_filter { |c| c.instance_variable_set(:@main_nav, name) }
   end
 
+  def self.sec_nav_highlight(name)
+    before_filter { |c| c.instance_variable_set(:@sec_nav, name) }
+  end
+
   def after_sign_in_path_for(resource_or_scope)
     if resource_or_scope.is_admin?
       admin_root_path

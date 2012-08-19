@@ -10,7 +10,9 @@ Twkunion::Application.routes.draw do
     resources :authentications, except: [:new, :create, :edit, :show]
   end
 
-  resources :topics
+  resources :topics do
+    resources :topic_articles, path: :articles
+  end
 
   scope '/my' do
     get :notificaitons, to: 'users#notifications', as: :my_notificaitons

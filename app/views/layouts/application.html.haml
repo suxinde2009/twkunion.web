@@ -16,7 +16,8 @@
     %hr/
     = render 'messages'
     #wrap
-      #wrap-inner
+      = render '/topics/context_header', topic: @topic
+      #wrap-inner{ class: @main_nav == :topics ? 'topic' : nil }
         #content.group
 
           = yield :full

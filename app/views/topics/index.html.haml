@@ -1,0 +1,52 @@
+- content_for :full do
+  .full.home_banner
+
+
+%ul.tabs
+  %li.active= link_to '全部专题', '#'
+  %li= link_to '按照更新时间', '#'
+  %li= link_to '按照人气指数', '#'
+
+.group.highlights.topics
+  - collection.each do |resource|
+    .multi.group
+      %h3.special
+        %span.special-flag.special-featured= resource.title
+        = link_to '进入专题', resource, class: 'date-more'
+      %ol.dribbbles.group
+        %li.group
+          .dribbble
+            .dribbble-shot
+              .dribbble-img
+                = link_to image_tag(resource.logo)
+              .tools.group
+              %ul.tools.group
+                %li.fav
+                  %a{:href => "/shots/692365-Sketch/fans", :title => "See fans of this screenshot"} 158
+                %li.cmnt
+                  %a{:href => "/shots/692365-Sketch#comments", :title => "View comments on this screenshot"} 19
+                %li.views
+                  915
+            .extras
+              %span.attachments-mark{"original-title" => "This shot has attachments", :rel => "tipsy"}
+                %img{:alt => "Attachments", :src => "/assets/icon-attach-16.png"}
+      .multi-meta
+        %ul.bucket-meta
+          %li.bucket-title-meta.bucket-title
+            %strong= link_to resource.title, resource
+          / %li.bucket-title-meta.bucket-title-attr
+          /   By
+          /   %a.url{:href => "/bieleib", :rel => "contact", :title => "Felix, Gabriel"}
+          /     %img.photo.fn{:alt => "Twitter_avatar", :src => "http://dribbble.s3.amazonaws.com/users/49464/avatars/original/Twitter_Avatar.png?1340287646"} Felix, Gabriel
+          %li.bucket-title-meta= resource.description
+          %li.bucket-title-meta.bucket-title-time.project-title-time
+            %strong #{resource.articles_count} 篇文章
+            %span.sep= '|'
+            %strong #{resource.videos_count} 个视频
+            %span.sep= '|'
+            %strong #{resource.photos_count} 张图片
+            %span.sep= '|'
+            %strong #{resource.downloads_count} 个资源
+          %li.bucket-title-meta
+            12分钟前更新
+
