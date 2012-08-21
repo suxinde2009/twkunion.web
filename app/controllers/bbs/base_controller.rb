@@ -1,5 +1,5 @@
 class Bbs::BaseController < ApplicationController
-  layout 'bbs'
-
+  main_nav_highlight :bbs
+  
   inherit_resources
 end

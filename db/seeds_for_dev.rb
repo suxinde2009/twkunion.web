@@ -24,11 +24,7 @@ topic = Topic.make!(
 5.times { TopicVideo.make!(topic: topic) }
 5.times { TopicPhoto.make!(topic: topic) }
 
-p 'create bbs related...'
-5.times do
-  main_board = BbsBoard.make!(admin: User.all.sample)
-  3.times do
-    child_board = BbsBoard.make!(ancestry: main_board.id.to_s, admin: User.all.sample)
-    5.times { BbsTopic.make!(user: User.all.sample, bbs_board: child_board) }
-  end
+
+BbsBoard.children.each do |board|
+  5.times { BbsTopic.make!(user: User.all.sample, bbs_board: board) }
 end
