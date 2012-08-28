@@ -12,6 +12,9 @@ Twkunion::Application.routes.draw do
 
   resources :topics do
     resources :topic_articles, path: :articles
+    resources :topic_videos, path: :videos
+    resources :topic_photos, path: :photos
+    resources :topic_downloads, path: :downloads
   end
 
   scope '/my' do

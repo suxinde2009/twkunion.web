@@ -35,6 +35,10 @@ gem 'weibo2',                         git: 'git://github.com/fmmp3/weibo2.git'
 # Exception notifier
 gem 'exception_notification_rails3', '~> 1.2.0', require: 'exception_notifier'
 
+# client side validations support
+gem 'client_side_validations', '~> 3.2.0.beta.6'
+gem 'client_side_validations-simple_form', '~> 2.0.0.beta.2'
+
 # Social Share
 gem "social-share-button", '0.0.3'
 

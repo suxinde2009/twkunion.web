@@ -4,8 +4,15 @@ h3.special {
   border-bottom: 2px solid #DDDDDD;
   font-size: 14px;
 
+  ul.tabs {
+    display: inline;
+    margin-left: 10px;
+    a { padding: 0 !important; line-height: 20px; }
+  }
+
   span.special-flag {
     padding: 6px 18px 4px 8px !important;
+    float: left;
   }
 }
 
@@ -58,6 +65,7 @@ ul.stats_bar {
 
 ul.articles {
   margin-bottom: 20px;
+
   li {
     width: 310px;
     padding-left: 20px;
@@ -72,6 +80,13 @@ ul.articles {
 
     h3 { font-weight: lighter !important; float: left; }
     span.time { float: right; } 
+  }
+
+  &.one_line {
+    li {
+      width: 100%;
+      line-height: 28px;
+    }
   }
 }
 

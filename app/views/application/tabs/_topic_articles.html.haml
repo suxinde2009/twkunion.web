@@ -1,0 +1,4 @@
+%ul.tabs
+  %li= settings_link_to '全部文章', topic_topic_articles_path(@topic)
+  - TopicArticle.category_mappings.each do |category|
+    %li= settings_link_to category[0], topic_topic_articles_path(@topic, category: category[1])

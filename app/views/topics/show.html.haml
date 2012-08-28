@@ -1,2 +1,51 @@
-%ul.tabs
-  %li.active 专题攻略
+- content_for :sidebar do
+  = render '/application/sidebars/topic_show'
+
+.group.highlights
+  .multi.group
+    %h3.special
+      %span.special-flag.special-featured 专题摘要 >>
+      吞食天地2nd Evolution 进化
+    .topic_info.group
+      .cover= image_tag('examples/02.jpg')
+      .desc
+        在本作中玩家扮演刘备，从第一章“黄巾之乱”开始，一直到最后篡改历史一统天下，总共分为八章。战斗过程除了普通攻击之外还有总攻击
+        和策略选项，体现了一定的战术性。
+    %ul.stats_bar.group
+      %li= link_to '下载', '#', class: 'download_btn'
+      %li.raty
+        推荐指数：
+        #fixed
+      %li
+        关注：
+        %span 27581
+
+%h3.special
+  %span.special-flag.special-featured 推荐文章 >>
+  %ul.tabs.group
+    %li= settings_link_to '全部文章', topic_topic_articles_path(@topic)
+    - TopicArticle.category_mappings.each do |category|
+      %li= settings_link_to category[0], topic_topic_articles_path(@topic, category: category[1])
+
+%ul.topic_articles
+  - @articles.each do |article|
+    %li.group
+      = link_to [@topic, :topic_articles] do
+        %span.category [#{article.category_name}]
+        = article.title
+        %span.time= article.created_at.to_date
+
+%h3.special.group
+  %span.special-flag.special-featured 推荐文章 >>
+
+%ol.multi-grid.full.photos.group
+  - @photos.each do |photo|
+    %li.multi-thumb
+      %a.zoom{:href => "/shots/687211-iPhone-App", "original-title" => ""}
+        %strong{:style => "opacity: 0;"}
+          %span 98
+        %img{:alt => "iPhone App", :src => "http://dribbble.s3.amazonaws.com/users/124059/screenshots/687211/400_teaser.png"}
+      .tipsy-player
+        %span.tipsy-player-link
+          %a.url{:href => "/virgilpana", :rel => "contact", :title => "Virgil Pana"}
+            %img.photo.fn{:alt => "Untitled-3", :src => "http://dribbble.s3.amazonaws.com/users/124059/avatars/original/Untitled-3.png?1333130134"} Virgil Pana

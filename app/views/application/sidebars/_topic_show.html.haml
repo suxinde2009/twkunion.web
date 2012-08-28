@@ -1,0 +1,46 @@
+.announce-btn.announce-job
+  %img{:alt => "Pin-job", :src => "/assets/pin-job.png"}
+    %a{:href => "/jobs?id=2281", :title => "posted August 13, 2012"}
+      %span.job-info
+        %strong.title
+          消息
+        %span.position 吞食天地2nd 是虾米虾米来着
+
+%h3.title 关注它的人
+
+%ol.players-list
+  %li.group
+    .follow-prompt
+      %form{:action => "/JePortieJim/followers", :method => "post"}
+        %div{:style => "margin:0;padding:0;display:inline"}
+          %input{:name => "authenticity_token", :type => "hidden", :value => "I8us46tDZo4N49RXkKaG6iONJig7x6tZERB4shcpCJo="}/
+        %a.action.follow{:href => "#", :title => "You are not following Jimmy van den IJssel . Click to follow."}
+          %span Follow
+    %h4.vcard
+      %a.url{:href => "/JePortieJim", :length => "18", :rel => "contact", :title => "Jimmy van den IJssel "}
+        %img.photo.fn{:alt => "Dsc_0058", :src => "http://dribbble.s3.amazonaws.com/users/70006/avatars/original/DSC_0058.png?1344630916"} 节操无下限
+      %span.user-meta
+        %strong 103
+        篇文章
+        %i |
+        %strong 19
+        个关注
+
+%h3.title 人气图片
+%ol.buckets.group
+  %li.bucket-76955.group
+    %a{:href => "/kgjerstad/buckets/76955-Loading-bars"}
+      %span.bucket-img
+        %img{:alt => "Progressbar_teaser", :src => "http://dribbble.s3.amazonaws.com/users/45054/screenshots/500329/progressbar_teaser.png", :title => "Progress Bar"}
+      %strong Loading bars
+      %span.bucket-meta
+        5 shots
+      %span.bucket-meta updated 29 minutes ago
+
+%h3.title 人气文章
+%dl.fd
+  %dt 如何打造终极装备
+  %dd 不小心找到了隐藏中的终极武器，装备上之后打怪不吃力了，血都不用喝了。
+
+%h3 投稿须知
+%p.copy 如果需要投稿请联系 topic@twkunion.com

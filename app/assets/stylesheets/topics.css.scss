@@ -65,9 +65,12 @@
 
 
 ul.topic_articles {
+  margin-bottom: 20px;
+  margin-top: 10px;
+
   li {
     a {
-      line-height: 20px;
+      line-height: 25px;
 
       span.category {  }
       span.time { float: right; }
@@ -76,4 +79,8 @@ ul.topic_articles {
     padding: 5px 0;
     border-bottom: 1px dashed #ddd;
   }
+}
+
+ol.photos {
+  margin-top: 10px;
 }

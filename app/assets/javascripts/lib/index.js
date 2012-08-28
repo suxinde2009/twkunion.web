@@ -4,3 +4,5 @@
 //= require lib/jquery.tipsy
 //= require lib/jquery.touchSwipe
 //= require lib/jquery.raty.min
+//= require rails.validations
+//= require rails.validations.simple_form

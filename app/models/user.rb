@@ -72,6 +72,14 @@ class User
   has_many :activities, dependent: :destroy
   has_and_belongs_to_many :liked_topics, class_name: 'Topic', inverse_of: :fans
 
+  def remember_me?
+    true
+  end
+
+  def remember_me
+    true
+  end
+
   def like!(target)
     liked_topics.push(target) unless target.nil?
   end

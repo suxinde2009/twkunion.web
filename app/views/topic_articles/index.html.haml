@@ -1,7 +1,7 @@
-%ul.tabs
-  %li.active= link_to '全部文章', '#'
-  - @categories.each do |category|
-    %li= link_to category[0], '#'
+- content_for :sidebar do
+  = render '/application/sidebars/topic_show'
+
+= render '/application/tabs/topic_articles'
 
 %ul.topic_articles
   - collection.each do |resource|
