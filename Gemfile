@@ -1,6 +1,6 @@
 source 'http://ruby.taobao.org'
 
-gem 'rails', '3.2.7'
+gem 'rails', '3.2.8'
 
 # mongo support
 gem 'mongoid',    '2.4.11'
@@ -48,6 +48,12 @@ gem 'activeadmin-mongoid', '~> 0.0.2.jpmckinney.0'
 
 # Rich text support
 gem 'rails_kindeditor', github: 'jerryshen/rails_kindeditor'
+
+
+# uploadify support
+# gem 'swf_fu', '~> 2.0'
+# gem 'flash_cookie_session'
+gem 'rack-raw-upload'
 
 
 # Gems used only for assets and not required

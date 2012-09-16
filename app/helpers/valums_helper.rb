@@ -1,0 +1,2 @@
+module ValumsHelper
+end

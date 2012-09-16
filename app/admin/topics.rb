@@ -42,10 +42,9 @@ ActiveAdmin.register Topic do
     end
 
     f.inputs '图片' do
-      f.input :icon, as: :file
-      f.input :logo, as: :file
-      f.input :banner, as: :file
-      f.input :full_screen, as: :file
+      f.input :icon
+      f.input :logo
+      f.input :banner
     end
 
     f.buttons

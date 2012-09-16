@@ -67,6 +67,7 @@ zh-CN:
         description: 简介
         admin_id: 版主
         bbs_topics_count: 帖子数量
+        depth: 目录层次
       bbs_topic:
         title: 标题
         content: 内容

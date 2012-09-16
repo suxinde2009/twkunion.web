@@ -80,3 +80,11 @@ end
 Photo.blueprint do
   # Attributes here
 end
+
+Asset.blueprint do
+  # Attributes here
+end
+
+AssetPhoto.blueprint do
+  # Attributes here
+end

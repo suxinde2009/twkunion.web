@@ -31,6 +31,7 @@ Twkunion::Application.routes.draw do
   end
 
   get 'bbs_home' => 'pages#bbs_home'
+  post 'valums/create' => 'valums#create'
   
   root :to => 'home#index'
 end

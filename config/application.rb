@@ -79,3 +79,4 @@ module Twkunion
 end
 
 require Rails.root + 'lib/monkey_patches/array'
+require Rails.root + 'lib/monkey_patches/u_string_io'

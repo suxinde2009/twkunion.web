@@ -5,29 +5,35 @@ ActiveAdmin.register BbsBoard do
   ## Customizing index screen for bbs boards
   index do
     column :id
+
+    column :logo do |board|
+      image_tag(board.logo, size: '40x20')
+    end
+
     column :name
     column :admin do |board|
-      link_to board.admin_name, admin_user_path(board.admin)
+      board.admins_text
     end
     column :ancestry do |board|
       board.root.name unless board.is_root?
+    end
+
+    column :depth do |board|
+      case board.depth
+      when 0
+        '1级板块'
+      when 1
+        '2级板块'
+      when 2
+        '3级板块'
+      end
     end
 
     default_actions
   end
 
   ## Customizing form screen for bbs boards
-  form do |f|
-    f.inputs '板块基本信息' do
-      f.input :ancestry, as: :select, collection: BbsBoard.roots, prompt: false
-      f.input :name
-      f.input :logo, as: :file
-      f.input :description, as: :text, input_html: { rows: 5 }
-      f.input :admin_id
-    end
-
-    f.buttons
-  end
+  form partial: 'form'
 
   ## Customizing show screen for bbs boards
   show do |board|
