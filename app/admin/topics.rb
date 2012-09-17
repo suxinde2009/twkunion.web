@@ -34,19 +34,32 @@ ActiveAdmin.register Topic do
   end
 
   ## Customizing form screen for topic
-  form do |f|
-    f.inputs '基本属性' do
-      f.input :title
-      f.input :slug
-      f.input :description
-    end
+  form partial: 'form'
 
-    f.inputs '图片' do
-      f.input :icon
-      f.input :logo
-      f.input :banner
-    end
+  ## Customizing show screen for bbs boards
+  show do |resource|
+    attributes_table do
+      row :id
+      row :title
+      row :slug
+      row :description
+      row :rating
+      row :is_published
+      row :published_at
+      row :articles_count
+      row :photos_count
+      row :videos_count
+      row :downloads_count
 
-    f.buttons
+      row :icon do
+        image_tag resource.icon, size: '200x80' if resource.icon
+      end
+      row :logo do
+        image_tag resource.logo, size: '200x80' if resource.logo
+      end
+      row :banner do
+        image_tag resource.banner, size: '200x80' if resource.banner
+      end
+    end
   end
 end

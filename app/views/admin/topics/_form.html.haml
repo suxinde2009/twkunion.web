@@ -1,0 +1,57 @@
+= semantic_form_for [:admin, @topic] do |f|
+  = f.inputs '基本属性' do
+    = f.input :title
+    = f.input :slug
+    = f.input :description
+
+  = f.inputs '图片资源' do
+    = f.input :icon
+    %li
+      %label &nbsp;
+      #file-uploader-icon
+      .preview
+        - unless @topic.new_record?
+          = image_tag(@topic.icon, size: '203x82')
+    = f.input :logo
+    %li
+      %label &nbsp;
+      #file-uploader-logo
+      .preview
+        - unless @topic.new_record?
+          = image_tag(@topic.logo, size: '203x82')
+    = f.input :banner
+    %li
+      %label &nbsp;
+      #file-uploader-banner
+      .preview
+        - unless @topic.new_record?
+          = image_tag(@topic.banner, size: '203x82')
+
+  = f.submit
+
+:javascript
+  function createUploader(uploader_id){
+      var uploader = new qq.FileUploader({
+          element: $(uploader_id)[0],
+          action: '/valums/create.json',
+          params: { photogenic_type: 'Topic' },
+          onComplete: function(id, fileName, responseJSON){
+            var attachmentSrc = responseJSON.src;
+            console.log($(uploader_id));
+
+            $(uploader_id).next().html('<img src="'+attachmentSrc+'" height=82 width=203></img>');
+
+            $(uploader_id).parent().prev().find('input').val(attachmentSrc);
+          }
+      });
+  }
+
+  function init(){
+      createUploader('#file-uploader-icon');
+      createUploader('#file-uploader-logo');
+      createUploader('#file-uploader-banner');
+  }
+  
+  // in your app create uploader as soon as the DOM is ready
+  // don't wait for the window to load
+  window.onload = init;

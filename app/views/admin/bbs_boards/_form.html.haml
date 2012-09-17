@@ -10,7 +10,6 @@
       .preview
         - unless @bbs_board.new_record?
           = image_tag(@bbs_board.logo, size: '203x82')
-      .qq-upload-extra-drop-area 图片丢到这里
 
     = f.input :description, as: :text, input_html: { rows: 5 }
 
@@ -22,7 +21,6 @@
           element: $('#file-uploader-logo')[0],
           action: '/valums/create.json',
           params: { photogenic_type: 'BbsBoard' },
-          extraDropzones: [qq.getByClass(document, 'qq-upload-extra-drop-area')[0]],
           onComplete: function(id, fileName, responseJSON){
             var attachmentSrc = responseJSON.src;
             $('#file-uploader-logo').next().html('<img src="'+attachmentSrc+'" height=82 width=203></img>');
