@@ -1,0 +1,9 @@
+= semantic_form_for [:admin, @topic_article] do |f|
+  = f.inputs '专题文章基本信息' do
+    = f.input :title
+    = f.input :category, as: :select, collection: TopicArticle.category_mappings, prompt: true
+    = f.input :author
+    = f.input :source
+    = f.input :content, as: :kindeditor, input_html: { height: 400, width: 820 }
+
+  = f.submit

@@ -38,17 +38,7 @@ ActiveAdmin.register TopicArticle do
   end
 
   ## Customizing form screen for topic article
-  form do |f|
-    f.inputs '专题文章基本信息' do
-      f.input :title
-      f.input :category, as: :select, collection: TopicArticle.category_mappings, prompt: true
-      f.input :author
-      f.input :source
-      f.input :content, as: :kindeditor, input_html: { height: 400, width: 920 }
-    end
-
-    f.buttons
-  end
+  form partial: 'form'
 
   ## Customizing show screen for topic article
   show do |article|

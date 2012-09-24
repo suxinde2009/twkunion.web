@@ -9,4 +9,4 @@ set :servers, servers
 role :db, :primary => true do servers end
 
 after 'deploy:update', 'deploy:rvmrc_symlink'
-after 'deploy:update', 'deploy:precompile'
+# after 'deploy:update', 'deploy:precompile'
