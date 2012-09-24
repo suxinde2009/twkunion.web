@@ -13,7 +13,7 @@ ActiveAdmin.register TopicPhoto do
   #   default_actions
   # end
 
-  index :as => :grid do |photo|
+  index as: :grid do |photo|
     link_to image_tag(photo.data.url), resource_path(photo)
   end
 end
