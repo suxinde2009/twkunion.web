@@ -1,0 +1,14 @@
+%li.response.comment.group
+  %h2
+    / %a.badge-link{:href => "/account/pro"}
+    /   %span.badge.badge-pro Pro
+    = user_avatar_link_to(resource.user)
+  .comment-body
+    %p= raw resource.content
+  %span.comment-meta-likes
+    %a.likes-list{:href => "/comments/1948766/likes"} 2
+    %span.hide likes
+  %p.comment-meta
+    %a.posted{:href => "#comment-1948766"} 3 days ago
+    %span.sep |
+    %a.likes{:href => "/comments/1948766/likes"} Like?

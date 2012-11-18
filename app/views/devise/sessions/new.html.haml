@@ -7,11 +7,11 @@
   %p 吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是。
 
 .signup-form
-  = simple_form_for resource, as: resource_name, url: session_path(resource_name), html: { class: 'gen-form with-messages signup' } do |f|
+  = simple_form_for resource, as: resource_name, url: session_path(resource_name), validate: true, html: { class: 'gen-form with-messages signup', autocomplete: :off } do |f|
     %h2.section 吞迷登录
-    = f.input :email, input_html: { class: 'form-text' }, autofocus: true
+    = f.input :email, input_html: { class: 'form-text' }, autofocus: true, validate: { presence: true }
     = f.input :password, input_html: { class: 'form-text' }
-    = f.input :remember_me, :as => :boolean if devise_mapping.rememberable?
+    = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
 
     .form-btns
       = f.button :submit, '登录', class: 'form-sub'

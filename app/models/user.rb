@@ -16,8 +16,8 @@ class User
           :omniauthable, omniauth_providers: [:weibo, :qq_connect]
 
   ## Database authenticatable
-  field :email,              null: false, default: ''
-  field :encrypted_password, null: false, default: ''
+  field :email
+  field :encrypted_password
 
   ## Custom Columns
   field :username
@@ -70,6 +70,7 @@ class User
   validates :name, presence: true
 
   has_many :activities, dependent: :destroy
+  has_many :bbs_posts
   has_and_belongs_to_many :liked_topics, class_name: 'Topic', inverse_of: :fans
 
   def remember_me?

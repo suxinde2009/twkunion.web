@@ -1,5 +1,5 @@
 # encoding: utf-8
-ActiveAdmin.register BbsTopic do
+ActiveAdmin.register BbsPost do
   menu label: '论坛帖子', priority: 5
 
   ## Customizing index screen for bbs boards
@@ -21,7 +21,7 @@ ActiveAdmin.register BbsTopic do
       resource.created_at.to_date
     end
 
-    column :bbs_replies_count
+    column :replies_count
 
     column '置顶' do |resource|
       links = ''.html_safe

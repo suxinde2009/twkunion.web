@@ -1,0 +1,35 @@
+- content_for :full do
+  .full
+    %h1
+      发帖 /
+      %em 分享游戏心得
+- content_for :sidebar do
+  = render '/application/sidebars/topic_form'
+
+= simple_form_for resource, url: collection_path, validate: true, html: { class: 'gen-form with-messages flush' } do | f|
+  %h2.section 帖子信息
+  = f.input :title, input_html: { class: 'form-text' }
+  = f.input :content, as: :text
+  .form-btns
+    = f.button :submit, '保存并发布', class: 'form-sub'
+    = link_to '取消', bbs_board_path(parent), class: 'form-btn'
+
+:javascript
+  $(function() {
+    var editor;
+
+    KindEditor.ready(function(K) {
+        editor = K.create('textarea', {
+        height: 400,
+        width: 600,
+        items: [
+          'undo', 'redo', 'preview', 'print', 'template', '|', 'justifyleft', 'justifycenter', 'justifyright',
+          'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
+          'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+          'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image',
+          'table', 'hr', 'emoticons', 'baidumap', 'pagebreak',
+          'anchor', 'link', 'unlink', '|'
+        ]
+      });
+    });
+  })

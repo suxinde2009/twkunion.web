@@ -9,14 +9,13 @@ zh-CN:
     models:
       user: 用户
       topic: 专题
-      article: 文章
-      topic_article: 专题文章
+      topic_post: 专题文章
       topic_video: 专题视频
       topic_photo: 专题图片
       topic_download: 专题资源
-      bbs_board: 论坛板块
-      bbs_topic: 论坛帖子
-      photo: 图片锦集
+      board: 论坛板块
+      bbs_post: 论坛帖子
+      asset_photo: 图片锦集
     attributes:
       user:
         email: Email
@@ -44,11 +43,11 @@ zh-CN:
         videos_count: 视频
         photos_count: 图片
         downloads_count: 资源下载
-      article:
+      post:
         title: 标题
         content: 内容
         is_recommended: 推荐
-      topic_article:
+      topic_post:
         category: 分类
         author: 作者
         source: 来源
@@ -59,7 +58,7 @@ zh-CN:
         topic_id: 专题
         widget: 视频嵌入代码
         url: 视频源地址
-      bbs_board:
+      board:
         name: 名称
         admin: 版主
         ancestry: 所属主板块
@@ -68,7 +67,7 @@ zh-CN:
         admin_id: 版主
         bbs_topics_count: 帖子数量
         depth: 目录层次
-      bbs_topic:
+      bbs_post:
         title: 标题
         content: 内容
         user_id: 发布人

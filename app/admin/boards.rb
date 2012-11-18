@@ -1,5 +1,5 @@
 # encoding: utf-8
-ActiveAdmin.register BbsBoard do
+ActiveAdmin.register Board do
   menu label: '论坛板块', priority: 4
 
   ## Customizing index screen for bbs boards

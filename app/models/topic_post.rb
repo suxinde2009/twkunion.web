@@ -1,9 +1,9 @@
-class TopicArticle < Article
+class TopicPost < Post
 
   field :author
   field :source
   field :category, type: Integer
-  field :views_count, type: Integer, default: 0
+  field :replies_count, type: Integer, default: 0
 
   validates :category, presence: true
 

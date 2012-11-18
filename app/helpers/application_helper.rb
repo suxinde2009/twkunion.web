@@ -32,4 +32,10 @@ module ApplicationHelper
     content = capture(&block)
     content_tag(:li, content, options)
   end
+
+  def user_avatar_link_to(user, size = :small)
+    link_to '#', title: user.name, class: 'url', rel: 'contact' do
+      image_tag user.avatar.send(size), class: 'photo'
+    end
+  end
 end

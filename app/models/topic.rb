@@ -10,7 +10,7 @@ class Topic
   field :published_at, type: DateTime
 
   # counters
-  field :articles_count, type: Integer, default: 0
+  field :posts_count, type: Integer, default: 0
   field :photos_count, type: Integer, default: 0
   field :videos_count, type: Integer, default: 0
   field :downloads_count, type: Integer, default: 0
@@ -24,7 +24,7 @@ class Topic
   validates :title, :slug, :description, presence: true
   validates :slug, uniqueness: true
 
-  has_many :topic_articles
+  has_many :topic_posts
   has_many :topic_videos
   has_many :topic_photos
   has_many :topic_downloads

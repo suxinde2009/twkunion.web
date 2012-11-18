@@ -2,11 +2,13 @@
 ActiveAdmin.register Topic do
   menu label: '专题', priority: 2
 
+  filter :title, as: :string
+
   ## Customizing index screen for topic
   index do
     column :id
     column :logo do |topic|
-      image_tag topic.logo
+      image_tag topic.logo, height: 20
     end
     column :title
     column :slug

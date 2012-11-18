@@ -1,0 +1,2 @@
+module Bbs::PostsHelper
+end

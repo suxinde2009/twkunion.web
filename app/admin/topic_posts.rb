@@ -1,5 +1,5 @@
 # encoding: utf-8
-ActiveAdmin.register TopicArticle do
+ActiveAdmin.register TopicPost do
   belongs_to :topic
   
   menu label: '专题文章'

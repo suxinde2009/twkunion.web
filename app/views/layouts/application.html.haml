@@ -19,7 +19,6 @@
       = render '/topics/context_header', topic: @topic
       #wrap-inner{ class: @main_nav == :topics ? 'topic' : nil }
         #content.group
-
           = yield :full
 
           #main{ class: @main_full.blank? ? '' : 'main-full' }

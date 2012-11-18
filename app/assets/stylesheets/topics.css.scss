@@ -84,3 +84,34 @@ ul.topic_articles {
 ol.photos {
   margin-top: 10px;
 }
+
+#secondary {
+  a.form-sub.share {
+    display:block;
+    margin-bottom: 10px;
+    text-align: center;
+    em { margin-top: 5px; }
+  }
+}
+
+#main {
+  .shot-byline {
+    border-top: 1px dashed #eee;
+    padding-top: 5px;
+  }
+
+  .post-content {
+    background-color: #fff;
+    border-radius: 7px 7px 7px 7px;
+    box-shadow: 0 0 0 1px #ddd inset, 0 0 0 2px rgba(255, 255, 255, 0.8) inset;
+    font-size: 14px;
+    line-height: 180%;
+    margin: 20px 0;
+    padding: 30px 30px 1.5em;
+    position: relative;
+  }
+
+  #comments-section {
+    width: 86% !important;
+  }
+}

@@ -1,26 +1,28 @@
-source 'http://ruby.taobao.org'
+source 'https://rubygems.org'
 
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.9'
 
 # mongo support
-gem 'mongoid',    '2.4.11'
-gem 'mongoid_auto_increment_id', '0.4.0'
-gem 'bson_ext',   '1.6.2'
+gem 'mongoid',    '3.0.13'
+gem 'mongoid_auto_increment_id', '0.5.0'
+gem 'bson_ext',   '1.7.1'
 
 # Core functions
 gem 'devise',               '~> 2.1.2'
 # gem 'devise_invitable',     '~> 1.0.2'
-gem 'simple_form',          '~> 2.0.2'
+gem 'simple_form',          '~> 2.0.4'
 gem 'inherited_resources',  '~> 1.3.1'
-gem 'kaminari',             '~> 0.13.0'
-gem 'nested_form',          '~> 0.2.2'
+gem 'kaminari',             '~> 0.14.1'
+gem 'nested_form',          '~> 0.3.1'
 gem 'symbolize',            '~> 4.2.0', require: 'symbolize/mongoid'
-gem 'mongoid-ancestry',     '~> 0.2.2'
+gem 'mongoid-ancestry',     '~> 0.3.0'
 gem 'rails_config'
 
 # gem 'carrierwave', '~> 0.6.0'
-gem 'carrierwave-mongoid',  '~> 0.2.0', require: 'carrierwave/mongoid'
+gem 'carrierwave-mongoid', github: 'jnicklas/carrierwave-mongoid', require: 'carrierwave/mongoid', branch: 'mongoid-3.0'
 gem 'mini_magick'
+
+gem 'mongoid_magic_counter_cache', github: 'Kequc/mongoid-magic-counter-cache'
 
 # Full-text search support
 gem 'sunspot_rails', '~> 1.3.1'
@@ -36,15 +38,16 @@ gem 'weibo2',                         git: 'git://github.com/fmmp3/weibo2.git'
 gem 'exception_notification_rails3', '~> 1.2.0', require: 'exception_notifier'
 
 # client side validations support
-gem 'client_side_validations', '~> 3.2.0.beta.6'
-gem 'client_side_validations-simple_form', '~> 2.0.0.beta.2'
+gem 'client_side_validations', '3.2.0'
+gem 'client_side_validations-mongoid', '~> 3.0.1'
+gem 'client_side_validations-simple_form', '2.0.0'
 
 # Social Share
-gem "social-share-button", '0.0.3'
+gem 'social-share-button', '0.0.3'
 
 # Admin support
 gem 'activeadmin', github: 'gregbell/active_admin'
-gem 'activeadmin-mongoid', '~> 0.0.2.jpmckinney.0'
+gem 'activeadmin-mongoid', github: 'simplybusiness/activeadmin-mongoid', branch: 'filter_support'
 
 # Rich text support
 gem 'rails_kindeditor', github: 'jerryshen/rails_kindeditor'

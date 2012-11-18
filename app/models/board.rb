@@ -1,4 +1,4 @@
-class BbsBoard
+class Board
   include Mongoid::Document
   include Mongoid::Timestamps
   include Mongoid::Ancestry
@@ -14,7 +14,7 @@ class BbsBoard
   validates :name, presence: true, uniqueness: true
 
   # Relations
-  has_many :topics, class_name: 'BbsTopic'
+  has_many :bbs_posts
   has_and_belongs_to_many :admins, class_name: 'User'
 
   # Delegates and Scopes

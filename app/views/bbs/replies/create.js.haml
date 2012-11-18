@@ -1,0 +1,3 @@
+- if resource.errors.empty?
+  $('#comments').prepend("#{escape_javascript(render('/bbs/replies/show', resource: resource))}");
+  $('form#new_reply').resetForm();

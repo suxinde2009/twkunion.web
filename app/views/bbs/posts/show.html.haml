@@ -1,0 +1,71 @@
+- content_for :sidebar do
+  = render '/application/sidebars/bbs'
+
+
+
+#screenshot-title-section.full.title
+  .single-title.vcard.group
+    = user_avatar_link_to(resource.user)
+
+    %h1#screenshot-title= resource.title
+    .shot-byline.group
+      %span.shot-byline-user
+        楼主：
+        = link_to resource.user_name, '#', class: 'url'
+      .follow-prompt
+        %a.action.following{:href => "#", :title => "You are following charhen. Click to unfollow."}
+          %span 关注
+      %span.screenshot-dash
+        = l resource.created_at, format: :long
+        (#{ time_ago_in_words resource.updated_at }前更新过)
+      .screenshot-dash.screenshot-project
+
+.post-content
+  = raw resource.content
+
+#comments-section
+  %h2.count.section #{resource.replies_count}条回复
+  %ol#comments.comments
+    - resource.replies.each do |reply|
+      %li.response.comment.group
+        %h2
+          / %a.badge-link{:href => "/account/pro"}
+          /   %span.badge.badge-pro Pro
+          = user_avatar_link_to(reply.user)
+        .comment-body
+          %p= raw reply.content
+        %span.comment-meta-likes
+          %a.likes-list{:href => "/comments/1948766/likes"} 2
+          %span.hide likes
+        %p.comment-meta
+          %a.posted{:href => "#comment-1948766"} 3 days ago
+          %span.sep |
+          %a.likes{:href => "/comments/1948766/likes"} Like?
+          
+  = simple_form_for resource.replies.build, url: bbs_board_post_replies_path(parent, resource), html: { class: 'gen-form with-messages flush group' }, remote: true do |f|
+    %h2.section 回复楼主
+    = f.input :content, as: :text, label: false
+    .form-btns
+      = f.button :submit, '回复', class: 'form-sub'
+      = link_to '清空', '#', class: 'form-btn'
+
+
+:javascript
+  $(function() {
+    var editor;
+
+    KindEditor.ready(function(K) {
+        editor = K.create('textarea', {
+        height: 200,
+        width: 600,
+        items: [
+          'undo', 'redo', 'preview', 'print', 'template', '|', 'justifyleft', 'justifycenter', 'justifyright',
+          'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
+          'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+          'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image',
+          'table', 'hr', 'emoticons', 'baidumap', 'pagebreak',
+          'anchor', 'link', 'unlink', '|'
+        ]
+      });
+    });
+  })

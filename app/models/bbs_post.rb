@@ -1,22 +1,16 @@
-class BbsTopic
-  include Mongoid::Document
-  include Mongoid::Timestamps
+class BbsPost < Post
   include Mongoid::Symbolize
 
   STICKY_TYPES = [:global, :main_board, :child_board]
 
-  field :title
-  field :content
   field :last_replied_at, type: Time
   field :last_updated_at, type: Time
   field :sticky
-  field :is_recommended, type: Boolean, default: false
-  field :bbs_replies_count, type: Integer, default: 0
+  field :replies_count, type: Integer, default: 0
 
-  validates :user_id, :title, :content, presence: true
-
-  belongs_to :user
-  belongs_to :bbs_board
+  has_many :replies
+  
+  belongs_to :board
   belongs_to :last_replied_by, class_name: 'User'
 
   symbolize :sticky, in: STICKY_TYPES, scopes: true, methods: true, validates: false, allow_blank: true

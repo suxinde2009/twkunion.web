@@ -16,18 +16,19 @@ Topic.blueprint do
   logo { "/assets/examples/02.jpg" }
 end
 
-Article.blueprint do
-  title { Faker::LoremCN.sentence }
-  content { Faker::LoremCN.paragraphs(5).join('.') }
-end
-
-TopicArticle.blueprint do
+TopicPost.blueprint do
   title { Faker::LoremCN.sentence }
   content { Faker::LoremCN.paragraphs(5).join('.') }
   category { (1..Settings.topic.article_categories.size).to_a.sample }
   author { "author_#{sn}" }
   source { "source_#{sn}" }
   topic { Topic.make! }
+end
+
+BbsPost.blueprint do
+  title { Faker::LoremCN.sentence }
+  content { Faker::LoremCN.paragraphs(5).join('.') }
+  board { Board.make! }
 end
 
 TopicDownload.blueprint do
@@ -54,30 +55,21 @@ Activity.blueprint do
   # Attributes here
 end
 
-Comment.blueprint do
-  # Attributes here
-end
-
-BbsBoard.blueprint do
+Board.blueprint do
   name { Faker::LoremCN.word }
   # logo { Pathname.glob(Rails.root.join('lib/assets/images/*')).sample.open }
   logo { "/assets/examples/02.jpg" }
   description { Faker::LoremCN.paragraph }
-  admin { User.make! }
 end
 
-BbsTopic.blueprint do
+Topic.blueprint do
   title { Faker::LoremCN.sentence }
   content { Faker::LoremCN.paragraphs(6).join(',') }
   user { Uesr.make! }
-  bbs_board { BbsBoard.make! }
+  board { Board.make! }
 end
 
-BbsReply.blueprint do
-  # Attributes here
-end
-
-Photo.blueprint do
+Reply.blueprint do
   # Attributes here
 end
 

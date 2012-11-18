@@ -22,7 +22,7 @@
         - board.children.each do |child|
           .child-board.group
             .head_img= image_tag('examples/02.jpg')
-            %h3= link_to child.name, '#'
+            %h3= link_to child.name, bbs_board_path(child)
             %p.description= child.description
             %p
               %span.admin

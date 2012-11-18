@@ -23,7 +23,8 @@ class UserAvatarUploader < CarrierWave::Uploader::Base
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url
     # For Rails 3.1+ asset pipeline compatibility:
-    asset_path([version_name, "default_avatar.jpg"].compact.join('_'))
+    # asset_path([version_name, "avatar-default.gif"].compact.join('_'))
+    asset_path('avatar-default.gif')
   end
 
   # Process files as they are uploaded:

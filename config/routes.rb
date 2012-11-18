@@ -11,7 +11,7 @@ Twkunion::Application.routes.draw do
   end
 
   resources :topics do
-    resources :topic_articles, path: :articles
+    resources :topic_posts, path: :posts
     resources :topic_videos, path: :videos
     resources :topic_photos, path: :photos
     resources :topic_downloads, path: :downloads
@@ -26,8 +26,11 @@ Twkunion::Application.routes.draw do
   namespace :bbs do
     root :to => 'home#index'
 
-    resources :boards, only: [:show]
-    resources :topics
+    resources :boards, only: [:show] do
+      resources :posts do
+        resources :replies
+      end
+    end
   end
 
   get 'bbs_home' => 'pages#bbs_home'

@@ -1,4 +1,4 @@
-class TopicArticlesController < InheritedResources::Base
+class TopicPostsController < InheritedResources::Base
   main_nav_highlight :topics
   sec_nav_highlight :articles
   actions :index, :show
@@ -12,6 +12,6 @@ class TopicArticlesController < InheritedResources::Base
   def get_topic
     @topic ||= parent
 
-    @categories ||= TopicArticle.category_mappings
+    @categories ||= TopicPost.category_mappings
   end
 end
