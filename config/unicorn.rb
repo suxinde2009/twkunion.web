@@ -19,7 +19,6 @@ preload_app  true
 stderr_path '/var/www/twkunion/shared/log/twkunion_app.log'
 
 before_fork do |server, worker|
-  defined?(ActiveRecord::Base) and ActiveRecord::Base.connection.disconnect!
 
   old_pid = "#{server.config[:pid]}.oldbin"
   if old_pid != server.pid
@@ -33,9 +32,6 @@ end
 
 #require "redis"
 after_fork do |server, worker|
-  if defined?(ActiveRecord::Base)
-    ActiveRecord::Base.establish_connection
-  end
 
   if defined?(MultiDb::ConnectionProxy)
     begin

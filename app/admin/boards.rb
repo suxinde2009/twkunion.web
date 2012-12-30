@@ -2,6 +2,8 @@
 ActiveAdmin.register Board do
   menu label: '论坛板块', priority: 4
 
+  filter :name, as: :string
+
   ## Customizing index screen for bbs boards
   index do
     column :id

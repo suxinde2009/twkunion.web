@@ -24,9 +24,9 @@ GIT
 
 GIT
   remote: git://github.com/gregbell/active_admin.git
-  revision: eea827a3cfd4c4bab3c3171efaa1d91bf6cb836b
+  revision: cc687d7d1615d76ef75c61ce4b9de47bde98035b
   specs:
-    activeadmin (0.5.0)
+    activeadmin (0.5.1)
       arbre (>= 1.0.1)
       bourbon (>= 1.0.0)
       devise (>= 1.1.2)
@@ -49,11 +49,11 @@ GIT
 
 GIT
   remote: git://github.com/jnicklas/carrierwave-mongoid.git
-  revision: 28a9b718d42b8aba47d2eb951f73bd9d872b6eb0
+  revision: fb61fb90a9512618ec21e13ad823485933e6293b
   branch: mongoid-3.0
   specs:
     carrierwave-mongoid (0.3.0.alpha)
-      carrierwave (~> 0.6.1)
+      carrierwave (~> 0.6)
       mongoid (~> 3.0.0)
       mongoid-grid_fs (~> 1.3.1)
 
@@ -110,12 +110,13 @@ GEM
       activesupport (>= 3.0.0)
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
-    bourbon (2.1.2)
-      sass (>= 3.2)
+    bourbon (3.0.1)
+      sass (>= 3.2.0)
       thor
-    bson (1.7.1)
-    bson_ext (1.7.1)
-      bson (~> 1.7.1)
+    bson (1.8.0)
+      activesupport
+    bson_ext (1.8.0)
+      bson (~> 1.8.0)
     builder (3.0.4)
     capistrano (2.11.2)
       highline
@@ -124,14 +125,14 @@ GEM
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
     capistrano_colors (0.5.5)
-    capybara (1.1.3)
+    capybara (1.1.4)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       selenium-webdriver (~> 2.0)
       xpath (~> 0.1.4)
-    carrierwave (0.6.2)
+    carrierwave (0.7.1)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
     childprocess (0.3.6)
@@ -180,13 +181,13 @@ GEM
       multipart-post (~> 1.1)
     fastercsv (1.5.5)
     ffaker (1.12.1)
-    ffi (1.1.5)
+    ffi (1.2.0)
     formtastic (2.2.1)
       actionpack (>= 3.0)
     gherkin (2.11.5)
       json (>= 1.4.6)
-    guard (1.5.4)
-      listen (>= 0.4.2)
+    guard (1.6.1)
+      listen (>= 0.6.0)
       lumberjack (>= 1.0.2)
       pry (>= 0.9.10)
       thor (>= 0.14.6)
@@ -207,19 +208,19 @@ GEM
       has_scope (~> 0.5.0)
       responders (~> 0.6)
     journey (1.0.4)
-    jquery-rails (2.1.3)
-      railties (>= 3.1.0, < 5.0)
-      thor (~> 0.14)
+    jquery-rails (2.1.4)
+      railties (>= 3.0, < 5.0)
+      thor (>= 0.14, < 2.0)
     json (1.7.5)
     kaminari (0.14.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
     launchy (2.1.2)
       addressable (~> 2.3)
-    libv8 (3.3.10.4)
-    libwebsocket (0.1.5)
+    libwebsocket (0.1.7.1)
       addressable
-    listen (0.5.3)
+      websocket
+    listen (0.7.0)
     lumberjack (1.0.2)
     machinist (2.0)
     mail (2.4.4)
@@ -235,9 +236,9 @@ GEM
     mime-types (1.19)
     mini_magick (3.4)
       subexec (~> 0.2.1)
-    mongo (1.7.1)
-      bson (~> 1.7.1)
-    mongoid (3.0.13)
+    mongo (1.8.0)
+      bson (~> 1.8.0)
+    mongoid (3.0.15)
       activemodel (~> 3.1)
       moped (~> 1.1)
       origin (~> 1.0)
@@ -256,18 +257,18 @@ GEM
     mongoid_colored_logger (0.2.2)
       mongo (~> 1.6)
       mongoid
-    moped (1.2.9)
-    multi_json (1.3.7)
+    moped (1.3.2)
+    multi_json (1.5.0)
     multipart-post (1.1.5)
     nested_form (0.3.1)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-sftp (2.0.5)
       net-ssh (>= 2.0.9)
-    net-ssh (2.6.1)
+    net-ssh (2.6.2)
     net-ssh-gateway (1.1.0)
       net-ssh (>= 1.99.1)
-    nokogiri (1.5.5)
+    nokogiri (1.5.6)
     oauth2 (0.5.2)
       faraday (~> 0.7)
       multi_json (~> 1.0)
@@ -283,7 +284,7 @@ GEM
     omniauth-weibo-oauth2 (0.2.0)
       omniauth (~> 1.0)
       omniauth-oauth2 (~> 1.0)
-    origin (1.0.10)
+    origin (1.0.11)
     orm_adapter (0.4.0)
     polyamorous (0.5.0)
       activerecord (~> 3.0)
@@ -313,7 +314,7 @@ GEM
     rails-dev-tweaks (0.6.1)
       actionpack (~> 3.1)
       railties (~> 3.1)
-    rails_config (0.3.1)
+    rails_config (0.3.2)
       activesupport (>= 3.0)
     railties (3.2.9)
       actionpack (= 3.2.9)
@@ -322,7 +323,7 @@ GEM
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
-    rake (10.0.1)
+    rake (10.0.3)
     rdoc (3.12)
       json (~> 1.4)
     responders (0.9.3)
@@ -343,12 +344,12 @@ GEM
       railties (>= 3.0)
       rspec (~> 2.9.0)
     rubyzip (0.9.9)
-    sass (3.2.3)
+    sass (3.2.4)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
-    selenium-webdriver (2.26.0)
+    selenium-webdriver (2.27.2)
       childprocess (>= 0.2.5)
       libwebsocket (~> 0.1.3)
       multi_json (~> 1.0)
@@ -363,7 +364,7 @@ GEM
     slop (3.3.3)
     social-share-button (0.0.3)
     spork (1.0.0rc3)
-    sprockets (2.2.1)
+    sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
@@ -377,8 +378,6 @@ GEM
       sunspot (= 1.3.3)
     sunspot_solr (1.3.3)
     symbolize (4.2.0)
-    therubyracer (0.10.2)
-      libv8 (~> 3.3.10)
     thin (1.5.0)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -394,6 +393,7 @@ GEM
       multi_json (~> 1.0, >= 1.0.2)
     warden (1.2.1)
       rack (>= 1.0)
+    websocket (1.0.6)
     xpath (0.1.4)
       nokogiri (~> 1.3)
 
@@ -404,7 +404,7 @@ DEPENDENCIES
   activeadmin!
   activeadmin-mongoid!
   bourbon
-  bson_ext (= 1.7.1)
+  bson_ext (= 1.8.0)
   capistrano (~> 2.11.2)
   capistrano_colors
   capybara (~> 1.1.2)
@@ -429,7 +429,7 @@ DEPENDENCIES
   machinist (~> 2.0)
   machinist_mongo!
   mini_magick
-  mongoid (= 3.0.13)
+  mongoid (= 3.0.15)
   mongoid-ancestry (~> 0.3.0)
   mongoid-rspec (~> 1.4.4)
   mongoid_auto_increment_id (= 0.5.0)
@@ -454,7 +454,6 @@ DEPENDENCIES
   sunspot_rails (~> 1.3.1)
   sunspot_solr
   symbolize (~> 4.2.0)
-  therubyracer
   thin
   uglifier (>= 1.0.3)
   weibo2!

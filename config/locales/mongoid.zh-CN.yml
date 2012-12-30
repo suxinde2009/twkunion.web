@@ -1,7 +1,7 @@
 zh-CN:
   mongoid:
     symbolizes:
-      bbs_topic:
+      bbs_post:
         sticky:
           global: 全局置顶
           main_board: 主板块置顶
@@ -72,8 +72,8 @@ zh-CN:
         content: 内容
         user_id: 发布人
         user: 发布人
-        bbs_board: 板块
+        board: 板块
         sticky: 置顶
         is_recommended: 精华
         created_at: 发布时间
-        bbs_replies_count: 回复数
+        replies_count: 回复数

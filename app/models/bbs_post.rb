@@ -15,10 +15,11 @@ class BbsPost < Post
 
   symbolize :sticky, in: STICKY_TYPES, scopes: true, methods: true, validates: false, allow_blank: true
 
-  delegate :name, to: :bbs_board, prefix: true
+  delegate :name, to: :board, prefix: true
   delegate :username, to: :user, prefix: true
 
   scope :default_order, desc(:updated_at)
+  scope :recommend, where(is_recommend: true)
 
   # Here you can use three methods to set sticky for a single topic
   ## mark_sticky_under_global

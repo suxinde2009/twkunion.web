@@ -14,8 +14,8 @@ ActiveAdmin.register Topic do
     column :slug
     column :rating
 
-    column :articles_count do |topic|
-      link_to topic.articles_count, [:admin, topic, :topic_articles]
+    column :posts_count do |topic|
+      link_to topic.posts_count, [:admin, topic, :topic_posts]
     end
 
     column :videos_count do |topic|
@@ -48,7 +48,7 @@ ActiveAdmin.register Topic do
       row :rating
       row :is_published
       row :published_at
-      row :articles_count
+      row :posts_count
       row :photos_count
       row :videos_count
       row :downloads_count

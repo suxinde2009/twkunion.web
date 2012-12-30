@@ -12,6 +12,7 @@ class Board
   field :bbs_topics_count, type: Integer, default: 0
   
   validates :name, presence: true, uniqueness: true
+  validates :logo, presence: true
 
   # Relations
   has_many :bbs_posts

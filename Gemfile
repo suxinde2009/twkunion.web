@@ -3,9 +3,9 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.9'
 
 # mongo support
-gem 'mongoid',    '3.0.13'
+gem 'mongoid',    '3.0.15'
 gem 'mongoid_auto_increment_id', '0.5.0'
-gem 'bson_ext',   '1.7.1'
+gem 'bson_ext',   '1.8.0'
 
 # Core functions
 gem 'devise',               '~> 2.1.2'
@@ -65,7 +65,8 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.5'
   gem 'coffee-rails', '~> 3.2.2'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', :platforms => :ruby
+  # gem 'therubyracer', :platforms => :ruby
+  # gem 'libv8', '~> 3.11.8'
   gem 'uglifier', '>= 1.0.3'
 end
 

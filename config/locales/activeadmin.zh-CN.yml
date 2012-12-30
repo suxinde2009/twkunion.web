@@ -29,6 +29,8 @@ zh-CN:
     logout: "退出"
     sidebars:
       filters: "所有条件"
+    scopes:
+      recommend: '推荐'
     pagination:
       empty: "暂时没有%{model}"
       one: "显示 <b>1</b> %{model}"

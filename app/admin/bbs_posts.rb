@@ -1,22 +1,30 @@
 # encoding: utf-8
+
 ActiveAdmin.register BbsPost do
   menu label: '论坛帖子', priority: 5
+
+  scope :all, default: true
+  scope :recommend
+
+  filter :title, as: :string
 
   ## Customizing index screen for bbs boards
   index do
     column :id
-    column :title
+    column :title do |resource|
+      resource.title.try(:truncate, 10)
+    end
     column :user do |resource|
       link_to resource.user_username, admin_user_path(resource.user)
     end
-    column :bbs_board do |resource|
-      resource.bbs_board_name
+    column :board do |resource|
+      resource.board.try(:name)
     end
 
     column :sticky do |resource|
       resource.sticky_text
     end
-    column :is_recommended
+    
     column :created_at do |resource|
       resource.created_at.to_date
     end
@@ -44,10 +52,4 @@ ActiveAdmin.register BbsPost do
     end
   end
 
-  controller do
-    ## Overrides for collection
-    def collection
-      @bbs_topics = end_of_association_chain.default_order.page(params[:page])
-    end
-  end
 end

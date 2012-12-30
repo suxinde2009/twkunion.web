@@ -1,0 +1,33 @@
+= semantic_form_for [:admin, @board] do |f|
+  = f.inputs '板块基本信息' do
+    = f.input :ancestry, as: :select, collection: Board.roots, prompt: true,
+              input_html: { disabled: (!@board.new_record? && @board.is_root?) ? true : false }, hint: '主板块无须修改此项。'
+    = f.input :name
+    = f.input :logo, as: :string, hint: f.template.image_tag(f.object.logo) 
+    %li
+      %label &nbsp;
+      %p.inline-hints
+        #file-uploader-logo
+
+    = f.input :description, as: :text, input_html: { rows: 5 }
+
+  = f.submit
+
+:javascript
+  function createUploader(){
+      var uploader = new qq.FileUploader({
+          element: $('#file-uploader-logo')[0],
+          action: '/valums/create.json',
+          params: { photogenic_type: 'Board' },
+          onComplete: function(id, fileName, responseJSON){
+            var attachmentSrc = responseJSON.src;
+            $('#board_logo_input p.inline-hints').html('<img src="'+attachmentSrc+'" height=82 width=203></img>');
+
+            $('#board_logo').val(attachmentSrc);
+          }
+      });
+  }
+  
+  // in your app create uploader as soon as the DOM is ready
+  // don't wait for the window to load
+  window.onload = createUploader; 
