@@ -76,6 +76,8 @@ gem 'haml-rails',     '~> 0.3.4'
 gem 'jquery-rails'    
 gem 'bourbon'
 
+gem 'unicorn'
+
 group :development do
   # Deploy with Capistrano
   # gem 'rvm-capistrano'
