@@ -1,0 +1,18 @@
+common: &common
+  weibo:
+    api_key: "759077432"
+    api_secret: "132b12d779809bcb25545ff15237ff37"
+    redirect_uri: "http://www.twkunion.com/users/auth/weibo/callback"
+  qq_connect:
+    api_key: "100356890"
+    api_secret: "a930f12962270c9bf18bb38c09f6f46d"
+    redirect_uri: "http://www.twkunion.com/users/auth/qq_connect/callback"
+
+production:
+  <<: *common
+
+development:
+  <<: *common
+
+test:
+  <<: *common
