@@ -81,6 +81,7 @@ group :development do
   # gem 'rvm-capistrano'
   gem 'capistrano', '~> 2.11.2'
   gem 'capistrano_colors'
+  gem 'rvm-capistrano'
 
   # colored log
   gem 'mongoid_colored_logger'
