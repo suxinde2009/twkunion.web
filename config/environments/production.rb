@@ -46,7 +46,7 @@ Twkunion::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  config.assets.precompile += %w( active_admin.js active_admin.css )
+  config.assets.precompile += %w( active_admin.js active_admin.css *.jpg *.png)
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
@@ -66,7 +66,7 @@ Twkunion::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   # Email settings
-  config.action_mailer.default_url_options = { host: 'twkunion.com' }
+  config.action_mailer.default_url_options = { host: 'dev.twkunion.com' }
   config.action_mailer.asset_host = 'twkunion.com'
 
   config.action_mailer.delivery_method = :smtp

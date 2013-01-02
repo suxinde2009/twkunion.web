@@ -5,15 +5,15 @@ set -e
 # since nginx and unicorn accept the same signals
 
 # Feel free to change any of the following variables for your app:
-USER=www-data
+USER="www-data"
 RVM="/usr/local/rvm/bin/rvm"
-GEM_SET=1.9.3-p194@
+GEM_SET="1.9.3-p362@twkunion"
 GEM_HOME="/usr/local/rvm/gems/ruby-$GEM_SET"
 APP_ROOT="/var/www/mahjong/current"
 SET_PATH="cd $APP_ROOT && $RVM use $GEM_SET; export GEM_HOME=$GEM_HOME"
 
 PID="/tmp/unicorn_app.pid"
-ENV=staging
+ENV="staging"
 CMD="$SET_PATH; $RVM $GEM_SET exec bundle exec unicorn -D -E $ENV -c $APP_ROOT/config/unicorn.rb"
 
 old_pid="$PID.oldbin"

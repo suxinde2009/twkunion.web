@@ -55,11 +55,11 @@ namespace :deploy do
   task :stop do ; end
 
   task :restart, :roles => :app, :except => { :no_release => true } do
-    # run "kill -USR2 `cat /tmp/unicorn_app.pid`"
+    run "kill -USR2 `cat /tmp/unicorn_app.pid`"
   end
 
   task :reload, :roles => :app, :except => { :no_release => true } do
-    # run "kill -HUP `cat /tmp/unicorn_app.pid`"
+    run "kill -HUP `cat /tmp/unicorn_app.pid`"
   end
 end
 # ==

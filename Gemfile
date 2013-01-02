@@ -35,7 +35,7 @@ gem "omniauth-qq-connect",            '~> 0.1.0'
 gem 'weibo2',                         git: 'git://github.com/fmmp3/weibo2.git'
 
 # Exception notifier
-gem 'exception_notification_rails3', '~> 1.2.0', require: 'exception_notifier'
+gem 'exception_notification',  '~> 3.0.0', github: 'smartinez87/exception_notification'
 
 # client side validations support
 gem 'client_side_validations', '3.2.0'
