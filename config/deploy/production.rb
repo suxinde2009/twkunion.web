@@ -1,7 +1,7 @@
 set :deploy_env, 'production'
 set :rails_env, 'production'
 
-set :database_yml, "mongoid.yml.sample"
+set :database_yml, "mongoid.yml"
 set :current_rev, `git show --format='%H' -s`.chomp
 
 servers = ["twkunion.com"]
