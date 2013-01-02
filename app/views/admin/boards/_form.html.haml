@@ -3,7 +3,7 @@
     = f.input :ancestry, as: :select, collection: Board.roots, prompt: true,
               input_html: { disabled: (!@board.new_record? && @board.is_root?) ? true : false }, hint: '主板块无须修改此项。'
     = f.input :name
-    = f.input :logo, as: :string, hint: f.template.image_tag(f.object.logo) 
+    = f.input :logo, as: :string, hint: f.template.image_tag(f.object.logo)
     %li
       %label &nbsp;
       %p.inline-hints

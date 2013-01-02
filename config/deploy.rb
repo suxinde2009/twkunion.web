@@ -29,7 +29,7 @@ set(:servers)  { "#{servers}" }
 role :app do servers end
 
 # == rvm setting
-set :rvm_ruby_string, 'ruby-1.9.3-p194@twkunion'
+set :rvm_ruby_string, 'ruby-1.9.3-p362@twkunion'
 set :rvm_type, :system
 # ==
 

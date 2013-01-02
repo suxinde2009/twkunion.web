@@ -2,29 +2,29 @@
   = f.inputs '基本属性' do
     = f.input :title
     = f.input :slug
-    = f.input :description
+    = f.input :description, as: :text
 
   = f.inputs '图片资源' do
-    = f.input :icon
+    = f.input :icon 
     %li
       %label &nbsp;
       #file-uploader-icon
       .preview
-        - unless @topic.new_record?
+        - unless @topic.new_record? || @topic.icon.blank?
           = image_tag(@topic.icon, size: '203x82')
     = f.input :logo
     %li
       %label &nbsp;
       #file-uploader-logo
       .preview
-        - unless @topic.new_record?
+        - unless @topic.new_record? || @topic.logo.blank?
           = image_tag(@topic.logo, size: '203x82')
     = f.input :banner
     %li
       %label &nbsp;
       #file-uploader-banner
       .preview
-        - unless @topic.new_record?
+        - unless @topic.new_record? || @topic.banner.blank?
           = image_tag(@topic.banner, size: '203x82')
 
   = f.submit
