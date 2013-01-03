@@ -1,33 +1,22 @@
-- content_for :sidebar do
-  = render '/application/sidebars/registration'
+.row#sign-up
+  .span9
+    %section
+      .page-header
+        %h1
+          新用户注册
+          %small 只需要轻松输入信息，便可以成为吞迷
 
-- content_for :full do
-  .full
-    = image_tag 'banner_sign.png'
-    %h1
-      注册成为吞迷
-    %p 吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是。
+      = simple_form_for resource, as: resource_name, url: registration_path(resource_name), validate: true, html: { class: 'form-horizontal' } do |f|
+        = f.input :name
+        = f.input :username
+        = f.input :email
+        = f.input :password
+        = f.input :password_confirmation
 
-.signup-form
-  = simple_form_for resource, as: resource_name, url: registration_path(resource_name), html: { class: 'gen-form with-messages signup' } do |f|
-    %h2.section 完成以下的注册表单，你就可以成为吞迷的一员。
-    = f.input :name, input_html: { class: 'form-text' }, hint: '文字简介'
-    = f.input :username, input_html: { class: 'form-text' }, hint: '你的个人地址: http://twkunion.com/<strong><span id="username">USERNAME</span></strong>', required: false
-    = f.input :email, input_html: { class: 'form-text' }
-    = f.input :password, input_html: { class: 'form-text' }, hint: 'Minimum 6 characters'
-    = f.input :password_confirmation, input_html: { class: 'form-text' }
-
-    .form-btns
-      = f.button :submit, '提交帐户信息', class: 'form-sub'
-
-- content_for :javascript do
-  :javascript
-    $('#user_username')
-      // Show the input username in the user url (or default text if none)
-      .keyup(function() {
-        var value = $(this).val();
-        if (value == '') {
-          value = 'USERNAME';
-        }
-        $('#username').text(value);
-      });
+        .form-actions
+          = f.button :submit, '提交帐户信息', class: 'btn btn-success btn-large'
+  .span3
+    .page-header
+      %h1 第三方账户登录
+    %ul.auth
+      %li= link_to image_tag('weibo-login-btn-medium.png'), '#'

@@ -65,6 +65,11 @@ class User
 
   mount_uploader :avatar, UserAvatarUploader
 
+  validates_confirmation_of :password
+  
+
+  validates :email, presence: true, format: { with: /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
+
   validates :username, presence: true, uniqueness: true
 
   validates :name, presence: true
