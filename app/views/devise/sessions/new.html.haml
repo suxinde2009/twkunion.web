@@ -1,17 +1,20 @@
-- content_for :sidebar do
-  = render '/application/sidebars/registration'
-  
-.full
-  %h1
-    注册成为吞迷
-  %p 吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是吞迷是。
+.row#sign
+  .span9
+    %section
+      .page-header
+        %h1
+          新用户注册
+          %small 只需要轻松输入信息，便可以成为吞迷
 
-.signup-form
-  = simple_form_for resource, as: resource_name, url: session_path(resource_name), validate: true, html: { class: 'gen-form with-messages signup', autocomplete: :off } do |f|
-    %h2.section 吞迷登录
-    = f.input :email, input_html: { class: 'form-text' }, autofocus: true, validate: { presence: true }
-    = f.input :password, input_html: { class: 'form-text' }
-    = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
+      = simple_form_for resource, as: resource_name, url: session_path(resource_name), validate: true, html: { class: 'form-horizontal' } do |f|
+        = f.input :email, autofocus: true, validate: { presence: true }
+        = f.input :password, validate: { confirmation: false, presence: true }
+        = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
 
-    .form-btns
-      = f.button :submit, '登录', class: 'form-sub'
+        .form-actions
+          = f.button :submit, '吞迷登录', class: 'btn btn-success btn-large'
+  .span3
+    .page-header
+      %h1 第三方账户登录
+    %ul.auth
+      %li= link_to image_tag('weibo-login-btn-medium.png'), '#'
