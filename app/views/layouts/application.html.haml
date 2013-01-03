@@ -1,37 +1,28 @@
 !!!
-%html{:lang => "en", "xml:lang" => "en", :xmlns => "http://www.w3.org/1999/xhtml"}
+%html{ lang: 'zh',  :"xmlns:wb" => 'http://open.weibo.com/wb' }
   %head
-    %title Twkunion
-    %meta(content='text/html; charset=utf-8' http-equiv='content-type')
-    %meta(content='width=device-width, initial-scale=1.0, minimum-scale=1.0' name='viewport')
+    %title 吞食天地大同盟
+    %meta{ charset: 'utf-8' }
     <meta property="wb:webmaster" content="36188b653e22a3c9" />
     <meta property="qc:admins" content="44172176776473561766375" />
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+    %meta{:content => "", :name => "description"}
+    %meta{:content => "", :name => "author"}
 
-    = stylesheet_link_tag :application, media: 'all'
-    = javascript_include_tag :application
+    = stylesheet_link_tag :application, media: :all
 
-    = csrf_meta_tag
+    /[if lt IE 9]
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 
-  %body#signup
+    = yield :head
+
+  %body{ :"data-spy" => 'scroll', :"data-target" => '.bs-docs-sidebar' }
+
     = render 'header'
-    //header
-    %hr/
-    = render 'messages'
-    #wrap
-      = render '/topics/context_header', topic: @topic
-      #wrap-inner{ class: @main_nav == :topics ? 'topic' : nil }
-        #content.group
-          = yield :full
 
-          #main{ class: @main_full.blank? ? '' : 'main-full' }
-            = yield
-          
-          #secondary= yield :sidebar
+    = yield
 
-          = yield :extra
-        //content
-    //wrap
-    %hr/
     = render 'footer'
 
-    = yield :javascript
+    = javascript_include_tag :application
+    = yield :js

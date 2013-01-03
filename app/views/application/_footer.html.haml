@@ -1,34 +1,29 @@
-#footer
-  #footer-inner
-    %p.logo
-      = link_to image_tag('logo-footer-hd.png', width: 80, alt: 'twkunion'), root_path
-      Show and tell for designers.
-    %h4#pixels-total.group
-      = image_tag 'ball-46.png', alt: 'illustration'
-      %strong 51,457,757,720
-      pixels dribbbled
-    %ul#footer-nav
-      %li
-        %a#f-home{:href => "/site/about"} 站点统计
-      %li
-        %a{:href => "/site/faq"} 新浪微博
-      %li
-        %a{:href => "/site/contact"} 联系我们
-      %li
-        %a{:href => "/site/advertise"} 广告合作
-      %li
-        %a{:href => "/site/testimonials"} 吞食天地大同盟
-      %li
-        %a{:href => "/site/privacy"} 隐私权限
+%footer.footer
+  .container
     %p
-      Copyright © 2009-2012 Dribbble LLC. All screenshots © their respective owners.
-      %br/
-      Handcrafted in Salem, Massachusetts. Hosted by
+      Designed and built with all the love in the world by
+      %a{:href => "http://twitter.com/mdo", :target => "_blank"} @mdo
+      and
       = succeed "." do
-        %a{:href => "http://mediatemple.net/"} (mt) Media Temple
+        %a{:href => "http://twitter.com/fat", :target => "_blank"} @fat
     %p
-      %a.footer-twitter{:href => "http://twitter.com/dribbble"} Twitter
-      %a.footer-meetup{:href => "http://meetup.com/dribbble"} Meetups
-      %a.footer-newsletter{:href => "http://eepurl.com/hPDIU"} Newsletter
-      %a.footer-blog{:href => "http://blog.dribbble.com"} Blog
-/ /footer
+      Code licensed under
+      = succeed "," do
+        %a{:href => "http://www.apache.org/licenses/LICENSE-2.0", :target => "_blank"} Apache License v2.0
+      documentation under
+      = succeed "." do
+        %a{:href => "http://creativecommons.org/licenses/by/3.0/"} CC BY 3.0
+    %p
+      %a{:href => "http://glyphicons.com"} Glyphicons Free
+      licensed under
+      = succeed "." do
+        %a{:href => "http://creativecommons.org/licenses/by/3.0/"} CC BY 3.0
+    %ul.footer-links
+      %li
+        %a{:href => "http://blog.getbootstrap.com"} Blog
+      %li.muted ·
+      %li
+        %a{:href => "https://github.com/twitter/bootstrap/issues?state=open"} Issues
+      %li.muted ·
+      %li
+        %a{:href => "https://github.com/twitter/bootstrap/wiki"} Roadmap and changelog

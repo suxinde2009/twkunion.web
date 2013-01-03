@@ -1,32 +1,27 @@
-#header.group
-  #header-inner.group
-    #logo= link_to image_tag('logo-bw.gif', alt: 'twkunion'), root_path
-    #dashboard
-      %form#search{:action => "/search"}
-        %input#search-text{:name => "q", :placeholder => "搜索...", :type => "text", :value => ""}/
-    %ul#nav
-      - if user_signed_in?
-        %li#t-profile
-          = link_to '#', class: 'url', rel: 'contact', title: current_user.name do
-            = image_tag current_user.avatar.small, size: '16x16', alt: current_user.name, class: 'photo fn'
-          %ul.tabs
-            %li= link_to '个人资料', '#'
-            %li= link_to '帐户设置', edit_profile_path
-            %li.separate= link_to '登出', destroy_user_session_path, method: :delete
-      - else
-        %li#t-signin= link_to '登录', new_user_session_path
+/ Navbar \==================================================
+.navbar.navbar-inverse.navbar-fixed-top
+  .navbar-inner
+    .container
+      = button_tag class: 'btn btn-navbar', data: { target: '.nav-collapse', toggle: 'collapse' } do
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to root_path, class: 'brand' do
+        = image_tag('twkunion-tm.png')
+      .nav-collapse.collapse
+        %ul.nav
+          %li.active
+            = link_to '首页', root_path
+          %li= link_to '应用', '#'
+          %li= link_to '专题', '#'
+          %li= link_to '下载', '#'
+          %li= link_to '论坛', '#'
 
-      %li#t-search= link_to image_tag('adapt-icon-search.png', alt: 'search'), '#search'
-      = main_nav :home do
-        = link_to '首页', root_path
-      %li= link_to '应用', '#'
-      = main_nav :topics do
-        = link_to '专题', topics_path
-      %li= link_to '下载', '#'
-      = main_nav :bbs do
-        = link_to '论坛', bbs_root_path
+        = form_tag '/', class: 'navbar-search pull-left form-search' do
+          .input-append
+            = text_field_tag :q, nil, class: 'span2 search-query', placeholder: '请输入关键字...'
+            = button_tag '搜索', class: 'btn btn-inverse'
 
-      - unless user_signed_in?
-        %li#t-signup
-          = link_to new_user_registration_path do
-            %span 免费注册
+        %ul.nav.pull-right
+          %li= link_to t('views.layout.sign_up').html_safe, '#', class: 'signup'
+          %li= link_to '登录', '#'

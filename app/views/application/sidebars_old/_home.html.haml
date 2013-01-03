@@ -1,0 +1,28 @@
+%h3.title 用户动态
+
+%ol.players-list
+  %li.group
+    .follow-prompt
+      %form{:action => "/JePortieJim/followers", :method => "post"}
+        %div{:style => "margin:0;padding:0;display:inline"}
+          %input{:name => "authenticity_token", :type => "hidden", :value => "I8us46tDZo4N49RXkKaG6iONJig7x6tZERB4shcpCJo="}/
+        %a.action.follow{:href => "#", :title => "You are not following Jimmy van den IJssel . Click to follow."}
+          %span Follow
+    %h4.vcard
+      %a.url{:href => "/JePortieJim", :length => "18", :rel => "contact", :title => "Jimmy van den IJssel "}
+        %img.photo.fn{:alt => "Dsc_0058", :src => "http://dribbble.s3.amazonaws.com/users/70006/avatars/original/DSC_0058.png?1344630916"} Jimmy van den I...
+      %span.user-meta
+        %strong 1
+        shot
+        %i |
+        %strong 9
+        followers
+
+%h3.title 专题排行
+
+%dl.fd
+  - 3.times do |x|
+    %dt{ class: "number_#{x+1}" } 吞食天地2nd 进化
+    - if x == 0
+      = image_tag 'examples/02.jpg'
+    %dd 在本作中玩家扮演刘备，从黄巾之乱开始，一直到最后篡改历史一统天下，总共分为八章...

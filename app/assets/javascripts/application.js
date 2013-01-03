@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap.min
 //= require lib
-//= require script
-
-$.fn.raty.defaults.path = '/assets/raty';
+//= require public

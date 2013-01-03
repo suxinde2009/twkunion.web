@@ -1,0 +1,63 @@
+- content_for :sidebar do
+  = render '/application/sidebars/home'
+
+- content_for :full do
+  .full.home_banner
+    %h1.compact
+      %strong 如果你还没有注册成为吞迷，
+      又怎么能称的上游戏达人呢？
+      = link_to '注册成为吞迷',new_user_registration_path, class: 'form-sub tagline-action'
+
+  = render 'sliders'
+
+
+.group.highlights
+  .multi.group
+    %h3.special
+      %span.special-flag.special-featured 推荐专题 >>
+      吞食天地2nd Evolution 进化
+    .topic_info.group
+      .cover= image_tag('examples/02.jpg')
+      .desc
+        在本作中玩家扮演刘备，从第一章“黄巾之乱”开始，一直到最后篡改历史一统天下，总共分为八章。战斗过程除了普通攻击之外还有总攻击
+        和策略选项，体现了一定的战术性。
+    %ul.stats_bar.group
+      %li= link_to '下载', '#', class: 'download_btn'
+      %li.raty
+        推荐指数：
+        #fixed
+      %li
+        关注：
+        %span 27581
+
+    %ul.articles.group
+      - 3.times do
+        %li
+          %h3 吞食天地2nd  beta 1.0初章发布
+          %span.time 2008-7-22
+        %li
+          %h3 吞食天地大同盟官方正式成立
+          %span.time 2008-8-22
+
+    %ol.multi-grid.full.photos.group
+      %li.multi-thumb
+        %a.zoom{:href => "/shots/687211-iPhone-App", "original-title" => ""}
+          %strong{:style => "opacity: 0;"}
+            %span 98
+          %img{:alt => "iPhone App", :src => "http://dribbble.s3.amazonaws.com/users/124059/screenshots/687211/400_teaser.png"}
+        .tipsy-player
+          %span.tipsy-player-link
+            %a.url{:href => "/virgilpana", :rel => "contact", :title => "Virgil Pana"}
+              %img.photo.fn{:alt => "Untitled-3", :src => "http://dribbble.s3.amazonaws.com/users/124059/avatars/original/Untitled-3.png?1333130134"} Virgil Pana
+
+- content_for :extra do
+  = render 'extra'
+
+- content_for :javascript do
+  :javascript
+    $(function() {
+      $('div#fixed').raty({
+        readOnly: true,
+        start:    3
+      });
+    })

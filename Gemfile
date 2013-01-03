@@ -52,11 +52,12 @@ gem 'activeadmin-mongoid', github: 'simplybusiness/activeadmin-mongoid', branch:
 # Rich text support
 gem 'rails_kindeditor', github: 'jerryshen/rails_kindeditor'
 
-
 # uploadify support
 # gem 'swf_fu', '~> 2.0'
 # gem 'flash_cookie_session'
 gem 'rack-raw-upload'
+
+gem 'coffee-filter'
 
 
 # Gems used only for assets and not required

@@ -1,0 +1,5 @@
+zh-CN:
+  views:
+    layout:
+      sign_up: 新用户注册
+      topic_detail: <i class='icon-tasks'></i> 进入专题
