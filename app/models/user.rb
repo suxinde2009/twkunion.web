@@ -20,7 +20,6 @@ class User
   field :encrypted_password
 
   ## Custom Columns
-  field :username
   field :name
   field :avatar
   field :bio
@@ -61,16 +60,13 @@ class User
   ## Token authenticatable
   field :authentication_token
 
-  attr_accessible :email, :name, :username, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :name, :password, :password_confirmation, :remember_me
 
   mount_uploader :avatar, UserAvatarUploader
 
   validates_confirmation_of :password
-  
 
   validates :email, presence: true, format: { with: /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
-
-  validates :username, presence: true, uniqueness: true
 
   validates :name, presence: true
 

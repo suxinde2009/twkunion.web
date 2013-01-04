@@ -9,6 +9,7 @@ class UsersController < InheritedResources::Base
   end
 
   def notifications; end
+  def friends; end
 
   protected
 

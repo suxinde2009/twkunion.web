@@ -23,5 +23,17 @@
             = button_tag '搜索', class: 'btn btn-inverse'
 
         %ul.nav.pull-right
-          %li= link_to t('views.layout.sign_up').html_safe, new_user_registration_path, class: 'signup'
-          %li= link_to '登录', new_user_session_path
+          - if user_signed_in?
+            %li.dropdown
+              = link_to '#', class: 'dropdown-toggle', data: { toggle: 'dropdown' } do
+                %img{:alt => "", "data-src" => "holder.js/30x30"}
+                = current_user.name
+                %b.caret
+              %ul.dropdown-menu
+                %li= link_to '个人设置', edit_user_registration_path(type: :profile)
+                %li= link_to '修改密码', edit_user_registration_path(type: :password)
+                %li.divider
+                %li= link_to '登出', '#'
+          - else
+            %li= link_to t('views.layout.sign_up').html_safe, new_user_registration_path, class: 'signup'
+            %li= link_to '登录', new_user_session_path

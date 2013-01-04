@@ -4764,14 +4764,14 @@ input[type="submit"].btn.btn-mini {
 
 .navbar-inverse .divider-vertical {
   border-right-color: #222222;
-  border-left-color: #111111;
+  border-left-color: #2E2E2E;
 }
 
 .navbar-inverse .nav li.dropdown.open > .dropdown-toggle,
 .navbar-inverse .nav li.dropdown.active > .dropdown-toggle,
 .navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle {
   color: #ffffff;
-  background-color: #111111;
+  background-color: #2E2E2E;
 }
 
 .navbar-inverse .nav li.dropdown > a:hover .caret {

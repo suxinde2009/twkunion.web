@@ -1,48 +1,17 @@
-- content_for :full do
-  .group
-    %a.pro-motion.not-pro{:href => "/account/pro"}
-      %strong Go Pro!
-      %em Add power features for just $20/year
-    .group
-      .full
+.row#settings
+  .span9
+    .section
+      .page-header
         %h1
-          %a{:href => "/account"} 个人资料
-          %span.sep /
-          Profile
-        %p Edit your name, avatar, etc.
-
-
-= render '/application/tabs/settings'
-
-.session-form.alt
-  = simple_form_for resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'gen-form with-messages' } do |f|
-
-    = f.input :current_password, input_html: { class: 'form-text' }
-    = f.input :password, input_html: { class: 'form-text' }
-    = f.input :password_confirmation, input_html: { class: 'form-text' }
-
-    .form-btns
-      = f.button :submit, '保存设置', class: 'form-sub'
-
-/ <h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-/ <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-/   <%= f.error_notification %>
-
-/   <div class="inputs">
-/     <%= f.input :email, :required => true, :autofocus => true %>
-/     <%= f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false %>
-/     <%= f.input :password_confirmation, :required => false %>
-/     <%= f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true %>
-/   </div>
-
-/   <div class="actions">
-/     <%= f.button :submit, "Update" %>
-/   </div>
-/ <% end %>
-
-/ <h3>Cancel my account</h3>
-
-/ <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
-
-/ <%= link_to "Back", :back %>
+          用户信息设置
+          %small 这里需要添加一些文案，大家使劲想
+      %ul.nav.nav-tabs
+        = settings_link_to '个人设置', edit_user_registration_path(type: :profile)
+        = settings_link_to '密码设置', edit_user_registration_path(type: :password)
+        %li= link_to '第三方账户绑定', '#'
+        %li= link_to '邀请好友', '#'
+      = render params[:type]
+  .span3
+    .page-header
+      %h1
+        个人动态

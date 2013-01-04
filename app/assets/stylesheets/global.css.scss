@@ -25,3 +25,8 @@ section { padding-top: 0; }
     p { text-align: left; margin-left: 160px; margin-bottom: 5px; }
   }
 }
+
+.navbar .nav.pull-right > li > a {
+  padding: 15px 15px;
+  img { margin-right: 5px; }
+}

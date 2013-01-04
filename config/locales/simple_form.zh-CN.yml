@@ -23,4 +23,9 @@ zh-CN:
     #   defaults:
     #     username: 'User name to sign in.'
     #     password: 'No special characters, please.'
+    placeholders:
+      user:
+        edit:
+          name: 请输入昵称...
+          bio: 请输入个性签名...
 

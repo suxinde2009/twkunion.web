@@ -27,6 +27,7 @@ zh-CN:
         current_password: 旧密码
         confirmed_at: 激活时间
         avatar: 头像
+        bio: 个性签名
       topic:
         title: 标题
         slug: 英文标识

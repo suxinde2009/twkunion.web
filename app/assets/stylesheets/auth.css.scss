@@ -1,4 +1,4 @@
-.row#sign {
+.row#sign, .row#settings {
   padding-top: 30px;
 
   .form-actions {
@@ -8,5 +8,6 @@
   ul.auth {
     list-style: none;
     margin-left: 0;
+    li { margin-bottom: 10px; }
   }
 }
