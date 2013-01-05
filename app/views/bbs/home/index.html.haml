@@ -21,15 +21,17 @@
               = link_to '#' do
                 %img{:alt => "", "data-src" => "holder.js/300x174"}
               .caption
-                %h3= link_to '吞食天地2nd Evolution 进化', '#'
+                %h3= link_to '吞食天地2nd Evolution 进化', bbs_board_path(Board.children.first)
                 %p.desc 在本作中玩家扮演刘备，从第一章“黄巾之乱”开始，一直到最后篡改历史一统天下，总共分为八章。
                 %ul.state_bar.clearfix
                   %li
                     话题：
                     %span 200个
+                  %li.divider-vertical
                   %li
                     精华：
                     %span 10个
+                  %li.divider-vertical
                   %li
                     回复：
                     %span 29001个

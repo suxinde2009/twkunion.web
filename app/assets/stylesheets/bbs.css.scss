@@ -1,4 +1,9 @@
 .span3 {
+  a#add-new-post {
+    padding: 11px 55px;
+    margin-bottom: 15px;
+  }
+
   ul.media-list {
     li.notifications {
       border-top: 1px solid #ddd;
@@ -22,4 +27,78 @@
       }
     }
   }
+}
+
+#bbs-boards {
+  ul.media-list {
+    border-top: 1px solid #F0F0F0;
+    padding-top: 10px;
+    li.topic {
+      border-bottom: 1px solid #F0F0F0;
+      padding-bottom: 10px;
+      .media-body { position: relative; }
+      h4.media-heading {
+        font-size: 14px;
+      }
+      ul.state-bar {
+        top: 0;
+        right: 0;
+        position: absolute;
+        list-style: none;
+
+        li {
+          float: left;
+          margin-left: 10px;
+        }
+
+        a {
+          background-color: #FFFFFF;
+          border: 1px solid #DDDDDD;
+          border-radius: 15px 15px 15px 15px;
+          display: inline-block;
+          padding: 5px 14px;
+
+          &:hover {
+            background-color: #F5F5F5;
+            text-decoration: none;
+          }
+        }
+      }
+      p.meta {
+        margin-top: 10px;
+        a { color: #404040; }
+        span.divider-vertical {
+          border-left: 1px solid #F2F2F2;
+          border-right: 1px solid #FFFFFF;
+          height: 24px;
+          margin-left: 5px;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  ul.state_bar {
+    li {
+      margin-right: 10px;
+      &.divider-vertical {
+        border-left: 1px solid #F2F2F2;
+        border-right: 1px solid #FFFFFF;
+        height: 24px;
+      }
+    }
+  }
+
+  ul.breadcrumb {
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    li.last { float: right; }
+  }
+}
+
+form#new_bbs_post {
+  margin-top: 10px;
+  label { width: 50px; padding-top: 0; }
+  .controls { margin-left: 65px; }
 }

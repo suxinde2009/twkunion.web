@@ -4,5 +4,8 @@ zh-CN:
       sign_up: 新用户注册
       topic_detail: <i class='icon-tasks'></i> 进入专题
       board_detail: <i class='icon-tasks'></i> 进入板块
+      comments: <i class='icon-comment'></i> %{count}个回复
+      likes: <i class='icon-thumbs-up'></i> %{count}次赞
+      add_new_post: <i class='icon-pencil icon-white'></i> 发布新话题
     bbs:
       follow_btn: <i class='icon-heart icon-white'></i>

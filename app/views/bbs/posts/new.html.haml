@@ -1,35 +1,59 @@
-- content_for :full do
-  .full
-    %h1
-      发帖 /
-      %em 分享游戏心得
-- content_for :sidebar do
-  = render '/application/sidebars/topic_form'
+- content_for :jumbotron do
+  .jumbotron.masthead.home
+    .container
+      %p
+        在论坛您可以和玩家进行交流，晒自己的极品装备
+        = link_to '马上成为吞迷', new_user_registration_path, class: 'btn btn-primary'
 
-= simple_form_for resource, url: collection_path, validate: true, html: { class: 'gen-form with-messages flush' } do | f|
-  %h2.section 帖子信息
-  = f.input :title, input_html: { class: 'form-text' }
-  = f.input :content, as: :text
-  .form-btns
-    = f.button :submit, '保存并发布', class: 'form-sub'
-    = link_to '取消', bbs_board_path(parent), class: 'form-btn'
+.row#new-posts
+  .span9
+    %section#bbs-boards
+      %ul.breadcrumb
+        %li
+          = link_to '社区', bbs_root_path
+          %span.divider /
+        %li
+          = link_to parent.parent.name, bbs_root_path
+          %span.divider /
+        %li
+          = link_to parent.name, bbs_board_path(parent)
+          %span.divider /
+        %li
+          发布新话题
 
-:javascript
-  $(function() {
-    var editor;
+      = simple_form_for resource, url: collection_path, validate: true, html: { class: 'form-horizontal' } do | f|
+        = f.input :title, input_html: { class: 'span8' }
+        = f.input :content, as: :text
+        .form-actions
+          = f.button :submit, '保存并发布', class: 'btn btn-success btn-large'
+          = link_to '取消', bbs_board_path(parent), class: 'btn btn-large'
+  .span3
+    .box
+      - if user_signed_in?
+        %ul.media-list
+          %li.media
+            = link_to '#', class: 'pull-left' do
+              %img{:alt => "", "data-src" => "holder.js/80x80"}
+            %h4.media-heading
+              = current_user.name
+            .media-body
+              当前论坛积分： 1000
+          %li.media
+            %ul.nav.nav-pills
+              %li.active= link_to '100<br/>话题'.html_safe, '#'
+              %li.active= link_to '10<br/>粉丝'.html_safe, '#'
+              %li.active= link_to '9<br/>关注'.html_safe, '#'
+          %li.media.notifications
+            %p.muted 您有一篇文章被回复了
+            %p.muted 您有一篇文章被回复了
 
-    KindEditor.ready(function(K) {
-        editor = K.create('textarea', {
-        height: 400,
-        width: 600,
-        items: [
-          'undo', 'redo', 'preview', 'print', 'template', '|', 'justifyleft', 'justifycenter', 'justifyright',
-          'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
-          'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
-          'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image',
-          'table', 'hr', 'emoticons', 'baidumap', 'pagebreak',
-          'anchor', 'link', 'unlink', '|'
-        ]
-      });
-    });
-  })
+- content_for :js do
+  :coffeescript
+    $ ->
+      editor = undefined
+      KindEditor.ready (K) ->
+        editor = K.create("textarea",
+          height: 400
+          width: 620
+          items: ["undo", "redo", "preview", "print", "template", "|", "justifyleft", "justifycenter", "justifyright", "justifyfull", "insertorderedlist", "insertunorderedlist", "indent", "outdent", "subscript", "formatblock", "fontname", "fontsize", "|", "forecolor", "hilitecolor", "bold", "italic", "underline", "strikethrough", "lineheight", "removeformat", "|", "image", "table", "hr", "emoticons", "baidumap", "pagebreak", "anchor", "link", "unlink", "|"]
+        )
