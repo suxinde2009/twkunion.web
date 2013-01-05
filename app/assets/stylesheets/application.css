@@ -15,4 +15,5 @@
  *= require global
  *= require home
  *= require auth
+ *= require bbs
  */

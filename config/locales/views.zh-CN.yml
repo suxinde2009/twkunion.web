@@ -3,3 +3,6 @@ zh-CN:
     layout:
       sign_up: 新用户注册
       topic_detail: <i class='icon-tasks'></i> 进入专题
+      board_detail: <i class='icon-tasks'></i> 进入板块
+    bbs:
+      follow_btn: <i class='icon-heart icon-white'></i>

@@ -1,0 +1,25 @@
+.span3 {
+  ul.media-list {
+    li.notifications {
+      border-top: 1px solid #ddd;
+      padding-top: 5px;
+    }
+  }
+
+  .box {
+    margin-bottom: 15px;
+    .page-header {
+      margin: 0 0 10px;
+    }
+
+    table {
+      td:first-child {
+        text-align: right;
+        border-right: 1px dashed #ddd;
+        margin-right: 10px;
+        display: block;
+        padding-right: 10px;
+      }
+    }
+  }
+}

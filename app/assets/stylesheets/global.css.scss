@@ -30,3 +30,14 @@ section { padding-top: 0; }
   padding: 15px 15px;
   img { margin-right: 5px; }
 }
+
+.span3 {
+  .box {
+    border: 1px solid #DDD;
+    padding: 10px;
+    ul.media-list, ul.nav-pills {
+      margin: 0;
+      li { padding-bottom: 0; }
+    }
+  }
+}

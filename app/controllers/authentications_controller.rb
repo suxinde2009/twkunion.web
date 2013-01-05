@@ -1,5 +1,6 @@
 class AuthenticationsController < Devise::OmniauthCallbacksController
   before_filter :authenticate_user!, only: :index
+  main_nav_highlight :settings
   
   def index
     @providers = User.omniauth_providers

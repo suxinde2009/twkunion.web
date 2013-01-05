@@ -1,219 +1,53 @@
-#right-wrap
-  #rank-list
-    %a{:href => "event.tora"}
-      .rank.digger-event-intro
-        %h3 谁最了解 Tora 酱？
-        %p
-          获得 Tora 首枚活动称号
-          %br 赢取免费祝福时间
-        #digger-toracyan
-        %p#digger-more-link
-          %a{:href => "/eva"} 查看详情
-    .rank.digger-winner-item
-      .rank-title.top-rank.digger-winner-item-bar 本期 Digger 排行
-      %span
-        %a{:href => "eva?now"} 更多排行
-      %a.digger-winner-avatar.avatar{:href => "@83f11"}
-        %img{:alt => "avatar", :src => "/"}/
-      %ul.digger-winner-details
-        %li.digger-winner-name
-          %a{:href => "@83f11"} riviera_1218
-        %li
-          贡献度
-          %var 272
-        %li
-          收录文章
-          %var 319 篇
-        %li
-          %a{:href => "~J.C.STAFF的动画"} J.C.STAFF的动画
-          %var 219 篇
-        %li
-          %a{:href => "~nico翻唱歌手的资源"} nico翻唱歌手的资源
-          %var 71 篇
-        %li
-          %a{:href => "~桥本美雪的音乐"} 桥本美雪的音乐
-          %var 29 篇
-      %table.digger-index-more{:border => "0", :cellpadding => "6", :cellspacing => "0"}
-        %colgroup
-          %col.dt-col-usr/
-          %col.dt-col-contributed/
-          %col.dt-col-indexed/
+.span3
+  .box
+    - if user_signed_in?
+      %ul.media-list
+        %li.media
+          = link_to '#', class: 'pull-left' do
+            %img{:alt => "", "data-src" => "holder.js/80x80"}
+          %h4.media-heading
+            = current_user.name
+          .media-body
+            当前论坛积分： 1000
+        %li.media
+          %ul.nav.nav-pills
+            %li.active= link_to '100<br/>话题'.html_safe, '#'
+            %li.active= link_to '10<br/>粉丝'.html_safe, '#'
+            %li.active= link_to '9<br/>关注'.html_safe, '#'
+        %li.media.notifications
+          %p.muted 您有一篇文章被回复了
+          %p.muted 您有一篇文章被回复了
+
+  // BBS STATUS
+  .box
+    .page-header
+      %h1 社区运行状态
+    %table.table-striped
+      %tbody
         %tr
-          %td.dt-usr
-            %a{:href => "@n8fa1"} s000015
-          %td 贡献 196
-          %td 收录 304
+          %td 注册会员
+          %td 1200
         %tr
-          %td.dt-usr
-            %a{:href => "@d8W11"} 蓝色波斯菊
-          %td 贡献 196
-          %td 收录 241
+          %td 话题
+          %td 398
         %tr
-          %td.dt-usr
-            %a{:href => "@AChq1"} sonicll
-          %td 贡献 104
-          %td 收录 519
-        %tr
-          %td.dt-usr
-            %a{:href => "@Iacq1"} じ遺莣の噯゛
-          %td 贡献 84
-          %td 收录 25
-        %tr
-          %td.dt-usr
-            %a{:href => "@ZHha1"} yujincheng08
-          %td 贡献 67
-          %td 收录 19
-    /
-      <div class="rank digger-winner-item">
-      <div class="rank-title top-rank digger-winner-item-bar">当前综合最佳 Digger</div>
-      <span>
-      <a href="eva?all">综合贡献排名</a>
-      </span>
-      <a href="@83f11" class="digger-winner-avatar avatar"><img src="headimg.ajax?userid=83f11" alt="avatar"></a>
-      <ul class="digger-winner-details">
-      <li class="digger-winner-name"><a href="@83f11">riviera_1218</a></li>
-      <li>贡献度<var>854</var></li>
-      <li>收录文章<var>1831 篇</var></li>
-      <li><a href="~2011春番">2011春番</a><var>181 篇</var></li>
-      <li><a href="~CLAMP的动画">CLAMP的动画</a><var>14 篇</var></li>
-      <li><a href="~J.C.STAFF的动画">J.C.STAFF的动画</a><var>219 篇</var></li>
-      <li><a href="~nico翻唱歌手的资源">nico翻唱歌手的资源</a><var>71 篇</var></li>
-      <li><a href="~PS游戏怀旧">PS游戏怀旧</a><var>349 篇</var></li>
-      <li><a href="~川上朋子的动画">川上朋子的动画</a><var>687 篇</var></li>
-      <li><a href="~桥本美雪的音乐">桥本美雪的音乐</a><var>29 篇</var></li>
-      <li><a href="~繁体中文漫画">繁体中文漫画</a><var>281 篇</var></li>
-      </ul>
-      </div>
-    .rank
-      .rank-title.top-rank
-        人气排行榜 -                     第 1 位
-      %a.rank-avatar.avatar{:href => "@QsSa1"}
-        %img{:alt => "avatar", :src => "/"}/
-      %span
-      %p
-        %a.top-rank-title{:href => "!H0rtA"} 軌跡 of Meine Vita
-      %var
-        作者:
-        = succeed "," do
-          %a{:href => "@QsSa1"} xinkj007
-        浏览数: 75, 评分: 0, 收藏: 0
-    / rank
-    .rank
-      .rank-title.top-rank
-        第 2 位
-      %a.rank-avatar.avatar{:href => "@Ht2a1"}
-        %img{:alt => "avatar", :src => "/"}/
-      %span
-      %p
-        %a.top-rank-title{:href => "!cuC7O"} まぐろ帝國  中文合集  口味略重[中漫] [970M][CT]
-      %var
-        作者:
-        = succeed "," do
-          %a{:href => "@Ht2a1"} cho3333
-        浏览数: 601, 评分: 3, 收藏: 0
-    / rank
-    .rank
-      .rank-title.top-rank
-        第 3 位
-      %a.rank-avatar.avatar{:href => "@SsGq1"}
-        %img{:alt => "avatar", :src => "/"}/
-      %span
-      %p
-        %a.top-rank-title{:href => "!gQnlL"} [115/JSMC][2012.06.16][动漫资源整合贴][已更新270部]（暂且恢复更新，但是……）
-      %var
-        作者:
-        = succeed "," do
-          %a{:href => "@SsGq1"} 白色的小空
-        浏览数: 12949, 评分: 91, 收藏: 47
-    / rank
-    .rank
-      .rank-title
-        第 4 位至第 15 位
-      %span
-      %p
-        %a{:href => "!YRjyi"} 《源君物语》[稲叶みのり][漫画][香香泡面馆汉化版]
-      %var
-        作者:
-        = succeed "," do
-          %a{:href => "@lEMa1"} 木叶的泡面
-        浏览数: 15902, 评分: 24, 收藏: 18
-      %p
-        %a{:href => "!UzgMV"} 2012 ISML 晒票
-      %var
-        作者:
-        = succeed "," do
-          %a{:href => "@QsSa1"} xinkj007
-        浏览数: 898, 评分: 1, 收藏: 0
-      %p
-        %a{:href => "!GYRsx"} (成年コミック) [葛城ゆう] ホンキ汁 找了很久的应求本[中漫] [40M][CT]
-      %var
-        作者:
-        = succeed "," do
-          %a{:href => "@Ht2a1"} cho3333
-        浏览数: 125, 评分: 1, 收藏: 0
-      %p
-        %a{:href => "!WL11r"} 啊咧...又是一年六一节...
-      %var
-        作者:
-        = succeed "," do
-          %a{:href => "@JUnq1"} frelia
-        浏览数: 874, 评分: 3, 收藏: 0
-      %p
-        %a{:href => "!aWNrL"} (一般コミック) [南條範夫×山口貴由] シグルイ
-      %var
-        作者:
-        = succeed "," do
-          %a{:href => "@Q2xq1"} 0906xhc
-        浏览数: 52, 评分: 0, 收藏: 0
-      %p
-        %a{:href => "!tYgjT"} (一般コミック) [北爪宏幸] 機動戦士ガンダム C.D.A. 若き彗星の肖像 全14卷
-      %var
-        作者:
-        = succeed "," do
-          %a{:href => "@Q2xq1"} 0906xhc
-        浏览数: 57, 评分: 0, 收藏: 0
-      %p
-        %a{:href => "!nyEXz"} [JSMC+115理论永久][FN@Lv.1]魔法禁书目录 / To Aru Majutsu no Index[01-24+SP Fin][BDRip][MP4-1080P][18.3+23.3G]
-      %var
-        作者:
-        = succeed "," do
-          %a{:href => "@6nVa1"} 由依喵
-        浏览数: 2910, 评分: 5, 收藏: 1
-      %p
-        %a{:href => "!YgMWP"} 2012年6月17日更新 伪物语  Holy Knight CLANNAD完坑 （Holy Knight k-on！！便当 萝球社 公主恋人 纯白交响曲 未来日记  结界女王 圣痕2 认真和我谈恋爱 マケン姫 魔球谷大你三千教育課件  菲特今晚留下来）【度娘分流】  我的高压【BDrip 1080p】动漫资源索引
-      %var
-        作者:
-        = succeed "," do
-          %a{:href => "@IX5q1"} lg820zjs
-        浏览数: 27050, 评分: 107, 收藏: 45
-      %p
-        %a{:href => "!WkkpK"} (一般コミック) [BONES 岡村天斎×岩原裕二] DARKER THAN BLACK -漆黒の花-
-      %var
-        作者:
-        = succeed "," do
-          %a{:href => "@Q2xq1"} 0906xhc
-        浏览数: 85, 评分: 0, 收藏: 0
-      %p
-        %a{:href => "!04OlH"} (一般コミック) [清水栄一×下口智裕] 鉄のラインバレル 00-19
-      %var
-        作者:
-        = succeed "," do
-          %a{:href => "@Q2xq1"} 0906xhc
-        浏览数: 93, 评分: 0, 收藏: 0
-      %p
-        %a{:href => "!2dyNT"} (一般コミック) [平野耕太] ヘルシング 全10卷 & THE DAWN 01-06
-      %var
-        作者:
-        = succeed "," do
-          %a{:href => "@Q2xq1"} 0906xhc
-        浏览数: 1118, 评分: 2, 收藏: 0
-      %p
-        %a{:href => "!Y8tmH"} (一般コミック) [木尾士目] げんしけん 全9卷
-      %var
-        作者:
-        = succeed "," do
-          %a{:href => "@Q2xq1"} 0906xhc
-        浏览数: 410, 评分: 1, 收藏: 0
-    / rank
-  / #rank-list
-/ #right-wrap
+          %td 回复
+          %td 1890
+
+
+  // BBS LEADER BOARD
+  .page-header
+    %h1 社区活跃用户排行
+  %ul.media-list
+    - 5.times do
+      %li.media
+        = link_to '#', class: 'pull-left' do
+          %img.img-polaroid{:alt => "", "data-src" => "holder.js/40x40"}
+        %h4.media-heading
+          西唯-Jerry
+          = link_to t('views.bbs.follow_btn').html_safe, '#', class: 'btn btn-small btn-info follow'
+        .media-body
+          %p 用户积分100
+
+  .page-header
+    %h1 社区新帖

@@ -1,5 +1,6 @@
 section {
-  &#topics {
+  &#topics, &#bbs-boards {
+    ul.thumbnails > li { width: 97%; }
     ul.thumbnails {
       .thumbnail {
         overflow: hidden;
@@ -32,7 +33,11 @@ section {
 }
 
 ul.media-list {
-  li.media { padding-bottom: 5px; border-bottom: 1px dashed #eee; }
+  li.media {
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #eee;
+    a.follow { float: right; }
+  }
 }
 
 ul.bs-docs-social-buttons {

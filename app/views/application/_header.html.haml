@@ -10,12 +10,13 @@
         = image_tag('twkunion-tm.png')
       .nav-collapse.collapse
         %ul.nav
-          %li.active
+          = main_nav :home do
             = link_to '首页', root_path
           %li= link_to '应用', '#'
           %li= link_to '专题', '#'
           %li= link_to '下载', '#'
-          %li= link_to '论坛', bbs_root_path
+          = main_nav :bbs do
+            %li= link_to '论坛', bbs_root_path
 
         = form_tag '/', class: 'navbar-search pull-left form-search' do
           .input-append
@@ -24,7 +25,7 @@
 
         %ul.nav.pull-right
           - if user_signed_in?
-            %li.dropdown
+            = main_nav :settings, { class: 'dropdown' } do
               = link_to '#', class: 'dropdown-toggle', data: { toggle: 'dropdown' } do
                 %img{:alt => "", "data-src" => "holder.js/30x30"}
                 = current_user.name
@@ -33,7 +34,7 @@
                 %li= link_to '个人设置', edit_user_registration_path(type: :profile)
                 %li= link_to '修改密码', edit_user_registration_path(type: :password)
                 %li.divider
-                %li= link_to '登出', '#'
+                %li= link_to '登出', destroy_user_session_path, method: :delete
           - else
             %li= link_to t('views.layout.sign_up').html_safe, new_user_registration_path, class: 'signup'
             %li= link_to '登录', new_user_session_path
