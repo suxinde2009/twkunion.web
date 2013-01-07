@@ -143,6 +143,9 @@ GEM
     carrierwave (0.7.1)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
+    cells (3.8.6)
+      actionpack (~> 3.0)
+      railties (~> 3.0)
     childprocess (0.3.6)
       ffi (~> 1.0, >= 1.0.6)
     client_side_validations (3.2.0)
@@ -445,6 +448,7 @@ DEPENDENCIES
   capistrano_colors
   capybara (~> 1.1.2)
   carrierwave-mongoid!
+  cells (~> 3.8.6)
   client_side_validations (= 3.2.0)
   client_side_validations-mongoid (~> 3.0.1)
   client_side_validations-simple_form (= 2.0.0)
