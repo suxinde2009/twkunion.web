@@ -59,7 +59,7 @@ gem 'rails_kindeditor', github: 'jerryshen/rails_kindeditor'
 # gem 'flash_cookie_session'
 gem 'rack-raw-upload'
 
-gem 'coffee-filter'
+gem 'coffee-filter', require: 'coffee-filter'
 
 
 # Gems used only for assets and not required
