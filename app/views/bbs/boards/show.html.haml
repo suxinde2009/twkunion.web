@@ -44,8 +44,8 @@
   .span3
     = link_to t('views.layout.add_new_post').html_safe, new_bbs_board_post_path(resource), class: 'btn btn-primary btn-large', id: 'add-new-post'
 
-    .box
-      - if user_signed_in?
+    - if user_signed_in?
+      .box
         %ul.media-list
           %li.media
             = link_to '#', class: 'pull-left' do

@@ -1,71 +1,67 @@
-- content_for :sidebar do
-  = render '/application/sidebars/bbs'
+.row#bbs-post
+  .span9
+    %section#post-detail
+      %ul.breadcrumb
+        %li
+          = link_to '社区', bbs_root_path
+          %span.divider /
+        %li
+          = link_to resource.board.parent.name, bbs_root_path
+          %span.divider /
+        %li
+          = link_to resource.board.name, bbs_board_path(resource.board)
+        %li.active
+          浏览帖子
+      .page-header.post-header.clearfix
+        %img{ alt: '', data: { src: 'holder.js/48x48' } }
+        %h1 吞食天地2ND游戏发生就要发布了
+        %p.meta.muted
+          = link_to '<span class="label">板块名称</span>'.html_safe, '#'
+          %span.divider-vertical
+          = link_to '西唯-Jerry', '#'
+          发布于
+          3小时前
+          %span.divider-vertical
+          最后由
+          = link_to '你奶奶的爷爷', '#'
+          于17小时前回复
+          %span.divider-vertical
+          300次浏览
+      .post-body
+        %p= raw resource.content
+    %section#comments.bs-docs-example
+      .page-header.comments-list-header
+        %p 共收到100条回复
+      %ul.media-list.comments-list
+        - 10.times do
+          %li.media
+            = link_to '#', class: 'pull-left' do
+              %img{ alt: '', data: { src: 'holder.js/48x48' } }
+            %ul.state-bar.clearfix
+              %li= link_to t('views.bbs.like').html_safe, '#'
+            .media-body
+              %h4.media-heading
+                西唯-Jerry
+                %small
+                  10楼
+                  20小时前
+              %p 这个帖子不错，顶一下。
+    %section#post-form
+      = simple_form_for resource.replies.build, url: bbs_board_post_replies_path(parent, resource), html: { class: 'form-horizontal' }, validate: true, remote: true do |f|
+        = f.input :content, as: :text, label: false
+        .form-actions
+          = f.button :submit, '回复', class: 'btn btn-success btn-large'
 
 
+  = render 'sidebar'
 
-#screenshot-title-section.full.title
-  .single-title.vcard.group
-    = user_avatar_link_to(resource.user)
-
-    %h1#screenshot-title= resource.title
-    .shot-byline.group
-      %span.shot-byline-user
-        楼主：
-        = link_to resource.user_name, '#', class: 'url'
-      .follow-prompt
-        %a.action.following{:href => "#", :title => "You are following charhen. Click to unfollow."}
-          %span 关注
-      %span.screenshot-dash
-        = l resource.created_at, format: :long
-        (#{ time_ago_in_words resource.updated_at }前更新过)
-      .screenshot-dash.screenshot-project
-
-.post-content
-  = raw resource.content
-
-#comments-section
-  %h2.count.section #{resource.replies_count}条回复
-  %ol#comments.comments
-    - resource.replies.each do |reply|
-      %li.response.comment.group
-        %h2
-          / %a.badge-link{:href => "/account/pro"}
-          /   %span.badge.badge-pro Pro
-          = user_avatar_link_to(reply.user)
-        .comment-body
-          %p= raw reply.content
-        %span.comment-meta-likes
-          %a.likes-list{:href => "/comments/1948766/likes"} 2
-          %span.hide likes
-        %p.comment-meta
-          %a.posted{:href => "#comment-1948766"} 3 days ago
-          %span.sep |
-          %a.likes{:href => "/comments/1948766/likes"} Like?
-          
-  = simple_form_for resource.replies.build, url: bbs_board_post_replies_path(parent, resource), html: { class: 'gen-form with-messages flush group' }, remote: true do |f|
-    %h2.section 回复楼主
-    = f.input :content, as: :text, label: false
-    .form-btns
-      = f.button :submit, '回复', class: 'form-sub'
-      = link_to '清空', '#', class: 'form-btn'
-
-
-:javascript
-  $(function() {
-    var editor;
-
-    KindEditor.ready(function(K) {
-        editor = K.create('textarea', {
-        height: 200,
-        width: 600,
-        items: [
-          'undo', 'redo', 'preview', 'print', 'template', '|', 'justifyleft', 'justifycenter', 'justifyright',
-          'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
-          'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
-          'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image',
-          'table', 'hr', 'emoticons', 'baidumap', 'pagebreak',
-          'anchor', 'link', 'unlink', '|'
-        ]
-      });
-    });
-  })
+- content_for :js do
+  :coffeescript
+    $ ->
+      editor = undefined
+      KindEditor.ready (K) ->
+        editor = K.create("textarea",
+          height: 200
+          width: 600
+          items: ["undo", "redo", "preview", "|", "justifyleft", "justifycenter", "justifyright", "justifyfull", "insertorderedlist", "insertunorderedlist", "indent", "outdent", "subscript", "formatblock", "fontname", "fontsize", "|", "forecolor", "hilitecolor", "bold", "italic", "underline", "strikethrough", "lineheight", "removeformat", "|", "image", "table", "hr", "emoticons", "baidumap", "pagebreak", "anchor", "link", "unlink", "|"]
+        )

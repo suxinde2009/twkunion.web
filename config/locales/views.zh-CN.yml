@@ -9,3 +9,4 @@ zh-CN:
       add_new_post: <i class='icon-pencil icon-white'></i> 发布新话题
     bbs:
       follow_btn: <i class='icon-heart icon-white'></i>
+      like: <i class='icon-heart'></i> 喜欢

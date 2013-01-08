@@ -27,7 +27,8 @@ section { padding-top: 0; }
 }
 
 .navbar .nav.pull-right > li > a {
-  padding: 15px 15px;
+  padding: 20px 15px;
+  &.image { padding: 15px; }
   img { margin-right: 5px; }
 }
 
