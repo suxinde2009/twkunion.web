@@ -100,12 +100,6 @@ p.meta {
 section#post-detail {
   border-bottom: 1px solid #ddd;
 
-  form#new_bbs_post {
-    margin-top: 10px;
-    label { width: 50px; padding-top: 0; }
-    .controls { margin-left: 65px; }
-  }
-
   .page-header {
     &.post-header {
       img { float: right; }
@@ -126,6 +120,12 @@ section#post-detail {
     margin-top: 10px;
     p { margin-bottom: 5px; }
   }
+}
+
+form#new_bbs_post {
+  margin-top: 10px;
+  label { width: 50px; padding-top: 0; }
+  .controls { margin-left: 65px; }
 }
 
 section#comments {
