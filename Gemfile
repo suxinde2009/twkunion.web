@@ -1,11 +1,12 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.10'
+gem 'rails', '3.2.11'
 
 # mongo support
 gem 'mongoid',    '3.0.15'
 gem 'mongoid_auto_increment_id', '0.5.0'
 gem 'bson_ext',   '1.8.0'
+gem 'rack', '1.4.1'
 
 # Core functions
 gem 'devise',               '~> 2.1.2'
