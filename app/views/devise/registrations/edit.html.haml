@@ -6,7 +6,15 @@
           用户信息设置
           %small 这里需要添加一些文案，大家使劲想
       = render '/application/tabs/settings'
-      = render params[:type]
+
+      = simple_form_for resource, as: resource_name, url: registration_path(resource_name), validate: true, html: { method: :put, class: 'form-horizontal' } do |f|
+
+        = f.input :current_password
+        = f.input :password, validate: { presence: true }
+        = f.input :password_confirmation
+
+        .form-actions
+          = f.button :submit, '保存设置', class: 'btn btn-success btn-large'
   .span3
     .page-header
       %h1

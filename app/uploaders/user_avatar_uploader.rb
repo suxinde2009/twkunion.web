@@ -31,15 +31,15 @@ class UserAvatarUploader < CarrierWave::Uploader::Base
   
   # Create different versions of your uploaded files:
   version :small do
-    process :resize_to_fill => [48, 48]
+    process resize_to_fill: [50, 50]
   end
 
   version :medium do
-    process :resize_to_fill => [96, 96]
+    process resize_to_fill: [100, 100]
   end
 
-  version :small do
-    process :resize_to_fill => [128, 128]
+  version :large do
+    process resize_to_fill: [150, 150]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

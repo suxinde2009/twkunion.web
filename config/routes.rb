@@ -3,7 +3,8 @@ Twkunion::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   devise_for :users, controllers: {
-    omniauth_callbacks: :authentications
+    omniauth_callbacks: :authentications,
+    registrations: :registrations
   }
 
   devise_scope :user do
@@ -18,9 +19,9 @@ Twkunion::Application.routes.draw do
   end
 
   scope '/my' do
-    get :notificaitons, to: 'users#notifications', as: :my_notificaitons
-    get 'profile/edit' => 'users#edit', as: :edit_profile
-    put 'profile/update' => 'users#update', as: :profile_settings
+    get 'notificaitons' => 'users#notifications', as: :notifications
+    get ':type/edit' => 'users#edit', as: :settings
+    put 'profile/update' => 'users#update', as: :users
   end
   
   namespace :bbs do

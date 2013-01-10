@@ -1,49 +1,13 @@
-- content_for :sidebar do
-  = render '/application/sidebars/settings'
-
-- content_for :full do
-  .group
-    %a.pro-motion.not-pro{:href => "/account/pro"}
-      %strong Go Pro!
-      %em Add power features for just $20/year
-    .group
-      .full
+.row#settings
+  .span9
+    .section
+      .page-header
         %h1
-          %a{:href => "/account"} 个人资料
-          %span.sep /
-          Profile
-        %p Edit your name, avatar, etc.
-
-
-= render '/application/tabs/settings'
-
-.session-form.alt
-  = simple_form_for resource, url: profile_settings_path, html: { method: :put, class: 'gen-form with-messages' } do |f|
-
-    = f.input :name, input_html: { class: 'form-text' }, hint: 'xxx'
-    = f.input :username, input_html: { class: 'form-text' }, hint: 'xxxx'
-    = f.input :bio, as: :text, input_html: { class: 'form-text', cols: 20, rows: 40 }
-
-    .form-btns
-      = f.button :submit, '保存设置', class: 'form-sub'
-      = link_to '移除我的帐号', registration_path(resource), confirm: "Are you sure?", method: :delete, class: 'link'
-
-- content_for :javascript do
-  :javascript
-    new ShowAndHideControl({
-      target: '#avatar-form', 
-      showControl: '#edit_avatar_link', 
-      hideControl: '#cancel-avatar'
-    });
-
-    $('#delete-avatar-button').click(function() {
-      return confirm("Deleting avatar. Continue?");
-    });
-
-    $('h3.player-card a').
-      tipsy({
-        gravity: 'e',
-        html: true,
-        title: function() { return $('#player-card-tipsy-text').html(); }
-      }).
-      click(function() { return false; });
+          用户信息设置
+          %small 这里需要添加一些文案，大家使劲想
+      = render '/application/tabs/settings'
+      = render params[:type]
+  .span3
+    .page-header
+      %h1
+        个人动态

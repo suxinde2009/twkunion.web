@@ -1,5 +1,6 @@
 class UsersController < InheritedResources::Base
   before_filter :authenticate_user!, except: :show
+  main_nav_highlight :settings
 
   def update
     update! do |format|
@@ -14,8 +15,7 @@ class UsersController < InheritedResources::Base
   protected
 
   def resource
-    if params.key?(:username)
-    elsif params.key?(:id)
+    if params.key?(:id)
       super
     else
       current_user

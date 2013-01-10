@@ -31,8 +31,12 @@
                 = current_user.name
                 %b.caret
               %ul.dropdown-menu
-                %li= link_to '个人设置', edit_user_registration_path(type: :profile)
-                %li= link_to '修改密码', edit_user_registration_path(type: :password)
+                %li= link_to '个人设置', settings_path(type: :profile)
+                %li= link_to '消息设置', settings_path(type: :notifications)
+                %li= link_to '修改密码', edit_user_registration_path
+                %li.divider
+                %li= link_to '第三方账户绑定', authentications_path
+                %li= link_to '邀请好友', '#'
                 %li.divider
                 %li= link_to '登出', destroy_user_session_path, method: :delete
           - else
