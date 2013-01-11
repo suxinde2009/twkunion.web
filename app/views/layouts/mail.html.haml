@@ -1,0 +1,18 @@
+!!!
+%html{ lang: 'zh',  :"xmlns" => 'http://www.w3.org/1999/xhtml' }
+  %head
+    %title 吞食天地大同盟
+    %meta{ charset: 'utf-8' }
+    = stylesheet_link_tag 'mail'
+    %style{type:"text/css"}
+      = ".img{border:none}"
+      = ".mail_container table { color:#000;font-size:14px;padding-bottom:20px; border:1px solid #999;border-top:5px solid #999;width:738px;margin:20px auto}"
+      = ".mail_container table tr.nav td{ border-bottom:1px solid #999 }"
+      = ".mail_container table tr td.content { line-height: 1.5em;padding-left:15px;padding-right:5px;word-wrap:break-word;overflow:hidden; }"
+      = ".mail_container table tr td.logo { height:225px } "
+      = ".mail_container tr.nav ul li { display:inline-block; width:85px; }"
+      = "p.title { font-size:18px; line-height:54px; height:54px; font-weight:bold; }"
+      = "a.nav { text-decoration:none ; color:#aaa; font-size:18px; font-weight:bold;}"
+  %body{ :"data-spy" => 'scroll', :"data-target" => '.bs-docs-sidebar' }
+    .mail_container
+      = yield

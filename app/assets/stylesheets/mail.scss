@@ -1,0 +1,19 @@
+@mixin title-style($fontsize) {
+	font-size:$fontsize; line-height:$fontsize * 3; height:$fontsize*3; font-weight:bold;
+}
+
+.img{border:none}
+.mail_container {
+	table {
+		color:#000;font-size:14px;margin:0 auto;padding:0 5px; border:1px solid #a8c3c6;border-top:5px solid #a8c3c6;width:738px;
+		td.content {
+			line-height: 1.5em;padding-left:15px;padding-right:5px;word-wrap:break-word;overflow:hidden;
+		}
+		td.logo {
+
+		}
+	}
+}
+p .title-style18 {
+	@include title-style(18px)
+}

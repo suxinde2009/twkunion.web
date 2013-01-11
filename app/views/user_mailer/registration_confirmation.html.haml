@@ -1,0 +1,34 @@
+%table{cellpadding:"0",cellspacing:"0",border:"0"}
+	%tr.nav
+		%td= render 'nav'
+	%tr
+		%td.logo= render 'logo'
+	%tr
+		%td.content
+			%p.title
+				感谢您的注册！
+				="您在吞食天地大同盟的账号是:#{@user.name}"
+			您现在必须先验证您的电子邮箱地址，方可登陆。
+			%br/
+			请您点击以下链接验证您的电子邮箱：
+			%br/
+			%a{ href:"http://www.twkunion.com/xxxxxx/xxx" } http://www.twkunion.com/xxxxxxxxxxxx
+			%br/
+			如果您的邮箱不支持链接点击，请将以上链接地址拷贝到您的浏览器地址栏中。如果您错误的收到此邮件，不做任何处理即可。
+			%br/
+			%br/
+			1. 为了保障您的账户安全性，请在48小时内完成激活，此链接在您激活成功后失效
+			%br/
+			2. 请尽快激活激活完成，否则过期吞食天地大同盟将有权回收该账号
+			%br/
+			%br/
+			成功验证后，您可登陆网站，关注吞食天地2ND的游戏最新开发进展以及Demo版的发布，
+			%br/
+			加入社区和吞迷们一起讨论交流游戏心得，与我们和我们共同发展！
+			%br/
+			假如您有任何疑问或意见，请给我们发电子邮件至
+			%a{ href:"mailto:info@twkunion.com" } info@twkunion.com
+			我们期待在吞食天地大同盟见到您！
+			%br/
+			%br/
+			= render 'foot'

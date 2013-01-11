@@ -1,0 +1,22 @@
+%table{cellpadding:"0",cellspacing:"0",border:"0"}
+	%tr.nav
+		%td= render 'nav'
+	%tr
+		%td.logo= render 'logo'
+	%tr
+		%td.content
+			%p.title
+				亲:
+				="您的好友 #{@inviter.name} 给您发了这封邮件"
+			希望您与他一同加入吞食天地大同盟
+			%br/
+			点击以下链接加入吞食天地大同盟
+			%br/
+			%a{ href:"http://www.twkunion.com/xxxxxx/xxx" } http://www.twkunion.com/xxxxxxxxxxxx
+			%br/
+			一起关注吞食天地2ND游戏开发进展，Demo,以及周边游戏，
+			%br/
+			加入社区一起讨论，与吞食天地大同盟一同发展吧，期待您的加入
+			%br/
+			%br/
+			= render 'foot'
