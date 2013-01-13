@@ -1,6 +1,7 @@
 = simple_form_for resource, url: collection_path, validate: true, html: { class: 'form-horizontal', method: :put } do |f|
   = f.input :name
   = f.input :bio, as: :text, input_html: { rows: 5, class: 'span5' }
+  = f.input :skip_password, as: :hidden, input_html: { value: true }
 
   .form-actions
     = f.button :submit, '保存设置', class: 'btn btn-success btn-large'

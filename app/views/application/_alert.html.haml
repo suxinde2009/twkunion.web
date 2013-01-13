@@ -1,0 +1,8 @@
+- if notice
+  .alert.alert-success
+    = button_tag 'x', data: { dismiss: 'alert' }, class: 'close'
+    = notice
+- elsif alert
+  .alert.alert-error
+    = button_tag 'x', data: { dismiss: 'alert' }, class: 'close'
+    = alert

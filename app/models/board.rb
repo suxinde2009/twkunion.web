@@ -28,4 +28,8 @@ class Board
     admins.join(',')
   end
 
+  def total_replies_count
+    bbs_posts.sum(:replies_count).to_i
+  end
+
 end

@@ -1,4 +1,6 @@
 zh-CN:
+  notifications:
+    profile_updated: 您的个人信息已经成功更新！
   views:
     layout:
       sign_up: 新用户注册
