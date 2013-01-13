@@ -32,6 +32,7 @@ class User
 
   ## Rememberable
   field :remember_created_at, type: Time
+  field :remember_token
 
   ## Trackable
   field :sign_in_count,      type: Integer, default: 0
@@ -61,7 +62,15 @@ class User
   ## Token authenticatable
   field :authentication_token
 
-  attr_accessible :email, :name, :password, :password_confirmation, :remember_me, :bio
+  attr_accessible :email,
+                  :name,
+                  :password,
+                  :password_confirmation,
+                  :remember_me,
+                  :bio,
+                  :skip_password
+
+  attr_accessor :skip_password
 
   mount_uploader :avatar, UserAvatarUploader
 
@@ -73,6 +82,7 @@ class User
 
   has_many :activities, dependent: :destroy
   has_many :bbs_posts
+  has_many :authentications, autosave: true, dependent: :destroy
   has_and_belongs_to_many :liked_topics, class_name: 'Topic', inverse_of: :fans
 
   def remember_me?
@@ -89,6 +99,38 @@ class User
 
   def unlike!(target)
     liked_topics.delete(target) unless target.nil?
+  end
+
+  # New user with session, by overriding devise method
+  def self.new_with_session(params, session)
+    super.tap do |user|
+      if data = session['omniauth']
+        user.name ||= data.info.name
+        user.skip_password = true
+      end
+    end
+  end
+
+  def apply_omniauth(omniauth)
+    self.name = omniauth.info.name if omniauth.info.name && self.name.blank?
+
+    self.authentications.build(
+      provider:     omniauth.provider,
+      uid:          omniauth.uid.to_s,
+      access_token: omniauth.credentials.token
+    )
+  end
+
+  def remember_value
+    self.remember_token ||= Devise.friendly_token
+  end
+
+  def password_required?
+    skip_password.nil?
+  end
+
+  def email_nomarlisation
+    self.email = email.strip.downcase
   end
 
   %w(admin user).each do |method|

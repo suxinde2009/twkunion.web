@@ -12,7 +12,10 @@ production:
   <<: *common
 
 development:
-  <<: *common
+  weibo:
+    api_key: "3685631151"
+    api_secret: "f4fd686ca650824f59906e2b5ece5f47"
+    redirect_uri: "http://127.0.0.1:3000/users/auth/weibo/callback"
 
 test:
   <<: *common

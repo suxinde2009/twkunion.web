@@ -9,7 +9,8 @@ gem 'bson_ext',   '1.8.0'
 gem 'rack', '1.4.1'
 
 # Core functions
-gem 'devise',               '~> 2.1.2'
+gem 'devise',               '~> 2.2.1'
+# gem 'devise', github: 'plataformatec/devise'
 # gem 'devise_invitable',     '~> 1.0.2'
 gem 'simple_form',          '~> 2.0.4'
 gem 'inherited_resources',  '~> 1.3.1'
@@ -69,7 +70,7 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.5'
   gem 'coffee-rails', '~> 3.2.2'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', :platforms => :ruby
+  # gem 'therubyracer', :platforms => :ruby
   # gem 'libv8', '~> 3.11.8'
   gem 'uglifier', '>= 1.0.3'
 end

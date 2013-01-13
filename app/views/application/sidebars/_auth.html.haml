@@ -1,6 +1,18 @@
 .span3
-  .page-header
-    %h1 第三方账户登录
-  %ul.auth
-    %li= link_to image_tag('weibo-login-btn-medium.png'), '#'
-    %li= link_to image_tag('qq-login-btn-medium.png'), '#'
+  - if session[:omniauth]
+    - omniauth = session[:omniauth]
+    - provider = t("views.auth.#{omniauth.provider}")
+    - screen_name = omniauth.info.name
+
+    .box.no-border
+      .page-header
+        %h1 当前授权信息
+      %p
+        当前您授权了#{provider}帐号【#{ link_to screen_name, 'http://weibo.com', target: '_blank' }】，
+        但吞迷必须得使用邮箱注册，所以亲，请务必填写正确的邮箱，才能成为正版吞迷哦。
+  .box.no-border
+    .page-header
+      %h1 第三方账户登录
+    %ul.auth
+      %li= link_to image_tag('weibo-login-btn-medium.png'), '/users/auth/weibo'
+      %li= link_to image_tag('qq-login-btn-medium.png'), '#'

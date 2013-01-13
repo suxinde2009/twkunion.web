@@ -37,6 +37,12 @@ section { padding-top: 0; }
   .box {
     border: 1px solid #DDD;
     padding: 10px;
+
+    &.no-border {
+      border: none;
+      padding: 10px 0 0 0;
+    }
+
     ul.media-list, ul.nav-pills {
       margin: 0;
       li { padding-bottom: 0; }

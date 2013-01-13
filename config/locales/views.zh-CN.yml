@@ -10,3 +10,6 @@ zh-CN:
     bbs:
       follow_btn: <i class='icon-heart icon-white'></i>
       like: <i class='icon-heart'></i> 喜欢
+    auth:
+      weibo: 新浪微博
+      qq_connect: 腾讯微博

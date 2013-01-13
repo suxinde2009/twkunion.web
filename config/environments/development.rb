@@ -35,27 +35,22 @@ Twkunion::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
 
 
   # Email settings
-  config.action_mailer.asset_host = 'twkunion.com'
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default charset: 'utf-8'
-  config.action_mailer.smtp_settings = {
-    address:        'smtp.exmail.qq.com',
-    port:           25,
-    domain:         'twkunion.com',
-    user_name:      'info@twkunion.com',
-    password:       'info2012',
-    authentication: :login
-  }
-
-  config.middleware.use ExceptionNotifier,
-                        email_prefix: '[twkunion]',
-                        sender_address: %{'Notifier' <info@twkunion.com>},
-                        exception_recipients: %w{hansay99@gmail.com}
+  # config.action_mailer.asset_host = 'twkunion.com'
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.perform_deliveries = true
+  # config.action_mailer.raise_delivery_errors = false
+  # config.action_mailer.default charset: 'utf-8'
+  # config.action_mailer.smtp_settings = {
+  #   address:        'smtp.exmail.qq.com',
+  #   port:           25,
+  #   domain:         'twkunion.com',
+  #   user_name:      'info@twkunion.com',
+  #   password:       'info2012',
+  #   authentication: :login
+  # }
 
 end
