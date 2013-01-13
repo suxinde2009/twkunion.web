@@ -21,14 +21,36 @@ stderr_path '/var/www/twkunion/shared/log/twkunion_app.log'
 before_fork do |server, worker|
 
   old_pid = "#{server.config[:pid]}.oldbin"
-  if old_pid != server.pid
+  if File.exists?(old_pid) && old_pid != server.pid
     begin
-      sig = (worker.nr + 1) >= server.worker_processes ? :QUIT : :TTOU
-      Process.kill(sig, File.read(old_pid).to_i)
+      # sig = (worker.nr + 1) >= server.worker_processes ? :QUIT : :TTOU
+      Process.kill('QUIT', File.read(old_pid).to_i)
+      # Process.kill(sig, File.read(old_pid).to_i)
     rescue Errno::ENOENT, Errno::ESRCH
     end
   end
 end
+
+
+#  old_pid = RAILS_ROOT + '/tmp/pids/unicorn.pid.oldbin'
+
+# if File.exists?(old_pid) && server.pid != old_pid
+
+# begin
+
+# Process.kill("QUIT", File.read(old_pid).to_i)
+
+# rescue Errno::ENOENT, Errno::ESRCH
+
+# # someone else did our job for us
+
+# end
+
+# end
+
+# end
+
+
 
 #require "redis"
 after_fork do |server, worker|
