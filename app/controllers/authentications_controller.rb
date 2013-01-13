@@ -35,10 +35,10 @@ class AuthenticationsController < Devise::OmniauthCallbacksController
       redirect_to radio_path
     elsif current_user
       authentication = Authentication.create_from_hash(current_user, omniauth)
-      redirect_to radio_path, notice: t('notifications.authentications.add_provider_success')
+      redirect_to radio_path, notice: t('notifications.add_provider_success')
     else
-      session[:omniauth] = omniauth.except("extra")
-      redirect_to new_user_registration_url, notice: t('notifications.authentications.fill_your_email')
+      session[:omniauth] = omniauth.except('extra')
+      redirect_to new_user_registration_url, notice: t('notifications.fill_your_email')
     end
   end
 

@@ -11,3 +11,31 @@
     li { margin-bottom: 10px; }
   }
 }
+
+form#new_user {
+  .control-group.boolean {
+    label { width: 5px; display: inline-block; margin-bottom: 0; }
+    p.help-block { display: inline-block; }
+  }
+}
+
+ul.authentications {
+  margin-left: 20px;
+  li.media {
+    a {
+      width: 60px;
+      height: 32px;
+      display: block;
+      padding-left: 50px;
+      background-repeat: no-repeat;
+      line-height: 32px;
+
+      &.weibo {
+        background-image: image-url("icons/sina_weibo_32x32.png");
+      }
+      &.qq_connect {
+        background-image: image-url("icons/qq_weibo_32x32.png");
+      }
+    }
+  }
+}

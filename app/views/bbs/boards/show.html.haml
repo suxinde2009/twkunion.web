@@ -19,21 +19,22 @@
           = resource.name
         %li.last
           %span.badge.badge-inverse
-            200篇帖子
+            #{resource.bbs_posts_count}篇帖子
 
       %ul.media-list
-        - 10.times do
+        - @posts.each do |post|
+          - path = bbs_board_post_path(resource, post)
           %li.media.topic
-            = link_to '#', class: 'pull-left' do
+            = link_to path, class: 'pull-left' do
               %img.media-object{ data: { src: 'holder.js/48x48' } }
             .media-body
               %h4.media-heading
-                = link_to '这个游戏怎么玩啊，装备打起来好难啊。。。'
+                = link_to post.title.truncate(30), path
               %ul.state-bar.clearfix
                 %li= link_to t('views.layout.comments', count: 100).html_safe, '#'
                 %li= link_to t('views.layout.likes', count: 30).html_safe, '#'
 
-              %p.meta
+              %p.meta.muted
                 = link_to '西唯-Jerry', '#'
                 发布于
                 3小时前

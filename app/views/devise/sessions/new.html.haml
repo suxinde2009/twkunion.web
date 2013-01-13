@@ -6,10 +6,10 @@
           新用户注册
           %small 只需要轻松输入信息，便可以成为吞迷
 
-      = simple_form_for resource, as: resource_name, url: session_path(resource_name), validate: true, html: { class: 'form-horizontal' } do |f|
+      = simple_form_for resource, as: resource_name, url: session_path(resource_name), validate: true, html: { class: 'form-horizontal', autocomplete: :off } do |f|
         = f.input :email, autofocus: true, validate: { presence: true, uniqueness: false }
         = f.input :password, validate: { confirmation: false, presence: true }
-        = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
+        = f.input :remember_me, as: :boolean, label: false, hint: '记住我的登录信息'
 
         .form-actions
           = f.button :submit, '吞迷登录', class: 'btn btn-success btn-large'

@@ -23,7 +23,7 @@
 
       = simple_form_for resource, url: collection_path, validate: true, html: { class: 'form-horizontal' } do | f|
         = f.input :title, input_html: { class: 'span8' }
-        = f.input :content, as: :text
+        = f.input :content, as: :kindeditor, input_html: { simple_mode: true }
         .form-actions
           = f.button :submit, '保存并发布', class: 'btn btn-success btn-large'
           = link_to '取消', bbs_board_path(parent), class: 'btn btn-large'
@@ -46,14 +46,3 @@
           %li.media.notifications
             %p.muted 您有一篇文章被回复了
             %p.muted 您有一篇文章被回复了
-
-- content_for :js do
-  :coffeescript
-    $ ->
-      editor = undefined
-      KindEditor.ready (K) ->
-        editor = K.create("textarea",
-          height: 400
-          width: 620
-          items: ["undo", "redo", "preview", "print", "template", "|", "justifyleft", "justifycenter", "justifyright", "justifyfull", "insertorderedlist", "insertunorderedlist", "indent", "outdent", "subscript", "formatblock", "fontname", "fontsize", "|", "forecolor", "hilitecolor", "bold", "italic", "underline", "strikethrough", "lineheight", "removeformat", "|", "image", "table", "hr", "emoticons", "baidumap", "pagebreak", "anchor", "link", "unlink", "|"]
-        )

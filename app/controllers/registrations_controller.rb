@@ -25,6 +25,7 @@ class RegistrationsController < Devise::RegistrationsController
     end
   end
 
+
   protected
 
   # Build a devise resource passing in the session. Useful to move
@@ -35,9 +36,6 @@ class RegistrationsController < Devise::RegistrationsController
 
     if omniauth
       self.resource.confirmed_at = Time.zone.now
-    end
-
-    if omniauth
       self.resource.authentications.build(
         {
           provider: omniauth.provider,

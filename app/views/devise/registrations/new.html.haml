@@ -4,6 +4,7 @@
       .page-header
         %h1
           新用户注册
+          = resource.authentications.inspect
           %small 只需要轻松输入信息，便可以成为吞迷
 
       = simple_form_for resource, as: resource_name, url: registration_path(resource_name), validate: true, html: { class: 'form-horizontal', autocomplete: :off } do |f|

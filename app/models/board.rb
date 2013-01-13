@@ -9,7 +9,7 @@ class Board
   field :ancestry
   field :logo
   field :description
-  field :bbs_topics_count, type: Integer, default: 0
+  field :bbs_posts_count, type: Integer, default: 0
   
   validates :name, presence: true, uniqueness: true
   validates :logo, presence: true

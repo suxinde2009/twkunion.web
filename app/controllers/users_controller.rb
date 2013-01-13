@@ -4,8 +4,6 @@ class UsersController < InheritedResources::Base
 
   def update
     update! do |format|
-      logger.info "@@@@@@@@@@@"*20
-      logger.info resource.errors.full_messages
       format.html { redirect_to :back, notice: t('notifications.profile_updated')
     }
    end

@@ -3,19 +3,18 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.11'
 
 # mongo support
-gem 'mongoid',    '3.0.15'
-gem 'mongoid_auto_increment_id', '0.5.0'
+gem 'mongoid',    '3.0.17'
+gem 'mongoid_auto_increment'
 gem 'bson_ext',   '1.8.0'
 gem 'rack', '1.4.1'
 
 # Core functions
 gem 'devise',               '~> 2.2.1'
-# gem 'devise', github: 'plataformatec/devise'
 # gem 'devise_invitable',     '~> 1.0.2'
 gem 'simple_form',          '~> 2.0.4'
 gem 'inherited_resources',  '~> 1.3.1'
 gem 'kaminari',             '~> 0.14.1'
-gem 'nested_form',          '~> 0.3.1'
+# gem 'nested_form',          '~> 0.3.1'
 gem 'symbolize',            '~> 4.2.0', require: 'symbolize/mongoid'
 gem 'mongoid-ancestry',     '~> 0.3.0'
 gem 'rails_config'
@@ -54,7 +53,7 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'activeadmin-mongoid', github: 'simplybusiness/activeadmin-mongoid', branch: 'filter_support'
 
 # Rich text support
-gem 'rails_kindeditor', github: 'jerryshen/rails_kindeditor'
+gem 'rails_kindeditor', '~> 0.3.10'
 
 # uploadify support
 # gem 'swf_fu', '~> 2.0'

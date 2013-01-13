@@ -1,6 +1,7 @@
 class User
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Concerns::SocialConnection
   
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
@@ -62,6 +63,9 @@ class User
   ## Token authenticatable
   field :authentication_token
 
+  # Since we don't have username, so we will display uid in the url, just like twkunion.com/u/2012
+  auto_increment :uid, seed: 2012
+
   attr_accessible :email,
                   :name,
                   :password,
@@ -119,6 +123,30 @@ class User
       uid:          omniauth.uid.to_s,
       access_token: omniauth.credentials.token
     )
+  end
+
+  def update_with_password(params={})
+    current_password = params.delete(:current_password) if !params[:current_password].blank?
+
+    if params[:password].blank?
+      params.delete(:password)
+      params.delete(:password_confirmation) if params[:password_confirmation].blank?
+    end
+
+    result = if has_no_password?  || valid_password?(current_password)
+      update_attributes(params) 
+    else
+      self.errors.add(:current_password, current_password.blank? ? :blank : :invalid)
+      self.attributes = params
+      false
+    end
+
+    clean_up_passwords
+    result
+  end
+
+  def has_no_password?
+    self.encrypted_password.blank?
   end
 
   def remember_value
