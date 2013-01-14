@@ -10,7 +10,7 @@
   .span9
     %section#bbs-boards
       .board
-        - @main_boards.each do |root|
+        - collection.roots.each do |root|
           .page-header
             %h1
               %i.icon-list
@@ -20,7 +20,7 @@
             - root.children.each do |child|
               %li
                 .thumbnail
-                  = link_to bbs_board_path(child) do
+                  = link_to bbs_board_posts_path(child) do
                     %img{:alt => "", "data-src" => "holder.js/300x150"}
                   .caption
                     %h3= link_to child.name, bbs_board_path(child)

@@ -25,13 +25,15 @@ Twkunion::Application.routes.draw do
   end
   
   namespace :bbs do
-    root :to => 'home#index'
+    root :to => 'boards#index'
 
     resources :boards, only: [:show] do
       resources :posts do
         resources :replies
       end
     end
+
+    get 'boards/:board_id' => 'posts#index', as: :board_posts
   end
 
   get 'bbs_home' => 'pages#bbs_home'

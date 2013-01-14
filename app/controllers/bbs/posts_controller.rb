@@ -1,9 +1,8 @@
 class Bbs::PostsController < Bbs::BaseController
-  defaults resource_class: BbsPost, collection_name: 'bbs_posts', instance_name: 'bbs_post'
-
   before_filter :authenticate_user!, only: [:new, :create]
 
-  belongs_to :board
+  defaults resource_class: BbsPost, collection_name: 'bbs_posts', instance_name: 'bbs_post'
+  belongs_to :board, finder: :find_by_sid, param: :board_id
 
   actions :index, :show, :new, :create
 
@@ -13,5 +12,4 @@ class Bbs::PostsController < Bbs::BaseController
 
     create! { resource_path }
   end
-
 end

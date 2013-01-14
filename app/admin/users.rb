@@ -2,11 +2,12 @@
 ActiveAdmin.register User do
   menu label: '用户', priority: 1
 
-  filter :username, as: :string
+  filter :name, as: :string
+  filter :email, as: :string
 
   index do
-    column :id
-    column :username
+    column :uid
+    column :name
     column :email
     column :confirmed_at
 

@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 p 'create admin user'
-admin = User.new(email: 'admin@twkunion.com', username: 'admin', password: 'password', name: '吞噬管理员')
+admin = User.new(email: 'admin@twkunion.com', username: 'admin', password: 'admin2012', name: '吞噬管理员')
 admin.confirm!
 
 admin.mark_as_admin!
@@ -34,12 +34,6 @@ board.children.create(
   name: '玩家交流',
   logo: '/assets/examples/02.jpg',
   description: '其他吞食游戏的提问,交流,心得,攻略'
-)
-
-board.children.create(
-  name: 'children',
-  logo: '/assets/examples/02.jpg',
-  description: '与吞食有关的音乐,图片,文字策划,配音,等素材的分享'
 )
 
 board = Board.create(name: '周边相关', description: '周边相关', logo: '/assets/examples/02.jpg')

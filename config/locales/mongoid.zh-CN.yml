@@ -68,6 +68,7 @@ zh-CN:
         admin_id: 版主
         bbs_posts_count: 帖子数量
         depth: 目录层次
+        sid: 序号
       bbs_post:
         title: 标题
         content: 内容

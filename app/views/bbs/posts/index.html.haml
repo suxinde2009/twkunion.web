@@ -13,16 +13,16 @@
           = link_to '社区', bbs_root_path
           %span.divider /
         %li
-          = link_to resource.parent.name, bbs_root_path
+          = link_to parent.parent.name, bbs_root_path
           %span.divider /
         %li.active
-          = resource.name
+          = parent.name
         %li.last
           %span.badge.badge-inverse
-            #{resource.bbs_posts_count}篇帖子
+            #{parent.bbs_posts_count}篇帖子
 
       %ul.media-list
-        - @posts.each do |post|
+        - collection.each do |post|
           - path = bbs_board_post_path(resource, post)
           %li.media.topic
             = link_to path, class: 'pull-left' do
@@ -43,7 +43,7 @@
                 = link_to '你奶奶的爷爷', '#'
 
   .span3
-    = link_to t('views.layout.add_new_post').html_safe, new_bbs_board_post_path(resource), class: 'btn btn-primary btn-large', id: 'add-new-post'
+    = link_to t('views.layout.add_new_post').html_safe, new_bbs_board_post_path(parent), class: 'btn btn-primary btn-large', id: 'add-new-post'
 
     - if user_signed_in?
       .box
