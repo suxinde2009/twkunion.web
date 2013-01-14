@@ -10,6 +10,7 @@
           %span.divider /
         %li
           = link_to resource.board.name, bbs_board_path(resource.board)
+          %span.divider /
         %li.active
           浏览帖子
       .page-header.post-header.clearfix
@@ -48,20 +49,9 @@
               %p 这个帖子不错，顶一下。
     %section#post-form
       = simple_form_for resource.replies.build, url: bbs_board_post_replies_path(parent, resource), html: { class: 'form-horizontal' }, validate: true, remote: true do |f|
-        = f.input :content, as: :text, label: false
+        = f.input :content, as: :kindeditor, label: false, input_html: { simple_mode: true, height: 150 }
         .form-actions
           = f.button :submit, '回复', class: 'btn btn-success btn-large'
 
 
   = render 'sidebar'
-
-- content_for :js do
-  :coffeescript
-    $ ->
-      editor = undefined
-      KindEditor.ready (K) ->
-        editor = K.create("textarea",
-          height: 200
-          width: 600
-          items: ["undo", "redo", "preview", "|", "justifyleft", "justifycenter", "justifyright", "justifyfull", "insertorderedlist", "insertunorderedlist", "indent", "outdent", "subscript", "formatblock", "fontname", "fontsize", "|", "forecolor", "hilitecolor", "bold", "italic", "underline", "strikethrough", "lineheight", "removeformat", "|", "image", "table", "hr", "emoticons", "baidumap", "pagebreak", "anchor", "link", "unlink", "|"]
-        )

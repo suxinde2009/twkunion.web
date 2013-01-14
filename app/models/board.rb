@@ -6,12 +6,13 @@ class Board
   has_ancestry
 
   field :name
+  field :code
   field :ancestry
   field :logo
   field :description
   field :bbs_posts_count, type: Integer, default: 0
   
-  validates :name, presence: true, uniqueness: true
+  validates :name, :code, presence: true, uniqueness: true
   validates :logo, presence: true
 
   # Relations

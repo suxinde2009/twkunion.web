@@ -47,7 +47,7 @@ ActiveAdmin.register Board do
       row :logo do
         image_tag board.logo
       end
-      row :bbs_topics_count
+      row :bbs_posts_count
     end
   end
 end
