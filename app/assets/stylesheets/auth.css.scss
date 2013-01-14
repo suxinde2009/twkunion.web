@@ -12,6 +12,10 @@
   }
 }
 
+.row#settings {
+  section { padding-top: 10px; }
+}
+
 form#new_user {
   .control-group.boolean {
     label { width: 5px; display: inline-block; margin-bottom: 0; }
@@ -19,23 +23,35 @@ form#new_user {
   }
 }
 
-ul.authentications {
+ul.social-connections {
   margin-left: 20px;
   li.media {
     a {
       width: 60px;
-      height: 32px;
+      height: 36px;
       display: block;
       padding-left: 50px;
       background-repeat: no-repeat;
       line-height: 32px;
-
-      &.weibo {
-        background-image: image-url("icons/sina_weibo_32x32.png");
-      }
-      &.qq_connect {
-        background-image: image-url("icons/qq_weibo_32x32.png");
-      }
     }
+  }
+}
+
+.box {
+  ul.social-connections {
+    margin: 0;
+    li a {
+      &.weibo { background-position: -10px -238px; }
+      &.qq_connect { background-position: -70px -240px; }
+      &.douban { background-position: -132px -238px; }
+    }
+  }
+}
+
+ul.media-list.social-connections {
+  li {
+    &.weibo { background-position: -10px -238px; }
+    &.qq_connect { background-position: -70px -240px; }
+    &.douban { background-position: -132px -238px; }
   }
 }

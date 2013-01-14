@@ -28,4 +28,11 @@ zh-CN:
         edit:
           name: 请输入昵称...
           bio: 请输入个性签名...
+      feedback:
+        new:
+          title: Email或者QQ
+    labels:
+      feedback:
+        new:
+          body: 请猛烈的批评我们吧！
 

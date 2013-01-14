@@ -40,6 +40,15 @@ ul.media-list {
   }
 }
 
-ul.bs-docs-social-buttons {
-  a.auth img { margin-top: -20px; }
+.bs-docs-social {
+  .span8 {
+    p { line-height: 20px; text-align: left; margin: 0; }
+  }
+  .span4 {
+    h3 {
+      float: left;
+      line-height: 40px;
+      margin: 0;
+    }
+  }
 }

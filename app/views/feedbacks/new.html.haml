@@ -1,0 +1,9 @@
+%section#feedback
+  .span4
+    %h3 常见问题
+  .span5
+    = simple_form_for resource, html: { class: '' } do |f|
+      = f.input :body, as: :text, input_html: { class: 'span5', rows: 10 }
+      = f.input :title, input_html: { class: 'span5' }, label: false
+      .form-actions
+        = f.button :submit, value: '提交', class: 'btn btn-large'

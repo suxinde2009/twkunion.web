@@ -14,7 +14,7 @@ class User
           :validatable,
           :confirmable,
           :token_authenticatable,
-          :omniauthable, omniauth_providers: [:weibo, :qq_connect]
+          :omniauthable, omniauth_providers: [:weibo, :qq_connect, :douban]
 
   ## Database authenticatable
   field :email

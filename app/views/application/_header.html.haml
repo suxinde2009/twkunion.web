@@ -38,6 +38,7 @@
                 %li= link_to '第三方账户绑定', authentications_path
                 %li= link_to '邀请好友', '#'
                 %li.divider
+                %li= link_to '回馈', new_feedback_path, rel: 'feedback', data: { :'fancybox-type' => 'ajax' }
                 %li= link_to '登出', destroy_user_session_path, method: :delete
           - else
             %li= link_to t('views.layout.sign_up').html_safe, new_user_registration_path, class: 'signup'

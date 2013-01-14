@@ -20,7 +20,7 @@ section { padding-top: 0; }
   &.home {
     background-image: image-url("jumbotron/banner_home.png");
     background-repeat: none;
-    padding: 180px 0 0;
+    padding: 235px 0 0;
 
     p { text-align: left; margin-left: 160px; margin-bottom: 5px; }
   }
@@ -54,4 +54,28 @@ section { padding-top: 0; }
   margin-top: 20px;
   margin-bottom: 0;
   text-align: center;
+}
+
+ul.social-connections {
+  margin-bottom: 0;
+  li {
+    display: inline-block;
+    border-left: 1px solid #e0e0e0;
+    padding: 0 5px;
+    &:first-child { border-left: none; }
+    a {
+      background-image: image-url("sns-sprites.png");
+      width: 40px;
+      height: 36px;
+      display: block;
+      font-size: 0;
+
+      &.weibo { background-position: -10px -188px; }
+      &.weibo:hover { background-position: -10px -238px; }
+      &.qq_connect { background-position: -70px -190px; }
+      &.qq_connect:hover { background-position: -70px -240px; }
+      &.douban { background-position: -132px -188px; }
+      &.douban:hover { background-position: -132px -238px; }
+    }
+  }
 }

@@ -18,6 +18,8 @@ Twkunion::Application.routes.draw do
     resources :topic_downloads, path: :downloads
   end
 
+  resources :feedbacks, only: [:new, :create]
+
   scope '/my' do
     get 'notificaitons' => 'users#notifications', as: :notifications
     get ':type/edit' => 'users#edit', as: :settings

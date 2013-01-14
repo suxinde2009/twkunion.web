@@ -11,9 +11,11 @@
  *= require bootstrap
  *= require bootstrap-responsive
  *= require lib/nivo-slider
+ *= require lib/jquery.fancybox
  *= require docs
  *= require global
  *= require home
  *= require auth
  *= require bbs
+ *= require popup
  */

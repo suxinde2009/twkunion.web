@@ -1,7 +1,7 @@
 module Concerns::SocialConnection
   extend ActiveSupport::Concern
 
-  CONNECTIONS = %w(weibo qq_connect)
+  CONNECTIONS = %w(weibo qq_connect douban)
 
   CONNECTIONS.each do |method|
     define_method(method) { authentications.where(provider: method).first }

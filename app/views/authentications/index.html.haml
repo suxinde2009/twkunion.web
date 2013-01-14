@@ -7,11 +7,11 @@
           %small 这里需要添加一些文案，大家使劲想
       = render '/application/tabs/settings'
       
-      %ul.media-list.authentications
+      %ul.media-list.social-connections
         - User.omniauth_providers.each do |provider|
-          %li.media
+          %li.media{ class: provider }
             - if current_user.authenticated_with?(provider)
-              = link_to '取消绑定', authentication_path(current_user.send(provider)), method: :delete, confirm: '您确定要删除吗?', class: provider
+              = link_to '取消绑定', authentication_path(current_user.send(provider)), method: :delete, confirm: '您确定要删除吗?'
             - else
               = link_to '我要绑定', "/users/auth/#{provider}", class: provider
   .span3

@@ -80,3 +80,7 @@ end
 AssetPhoto.blueprint do
   # Attributes here
 end
+
+Feedback.blueprint do
+  # Attributes here
+end
