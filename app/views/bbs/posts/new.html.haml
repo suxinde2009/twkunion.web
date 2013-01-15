@@ -22,7 +22,7 @@
         = f.input :content, as: :kindeditor, input_html: { simple_mode: true }
         .form-actions
           = f.button :submit, '保存并发布', class: 'btn btn-success btn-large'
-          = link_to '取消', bbs_board_path(parent), class: 'btn btn-large'
+          = link_to '取消', bbs_board_posts_path(parent), class: 'btn btn-large'
   .span3
     .box
       - if user_signed_in?
