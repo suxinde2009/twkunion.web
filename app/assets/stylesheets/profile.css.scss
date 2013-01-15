@@ -1,0 +1,53 @@
+.jumbotron.profile {
+  padding: 40px 0 20px 0;
+  text-align: left;
+  background: white image-url("spacer-bg.png") repeat-x 0 bottom;
+
+  .span8 {
+    a.user-avatar {
+      float: left;
+    }
+
+    .head-line {
+      display: inline-block;
+      margin-left: 10px;
+      h1 {
+        color: #424242;
+        font-size: 28px;
+      }
+      p { margin: 0; padding-top: 20px; }
+    }
+  }
+  .span4 {
+    padding-top: 20px;
+    text-align: right;
+
+    p {
+      margin: 0;
+      line-height: 30px;
+      a { color: #F7002F; }
+    }
+    ul.social-authentications {
+      li { float: right; margin-left: 10px; }
+      li a {
+        width: 24px;
+        height: 24px;
+        display: block;
+        font-size: 0;
+        background-image: image-url("sns-sprites.png");
+
+        &.weibo { background-position: 0 -30px; }
+        &.weibo.disabled { background-position: 0 0; }
+        &.qq_connect { background-position: -88px -30px; }
+        &.qq_connect.disabled { background-position: -88px 0; }
+        &.douban { background-position: -58px -30px;  }
+        &.douban.disabled { background-position: -58px 0;  }
+      }
+    }
+  }
+}
+
+.bs-docs-social.profile {
+  border-top: none;
+  p { font-size: 18px; line-height: 20px; margin: 0; padding: 10px 0; }
+}

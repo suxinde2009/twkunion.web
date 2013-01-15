@@ -19,6 +19,7 @@ section {
             border-top: 1px dashed #eee;
 
             li {
+              &.rate { width: 175px; }
               float: left;
               line-height: 25px;
               margin-bottom: 0;

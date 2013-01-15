@@ -17,6 +17,8 @@ class UsersController < InheritedResources::Base
   def resource
     if params.key?(:id)
       super
+    elsif params.key?(:uid)
+      end_of_association_chain.find_by_uid(params[:uid])
     else
       current_user
     end

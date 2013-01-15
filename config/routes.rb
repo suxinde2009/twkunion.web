@@ -25,6 +25,12 @@ Twkunion::Application.routes.draw do
     get ':type/edit' => 'users#edit', as: :settings
     put 'profile/update' => 'users#update', as: :users
   end
+
+  resources :users
+
+  scope '/u' do
+    get ':uid' => 'users#show', as: :user
+  end
   
   namespace :bbs do
     root :to => 'boards#index'

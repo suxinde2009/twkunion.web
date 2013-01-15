@@ -17,5 +17,6 @@
  *= require home
  *= require auth
  *= require bbs
+ *= require profile
  *= require popup
  */

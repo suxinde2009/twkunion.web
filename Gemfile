@@ -50,7 +50,7 @@ gem 'social-share-button', '0.0.3'
 
 # Admin support
 gem 'activeadmin', github: 'gregbell/active_admin'
-gem 'activeadmin-mongoid', github: 'simplybusiness/activeadmin-mongoid', branch: 'filter_support'
+gem 'activeadmin-mongoid', github: 'jerryshen/activeadmin-mongoid', branch: 'filter_support'
 
 # Rich text support
 gem 'rails_kindeditor', '~> 0.3.10'

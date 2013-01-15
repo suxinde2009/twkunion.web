@@ -166,4 +166,10 @@ class User
       update_attribute(:is_admin, method == 'admin' ? true : false)
     }
   end
+
+  class << self
+    def find_by_uid(uid)
+      find_by(uid: uid)
+    end
+  end
 end

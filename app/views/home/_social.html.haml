@@ -6,7 +6,7 @@
         %p 马上成为正版吞迷
       .span4.clearfix
         - if user_signed_in?
-          = link_to t('views.layout.my_profile').html_safe, '#', class: 'btn btn-large'
+          = link_to t('views.layout.my_profile').html_safe, user_path(uid: current_user.uid), class: 'btn btn-large'
         - else
           %h3 用以下帐号登录：
           %ul.social-connections

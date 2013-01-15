@@ -1,0 +1,35 @@
+- content_for :jumbotron do
+  .jumbotron.masthead.profile
+    .container
+      .row
+        .span8.clearfix
+          = link_to user_path(uid: resource.uid), class: 'user-avatar' do
+            %img{ data: { src: 'holder.js/80x80' } }
+          .head-line
+            %h1
+              = current_user.name
+              的吞食天地
+            %p
+              = l current_user.confirmed_at, format: :cool
+              加入吞迷
+        .span4
+          - if resource == current_user
+            %p
+              = link_to '连接到社交网站', '#'
+              ，你可以获得更多的粉丝哦
+            %ul.social-authentications.cleafix
+              - User.omniauth_providers.reverse.each do |provider|
+                - if resource.authenticated_with?(provider)
+                  %li= link_to provider, '#', class: provider, title: t("views.auth.#{provider}")
+                - else
+                  %li= link_to provider, '#', class: "#{provider} disabled", title: t("views.auth.#{provider}")
+          - else
+            %p 喜欢他/她，就了解他/她更多吧
+            %ul.social-authentications.cleafix
+              - resource.authentications.each do |auth|
+                %li= link_to auth.provider, '#', class: auth.provider, title: t("views.auth.#{auth.provider}")
+  .bs-docs-social.profile
+    .container
+      .row 
+        .span12
+          %p 这家伙在社区里面很懒，从没发布或者参与过话题
