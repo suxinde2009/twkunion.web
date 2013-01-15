@@ -2,6 +2,7 @@
   padding: 40px 0 20px 0;
   text-align: left;
   background: white image-url("spacer-bg.png") repeat-x 0 bottom;
+  text-shadow: none;
 
   .span8 {
     a.user-avatar {
@@ -13,9 +14,31 @@
       margin-left: 10px;
       h1 {
         color: #424242;
-        font-size: 28px;
+        font-size: 22px;
       }
-      p { margin: 0; padding-top: 20px; }
+      // p { margin: 0; padding-top: 20px; }
+      ul.nav.nav-pills {
+        margin: 13px 0 0 0;
+        li {
+          margin-right: 5px;
+          a {
+            color: #424242;
+            padding: 3px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 0;
+            -webkit-border-radius: 0;
+               -moz-border-radius: 0;
+                    border-radius: 0;
+          }
+          &.active a, &:hover a {
+            background-color: white;
+            color: #F7002F;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #F7002F;
+          }
+        }
+      }
     }
   }
   .span4 {

@@ -35,7 +35,7 @@ Twkunion::Application.routes.draw do
   namespace :bbs do
     root :to => 'boards#index'
 
-    resources :boards, only: [:show] do
+    resources :boards, only: :index do
       resources :posts do
         resources :replies
       end

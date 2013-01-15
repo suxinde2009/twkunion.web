@@ -10,7 +10,7 @@ zh-CN:
       comments: <i class='icon-comment'></i> %{count}个回复
       likes: <i class='icon-thumbs-up'></i> %{count}次赞
       add_new_post: <i class='icon-pencil icon-white'></i> 发布新话题
-      my_profile: 我的主页 <i class='icon-arrow-right'></i>
+      my_profile: 我的吞食天地 <i class='icon-arrow-right'></i>
     bbs:
       follow_btn: <i class='icon-heart icon-white'></i>
       like: <i class='icon-heart'></i> 喜欢

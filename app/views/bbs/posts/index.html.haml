@@ -1,9 +1,5 @@
 - content_for :jumbotron do
   .jumbotron.masthead.home
-    .container
-      %p
-        在论坛您可以和玩家进行交流，晒自己的极品装备
-        = link_to '马上成为吞迷', new_user_registration_path, class: 'btn btn-primary'
 
 .row
   .span9
@@ -43,7 +39,7 @@
                 = link_to '你奶奶的爷爷', '#'
 
   .span3
-    = link_to t('views.layout.add_new_post').html_safe, new_bbs_board_post_path(parent), class: 'btn btn-primary btn-large', id: 'add-new-post'
+    = link_to '发布新话题', new_bbs_board_post_path(parent), class: 'add-post-btn', id: 'add-new-post'
 
     - if user_signed_in?
       .box

@@ -63,6 +63,8 @@ class User
   ## Token authenticatable
   field :authentication_token
 
+  field :bbs_posts_count, type: Integer, default: 0
+
   # Since we don't have username, so we will display uid in the url, just like twkunion.com/u/2012
   auto_increment :uid, seed: 2012
 

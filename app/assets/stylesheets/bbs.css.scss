@@ -1,8 +1,4 @@
 .span3 {
-  a#add-new-post {
-    padding: 11px 55px;
-    margin-bottom: 15px;
-  }
 
   ul.media-list {
     li.notifications {
@@ -169,5 +165,18 @@ section#post-form {
     .controls {
       margin-left: 0;
     }
+  }
+}
+
+a.add-post-btn {
+  padding: 0;
+  width: 220px;
+  height: 47px;
+  display: block;
+  font-size: 0;
+  margin-bottom: 15px;
+  background-image: image-url("add-post-btn.png");
+  &:hover {
+    background-image: image-url("add-post-btn-hover.png")
   }
 }

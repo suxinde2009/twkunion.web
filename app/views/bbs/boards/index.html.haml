@@ -1,9 +1,5 @@
 - content_for :jumbotron do
   .jumbotron.masthead.home
-    .container
-      %p
-        在论坛您可以和玩家进行交流，晒自己的极品装备
-        = link_to '马上成为吞迷', new_user_registration_path, class: 'btn btn-primary'
 
 
 .row
@@ -23,7 +19,7 @@
                   = link_to bbs_board_posts_path(child) do
                     %img{:alt => "", "data-src" => "holder.js/300x150"}
                   .caption
-                    %h3= link_to child.name, bbs_board_path(child)
+                    %h3= link_to child.name, bbs_board_posts_path(child)
                     %p.desc= child.description
                     %ul.state_bar.clearfix
                       %li
@@ -40,5 +36,5 @@
                         回复：
                         %span= child.total_replies_count
                         个
-                      %li= link_to t('views.layout.topic_detail').html_safe, bbs_board_path(child)
+                      %li= link_to t('views.layout.topic_detail').html_safe, bbs_board_posts_path(child)
   = render 'sidebar'

@@ -1,5 +1,6 @@
 class BbsPost < Post
   include Mongoid::Symbolize
+  include Mongoid::MagicCounterCache
 
   STICKY_TYPES = [:global, :main_board, :child_board]
 
@@ -11,7 +12,11 @@ class BbsPost < Post
   has_many :replies
   
   belongs_to :board
+  belongs_to :user
   belongs_to :last_replied_by, class_name: 'User'
+
+  counter_cache :user, field: 'bbs_posts'
+  counter_cache :board, field: 'bbs_posts'
 
   symbolize :sticky, in: STICKY_TYPES, scopes: true, methods: true, validates: false, allow_blank: true
 
