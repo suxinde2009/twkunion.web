@@ -18,12 +18,20 @@ section { padding-top: 0; }
 // different .jumbotron background image for each page
 .jumbotron {
   &.home {
-    background-image: image-url("jumbotron/banner_home.png");
-    background-repeat: none;
-    padding: 235px 0 0;
-
-    p { text-align: left; margin-left: 160px; margin-bottom: 5px; }
+    // background-image: image-url("jumbotron/banner-home.jpg");
+    // background-repeat: none;
+    background: image-url("jumbotron/banner-home.jpg") center center no-repeat;
+    padding: 212px 0 0;
+    margin: 0 auto;
   }
+
+  &.bbs {
+    background: image-url("jumbotron/banner-bbs.jpg") center center no-repeat;
+    background-repeat: none;
+    padding: 212px 0 0;
+  }
+
+  p { text-align: left; margin-left: 160px; margin-bottom: 5px; }
 }
 
 .navbar .nav.pull-right > li > a {

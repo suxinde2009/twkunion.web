@@ -12,4 +12,10 @@ class Bbs::PostsController < Bbs::BaseController
 
     create! { resource_path }
   end
+
+  protected
+
+  def resource
+    @bbs_post ||= end_of_association_chain.find_by_sid(params[:id])  
+  end
 end

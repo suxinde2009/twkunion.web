@@ -20,6 +20,7 @@ gem 'mongoid-ancestry',     '~> 0.3.0'
 gem 'rails_config'
 
 gem 'cells', '~> 3.8.6'
+gem 'social_share_hub'
 
 # gem 'carrierwave', '~> 0.6.0'
 gem 'carrierwave-mongoid', github: 'jnicklas/carrierwave-mongoid', require: 'carrierwave/mongoid', branch: 'mongoid-3.0'

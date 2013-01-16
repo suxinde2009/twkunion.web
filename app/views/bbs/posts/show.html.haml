@@ -9,7 +9,7 @@
           = link_to resource.board.parent.name, bbs_root_path
           %span.divider /
         %li
-          = link_to resource.board.name, bbs_board_path(resource.board)
+          = link_to resource.board.name, bbs_board_posts_path(resource.board)
           %span.divider /
         %li.active
           浏览帖子
@@ -32,9 +32,9 @@
         %p= raw resource.content
     %section#comments.bs-docs-example
       .page-header.comments-list-header
-        %p 共收到100条回复
+        %p= replies_count(resource)
       %ul.media-list.comments-list
-        - 10.times do
+        - resource.replies.page(params[:page]).each do |reply|
           %li.media
             = link_to '#', class: 'pull-left' do
               %img{ alt: '', data: { src: 'holder.js/48x48' } }

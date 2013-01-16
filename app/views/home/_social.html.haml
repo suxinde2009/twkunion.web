@@ -2,8 +2,8 @@
   .container
     .row 
       .span8
-        %p 这里需要一些文案啦。。。。大家多努力想想啊。。。不然不知道放什么啊。。。
-        %p 马上成为正版吞迷
+        %p.poem 那些曾经身临其境的经典，又怎么能这么容易就忘却。
+        %p.poem.last 那些不曾忘却的佳作，重拾起来又何尝不是另外一番滋味。
       .span4.clearfix
         - if user_signed_in?
           = link_to t('views.layout.my_profile').html_safe, user_path(uid: current_user.uid), class: 'btn btn-large'

@@ -43,7 +43,10 @@ ul.media-list {
 
 .bs-docs-social {
   .span8 {
-    p { line-height: 20px; text-align: left; margin: 0; }
+    p {
+      line-height: 25px; text-align: left; margin: 0; font-size: 16px;
+      &.last { text-indent: 30px; }
+    }
   }
   .span4 {
     h3 {

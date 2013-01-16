@@ -40,8 +40,6 @@ Twkunion::Application.routes.draw do
         resources :replies
       end
     end
-
-    get 'boards/:board_id' => 'posts#index', as: :board_posts
   end
 
   get 'bbs_home' => 'pages#bbs_home'

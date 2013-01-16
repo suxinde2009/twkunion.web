@@ -19,7 +19,7 @@
 
       %ul.media-list
         - collection.each do |post|
-          - path = bbs_board_post_path(resource, post)
+          - path = bbs_board_post_path(parent, post)
           %li.media.topic
             = link_to path, class: 'pull-left' do
               %img.media-object{ data: { src: 'holder.js/48x48' } }
