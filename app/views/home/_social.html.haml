@@ -3,7 +3,7 @@
     .row 
       .span8
         %p.poem 那些曾经身临其境的经典，又怎么能这么容易就忘却。
-        %p.poem.last 那些不曾忘却的佳作，重拾起来又何尝不是另外一番滋味。
+        %p.poem.last 那些不曾忘却的佳作，重拾起来又何尝不是另外一番滋味......
       .span4.clearfix
         - if user_signed_in?
           = link_to t('views.layout.my_profile').html_safe, user_path(uid: current_user.uid), class: 'btn btn-large'
