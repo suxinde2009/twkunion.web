@@ -17,6 +17,10 @@ class Post
   delegate :name, to: :user, prefix: true
   delegate :email, to: :user, prefix: true
 
+  # scope :involved_bbs_posts, ->(user_id) {
+  #   where(:)
+  # }
+
   %w(default recommended).each do |method|
     define_method("mark_as_#{method}!") do
       update_attribute(:is_recommended, method == 'default' ? false : true )

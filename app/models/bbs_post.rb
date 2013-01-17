@@ -5,7 +5,6 @@ class BbsPost < Post
   STICKY_TYPES = [:global, :main_board, :child_board]
 
   field :last_replied_at, type: Time
-  field :last_updated_at, type: Time
   field :sticky
   field :replies_count, type: Integer, default: 0
 
@@ -15,13 +14,13 @@ class BbsPost < Post
   belongs_to :user
   belongs_to :last_replied_by, class_name: 'User'
 
-  counter_cache :user, field: 'bbs_posts'
-  counter_cache :board, field: 'bbs_posts'
+  counter_cache :user, using: 'bbs_posts'
+  counter_cache :board, using: 'bbs_posts'
 
   symbolize :sticky, in: STICKY_TYPES, scopes: true, methods: true, validates: false, allow_blank: true
 
   delegate :name, to: :board, prefix: true
-  delegate :username, to: :user, prefix: true
+  delegate :name, to: :user, prefix: true
 
   scope :default_order, desc(:updated_at)
   scope :recommend, where(is_recommend: true)

@@ -27,16 +27,18 @@
               %h4.media-heading
                 = link_to post.title.truncate(30), path
               %ul.state-bar.clearfix
-                %li= link_to t('views.layout.comments', count: 100).html_safe, '#'
+                %li= link_to t('views.layout.comments', count: post.replies_count).html_safe, '#'
                 %li= link_to t('views.layout.likes', count: 30).html_safe, '#'
 
               %p.meta.muted
-                = link_to '西唯-Jerry', '#'
-                发布于
-                3小时前
-                %span.divider-vertical
-                最后回复来自于
-                = link_to '你奶奶的爷爷', '#'
+                = link_to post.user_name, user_path(post.user)
+                = t('views.bbs.post_created_ago', ago: time_ago_in_words(post.created_at))
+                - if post.last_replied_by
+                  %span.divider-vertical
+                  = t('views.bbs.last_replied_by',  url: user_path(post.last_replied_by),
+                                                    name: post.last_replied_by.name,
+                                                    ago: time_ago_in_words(post.last_replied_at)).html_safe
+
 
   .span3
     = link_to '发布新话题', new_bbs_board_post_path(parent), class: 'add-post-btn', id: 'add-new-post'

@@ -5,7 +5,11 @@ class Reply
 
   field :content
 
+  validates :content, presence: true
+
   belongs_to :user
   belongs_to :bbs_post
-  counter_cache :bbs_post, field: 'replies'
+  counter_cache :bbs_post, using: 'replies'
+  
+  delegate :name, to: :user, prefix: true
 end

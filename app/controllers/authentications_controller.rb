@@ -27,12 +27,12 @@ class AuthenticationsController < Devise::OmniauthCallbacksController
 
   def omniauth_process
     omniauth = request.env['omniauth.auth']
-    authentication = Authentication.where(provider: omniauth.provider, uid: omniauth.uid.to_s).first
+    authentication = Authentication.where(provider: omniauth.provider, uid: omniauth.uid.to_i).first
 
     if authentication
       set_flash_message(:notice, :signed_in)
       sign_in(:user, authentication.user)
-      redirect_to radio_path
+      redirect_to user_path(current_user)
     elsif current_user
       authentication = Authentication.create_from_hash(current_user, omniauth)
       redirect_to radio_path, notice: t('notifications.add_provider_success')

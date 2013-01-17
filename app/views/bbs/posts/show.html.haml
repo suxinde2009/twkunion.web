@@ -15,43 +15,21 @@
           浏览帖子
       .page-header.post-header.clearfix
         %img{ alt: '', data: { src: 'holder.js/48x48' } }
-        %h1 吞食天地2ND游戏发生就要发布了
+        %h1= resource.title
         %p.meta.muted
-          = link_to '<span class="label">板块名称</span>'.html_safe, '#'
+          = link_to t('views.bbs.board', name: resource.board_name).html_safe, collection_path
           %span.divider-vertical
-          = link_to '西唯-Jerry', '#'
-          发布于
-          3小时前
+          = link_to resource.user_name, user_path(resource.user)
+          = t('views.bbs.post_created_ago', ago: time_ago_in_words(resource.created_at))
           %span.divider-vertical
-          最后由
-          = link_to '你奶奶的爷爷', '#'
-          于17小时前回复
-          %span.divider-vertical
+          - if resource.last_replied_by
+            = t('views.bbs.last_replied_by',  url: user_path(resource.last_replied_by),
+                                              name: resource.last_replied_by.name,
+                                              ago: time_ago_in_words(resource.last_replied_at)).html_safe
+            %span.divider-vertical
           300次浏览
       .post-body
         %p= raw resource.content
-    %section#comments.bs-docs-example
-      .page-header.comments-list-header
-        %p= replies_count(resource)
-      %ul.media-list.comments-list
-        - resource.replies.page(params[:page]).each do |reply|
-          %li.media
-            = link_to '#', class: 'pull-left' do
-              %img{ alt: '', data: { src: 'holder.js/48x48' } }
-            %ul.state-bar.clearfix
-              %li= link_to t('views.bbs.like').html_safe, '#'
-            .media-body
-              %h4.media-heading
-                西唯-Jerry
-                %small
-                  10楼
-                  20小时前
-              %p 这个帖子不错，顶一下。
-    %section#post-form
-      = simple_form_for resource.replies.build, url: bbs_board_post_replies_path(parent, resource), html: { class: 'form-horizontal' }, validate: true, remote: true do |f|
-        = f.input :content, as: :kindeditor, label: false, input_html: { simple_mode: true, height: 150 }
-        .form-actions
-          = f.button :submit, '回复', class: 'btn btn-success btn-large'
 
-
+    = render 'comments'
   = render 'sidebar'

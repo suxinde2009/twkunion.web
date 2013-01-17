@@ -73,4 +73,49 @@
 .bs-docs-social.profile {
   border-top: none;
   p { font-size: 18px; line-height: 20px; margin: 0; padding: 10px 0; }
+  ul.my-created-posts, ul.my-replied-posts {
+    text-align: left;
+    list-style: none;
+    margin-left: 0;
+    li {
+      margin-bottom: 10px;
+      background-color: white;
+      padding: 10px;
+      float: left;
+      border: 1px solid #ddd;
+      width: 440px;
+      &:hover { background-color: #efefef; }
+      h3 { line-height: 20px; margin: 0; }
+      a { color: #424242; }
+      a:hover { text-decoration: none; color: black; }
+      p { font-size: 13px; float: left; }
+      .meta {
+        p { padding: 5px 0 0 0; }
+        .counter { float: right; }
+        .counter span {
+          display: inline-block;
+          margin-right: 5px;
+          strong { display: inline-block; }
+          i.ico {
+            background-image: image-url("icos-post-counter.png");
+            width: 18px;
+            height: 16px;
+            margin: 0;
+            display: inline-block;
+            vertical-align: middle;
+          }
+          &.views-num i.ico { background-position: 0 0; }
+          &.likes-num i.ico { background-position: -24px 0; }
+          &.replies-num i.ico { background-position: -48px 0; }
+        }
+      }
+    }
+  }
+}
+
+ul.pager {
+  a {
+    color: #424242;
+    span { padding-top:2px; top: 1px; position: relative; }
+  }
 }

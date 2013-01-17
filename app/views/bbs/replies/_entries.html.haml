@@ -1,0 +1,14 @@
+%ul.media-list.comments-list
+  - replies.each do |reply|
+    %li.media
+      = link_to user_path(reply.user), class: 'pull-left' do
+        %img{ alt: '', data: { src: 'holder.js/48x48' } }
+      %ul.state-bar.clearfix
+        %li= link_to t('views.bbs.up').html_safe, '#'
+      .media-body
+        %h4.media-heading
+          = link_to reply.user_name, user_path(reply.user)
+          %small
+            10楼
+            #{ time_ago_in_words(reply.created_at) }前
+        %p= reply.content

@@ -10,8 +10,7 @@
               = current_user.name
               的吞食天地          
             %ul.nav.nav-pills
-              %li.active= link_to '我发起的话题', '#'
-              %li= link_to '我参与的话题', '#'
+              %li.active= link_to '我的话题', '#'
               %li= link_to '我的收藏', '#'
               %li= link_to '我的关注', '#'
         .span4
@@ -33,8 +32,55 @@
   .bs-docs-social.profile
     .container
       .row 
-        .span12
+        .span6
+          %h3
+            %i.icon-list
+            我发起的话题
           - if resource.bbs_posts.empty?
             %p 这家伙在社区里面很懒，从没发布或者参与过话题
           - else
-            asdf
+            %ul.my-created-posts.clearfix
+              - resource.bbs_posts.page(params[:page]).each do |post|
+                %li.cleaffix
+                  %h3= link_to post.title, bbs_board_post_path(post.board, post), title: post.title 
+                  .meta.clearfix
+                    %p.time= t('views.bbs.post_created_ago', ago: time_ago_in_words(post.created_at))
+                    .counter
+                      %span.views-num
+                        %i.ico{ title: '浏览次数' }
+                        %strong 3
+                      %span.likes-num
+                        %i.ico{ title: '喜欢次数' }
+                        %strong 6
+                      %span.replies-num
+                        %i.ico{ title: '回复条数' }
+                        %strong 9
+          %ul.pager
+            %li= link_to t('views.pager.prev').html_safe, '#'
+            %li= link_to t('views.pager.next').html_safe, '#'
+        .span6
+          %h3
+            %i.icon-list
+            我参与的话题
+          - if resource.bbs_posts.empty?
+            %p 这家伙在社区里面很懒，从没发布或者参与过话题
+          - else
+            %ul.my-replied-posts.clearfix
+              - resource.bbs_posts.page(params[:page]).each do |post|
+                %li.clearfix
+                  %h3= link_to post.title, bbs_board_post_path(post.board, post), title: post.title 
+                  .meta.clearfix
+                    %p.time= t('views.bbs.post_created_ago', ago: time_ago_in_words(post.created_at))
+                    .counter
+                      %span.views-num
+                        %i.ico{ title: '浏览次数' }
+                        %strong 3
+                      %span.likes-num
+                        %i.ico{ title: '喜欢次数' }
+                        %strong 6
+                      %span.replies-num
+                        %i.ico{ title: '回复条数' }
+                        %strong 9
+            %ul.pager
+              %li= link_to t('views.pager.prev').html_safe, '#'
+              %li= link_to t('views.pager.next').html_safe, '#'

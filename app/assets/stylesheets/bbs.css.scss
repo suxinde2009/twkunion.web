@@ -52,35 +52,73 @@ ul.state-bar {
 }
 
 #bbs-boards {
+  ul.thumbnails > li { width: 47% !important; }
+  ul.board-list {
+    .thumbnail {
+      position: relative;
+      padding: 0;
+
+      ul.state_bar {
+        list-style: none;
+        margin: 0;
+        font-size: 11px;
+
+        li {
+          display: inline-block;
+          margin-bottom: 0;
+        }
+      }
+    }
+    .cover {
+      position: absolute;
+      top: 20px;
+      left: 0;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 5px 10px;
+      width: 144px;
+
+      p { margin: 0; }
+    }
+  }
   ul.media-list {
     border-top: 1px solid #F0F0F0;
     padding-top: 10px;
     li.topic {
+      margin-bottom: 0 !important;
       border-bottom: 1px solid #F0F0F0;
       padding-bottom: 10px;
       .media-body { position: relative; }
       h4.media-heading {
         font-size: 14px;
+        line-height: 21px;
       }
+      p { margin: 0 !important; }
     }
   }
 
-  ul.state_bar {
-    li {
-      margin-right: 10px;
-      &.divider-vertical {
-        border-left: 1px solid #F2F2F2;
-        border-right: 1px solid #FFFFFF;
-        height: 24px;
-      }
-    }
-  }
+  // ul.state_bar {
+  //   li {
+  //     margin-right: 10px;
+  //     &.divider-vertical {
+  //       border-left: 1px solid #F2F2F2;
+  //       border-right: 1px solid #FFFFFF;
+  //       height: 24px;
+  //     }
+  //   }
+  // }
 
   ul.breadcrumb {
     margin-top: 15px;
     margin-bottom: 15px;
 
     li.last { float: right; }
+  }
+}
+
+.row#bbs-post {
+  ul.comments-list {
+    h4.media-heading { margin-bottom: 10px; line-height: 20px; }
   }
 }
 p.meta {
@@ -155,7 +193,7 @@ section#comments {
       &:last-child { border-bottom: none; }
 
       ul.state-bar {
-        padding: 10px;
+        padding: 5px;
       }
     }
   }

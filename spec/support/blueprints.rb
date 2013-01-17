@@ -2,9 +2,8 @@ require 'machinist/mongoid'
 
 User.blueprint do
   email     { Faker::Internet.email }
-  username  { "uname_#{sn}" }
   name      { "name_#{sn}" }
-  password  { "password" }
+  password  { "newpassword" }
   confirmed_at  { Time.zone.now }
 end
 
@@ -70,7 +69,9 @@ Topic.blueprint do
 end
 
 Reply.blueprint do
-  # Attributes here
+  user { User.all.sample }
+  content { Faker::LoremCN.paragraphs(2).join(',') }
+  bbs_post { BbsPost.all.sample }
 end
 
 Asset.blueprint do

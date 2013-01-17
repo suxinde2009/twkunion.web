@@ -1,0 +1,9 @@
+%section#comments.bs-docs-example
+  .page-header.comments-list-header
+    %p= replies_count(resource)
+  = render '/bbs/replies/entries', replies: resource.replies.page(1)
+%section#post-form
+  = simple_form_for resource.replies.build, url: bbs_board_post_replies_path(parent, resource), html: { class: 'form-horizontal' }, validate: true, remote: true do |f|
+    = f.input :content, as: :kindeditor, label: false, input_html: { simple_mode: true, height: 150 }
+    .form-actions
+      = f.button :submit, '回复', class: 'btn btn-success btn-large'

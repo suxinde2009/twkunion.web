@@ -56,3 +56,6 @@ zh-CN:
         subject: '重置密码信息'
       unlock_instructions:
         subject: '解锁信息'
+    authentications:
+      user:
+        signed_in: 欢迎回来，您已经成功通过第三方登录

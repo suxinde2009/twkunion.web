@@ -169,6 +169,10 @@ class User
     }
   end
 
+  def to_param
+    uid
+  end
+
   class << self
     def find_by_uid(uid)
       find_by(uid: uid)

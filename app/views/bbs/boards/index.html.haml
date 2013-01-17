@@ -12,29 +12,24 @@
               %i.icon-list
               = root.name
               %small= root.description
-          %ul.thumbnails
+          %ul.thumbnails.board-list
             - root.children.each do |child|
               %li
                 .thumbnail
                   = link_to bbs_board_posts_path(child) do
-                    %img{:alt => "", "data-src" => "holder.js/300x150"}
-                  .caption
-                    %h3= link_to child.name, bbs_board_posts_path(child)
+                    %img{:alt => "", "data-src" => "holder.js/360x160"}
+                  .cover
+                    %h3 【#{child.name}】
                     %p.desc= child.description
                     %ul.state_bar.clearfix
                       %li
-                        话题：
                         %span= child.bbs_posts_count
-                        个
-                      %li.divider-vertical
+                        个话题
                       %li
-                        精华：
                         %span= child.bbs_posts.recommend.count 
-                        个
-                      %li.divider-vertical
+                        个精华
                       %li
-                        回复：
                         %span= child.total_replies_count
-                        个
-                      %li= link_to t('views.layout.topic_detail').html_safe, bbs_board_posts_path(child)
+                        个回复
+                        
   = render 'sidebar'
