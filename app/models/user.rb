@@ -48,13 +48,6 @@ class User
   field :confirmation_sent_at, type: Time
   field :unconfirmed_email # Only if using reconfirmable
 
-  ## Inviteable
-  # field :invitation_token, type: String, limit: 60
-  # field :invitation_sent_at, type: String
-  # field :invitation_accepted_at, type: String
-  # field :invitation_limit, type: String
-  # field :invited_by_type, type: String
-
   ## Lockable
   # field :failed_attempts, :type => Integer, :default => 0 # Only if lock strategy is :failed_attempts
   # field :unlock_token,    :type => String # Only if unlock strategy is :email or :both

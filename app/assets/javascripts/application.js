@@ -15,3 +15,4 @@
 //= require bootstrap.min
 //= require lib
 //= require public
+//= require ui

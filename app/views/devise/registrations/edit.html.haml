@@ -5,6 +5,8 @@
 
       = simple_form_for resource, as: resource_name, url: registration_path(resource_name), validate: true, html: { method: :put, class: 'form-horizontal' } do |f|
       
+        - unless resource.has_no_password?
+          = f.input :current_password, validate: { presence: true }
         = f.input :password, validate: { presence: true }
         = f.input :password_confirmation
 

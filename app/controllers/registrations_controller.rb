@@ -25,7 +25,6 @@ class RegistrationsController < Devise::RegistrationsController
     end
   end
 
-
   protected
 
   # Build a devise resource passing in the session. Useful to move

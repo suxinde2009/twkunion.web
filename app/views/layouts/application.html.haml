@@ -22,8 +22,8 @@
   %body{ :"data-spy" => 'scroll', :"data-target" => '.bs-docs-sidebar' }
 
     = render 'header'
-    = render 'alert'
     = yield :jumbotron
+    = render 'alert'
 
     .container
       = yield

@@ -1,7 +1,6 @@
 - content_for :jumbotron do
   .jumbotron.masthead.bbs
 
-
 .row
   .span9
     %section#bbs-boards
@@ -17,7 +16,7 @@
               %li
                 .thumbnail
                   = link_to bbs_board_posts_path(child) do
-                    %img{:alt => "", "data-src" => "holder.js/360x160"}
+                    %img{:alt => "", "data-src" => "holder.js/350x200"}
                   .cover
                     %h3 【#{child.name}】
                     %p.desc= child.description

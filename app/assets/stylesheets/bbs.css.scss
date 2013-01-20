@@ -52,7 +52,7 @@ ul.state-bar {
 }
 
 #bbs-boards {
-  ul.thumbnails > li { width: 362px !important; }
+  ul.thumbnails > li { width: 350px !important; }
   ul.board-list {
     .thumbnail {
       position: relative;
@@ -71,7 +71,7 @@ ul.state-bar {
     }
     .cover {
       position: absolute;
-      top: 20px;
+      bottom: 20px;
       left: 0;
       color: white;
       background-color: rgba(0, 0, 0, 0.7);

@@ -1,8 +1,7 @@
 Twkunion::Application.routes.draw do
 
-  ActiveAdmin.routes(self)
-
   devise_for :users, controllers: {
+    sessions: :sessions,
     omniauth_callbacks: :authentications,
     registrations: :registrations
   }
@@ -44,6 +43,8 @@ Twkunion::Application.routes.draw do
 
   get 'bbs_home' => 'pages#bbs_home'
   post 'valums/create' => 'valums#create'
-  
+
+  ActiveAdmin.routes(self)
+
   root :to => 'home#index'
 end

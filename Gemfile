@@ -9,8 +9,8 @@ gem 'bson_ext',   '1.8.0'
 gem 'rack', '1.4.1'
 
 # Core functions
-gem 'devise',               '~> 2.2.1'
-# gem 'devise_invitable',     '~> 1.0.2'
+gem 'devise',               '2.2.1'
+# gem 'devise_invitable',     '~> 1.1.4'
 gem 'simple_form',          '~> 2.0.4'
 gem 'inherited_resources',  '~> 1.3.1'
 gem 'kaminari',             '~> 0.14.1'
@@ -94,7 +94,7 @@ group :development do
   gem 'mongoid_colored_logger'
   
   # speed up dev
-  gem 'rails-dev-tweaks', '~> 0.6.1'
+  # gem 'rails-dev-tweaks', '~> 0.6.1'
   
   #start server with thin
   gem 'thin'

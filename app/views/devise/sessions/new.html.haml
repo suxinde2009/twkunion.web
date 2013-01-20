@@ -6,11 +6,23 @@
           新用户注册
           %small 只需要轻松输入信息，便可以成为吞迷
 
-      = simple_form_for resource, as: resource_name, url: session_path(resource_name), validate: true, html: { class: 'form-horizontal', autocomplete: :off } do |f|
-        = f.input :email, autofocus: true, validate: { presence: true, uniqueness: false }
-        = f.input :password, validate: { confirmation: false, presence: true }
+      = simple_form_for resource, as: resource_name, url: session_path(resource_name), remote: true, html: { class: 'form-horizontal', autocomplete: :off }, validate: true do |f|
+        = f.input :email, validate: { uniqueness: false }
+        = f.input :password, validate: { confirmation: false, length: false }
         = f.input :remember_me, as: :boolean, label: false, hint: '记住我的登录信息'
 
         .form-actions
-          = f.button :submit, '吞迷登录', class: 'btn btn-success btn-large'
+          = f.button :submit, '吞迷登录', disable_wth: '登录中...', class: 'btn btn-success btn-large'
   = render '/application/sidebars/auth'
+
+:coffeescript
+  $ ->
+    $(document)
+      .on 'ajax:success', 'form', (xhr, data, status) ->
+        $('div.alert').remove()
+        $('section').html('亲，您已经登录成功......跳转中')
+        window.location = '/'
+      .on 'ajax:error', 'form', (xhr, status, error) ->
+        if $(document).find('div.alert').length == 0
+          $('body > .container').before '<div class="alert alert-error"><a class="close" data-dismiss="alert" href="#">&times;</a>' + status.responseText + '</div>'
+          fixedAlertPosition()
