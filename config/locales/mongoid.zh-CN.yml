@@ -1,7 +1,7 @@
 zh-CN:
   mongoid:
     symbolizes:
-      bbs_post:
+      post:
         sticky:
           global: 全局置顶
           main_board: 主板块置顶
@@ -14,8 +14,7 @@ zh-CN:
       topic_photo: 专题图片
       topic_download: 专题资源
       board: 论坛板块
-      bbs_post: 论坛帖子
-      asset_photo: 图片锦集
+      post: 话题
     attributes:
       user:
         email: Email
@@ -49,10 +48,21 @@ zh-CN:
         photos_count: 图片
         downloads_count: 资源下载
         posts_count: 攻略数量
+      topic_resource:
+        title: 标题
+        is_recommended: 推荐
+        sid: 序号
+        id: Mongo ID
+        topic: 专题
+        created_at: 添加时间
+        updated_at: 修改时间
+      topic_photo:
+        data: 图片
       topic_post:
         category: 分类
         author: 作者
         source: 来源
+        content: 内容 
       topic_video:
         title: 标题
         source: 来源
@@ -60,6 +70,8 @@ zh-CN:
         topic_id: 专题
         widget: 视频嵌入代码
         url: 视频源地址
+      topic_download:
+        source_url: 外链地址
       board:
         name: 名称
         admin: 版主
@@ -80,3 +92,8 @@ zh-CN:
         is_recommended: 精华
         created_at: 发布时间
         replies_count: 回复数
+        last_replied_at: 上次回复时间
+        last_replied_by: 上次回复人
+        views_count: 浏览次数
+        sticky_text: 置顶情况
+        updated_at: 更新时间

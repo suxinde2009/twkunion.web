@@ -6,6 +6,8 @@ class TopicVideo < TopicResource
   field :cover
   field :url
 
+  mount_uploader :cover, PhotoUploader
+
   validates :source, :cover, :widget, presence: true
 
   # There will be a field 'posts_count' in post attributes

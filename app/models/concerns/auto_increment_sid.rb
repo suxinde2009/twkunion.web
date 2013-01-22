@@ -10,8 +10,8 @@ module AutoIncrementSid
   def to_param
     sid
   end
-
-  class << self
+  
+  module ClassMethods
     def find_by_sid(sid)
       find_by(sid: sid)
     end

@@ -1,16 +1,26 @@
 # encoding: utf-8
 ActiveAdmin.register TopicVideo do
-  belongs_to :topic
+  belongs_to :topic, finder: :find_by_sid, param: :topic_id
   
   menu label: '专题视频'
+
+  index do
+    column :sid
+    column :title do |resource|
+      link_to resource.title.truncate(15), resource_path(resource)
+    end
+    column :source
+    column :updated_at
+
+    default_actions
+  end
 
   ## Customizing form screen for topic video
   form do |f|
     f.inputs '视频基本信息' do
       f.input :title
       f.input :source
-      f.input :cover, as: :file
-      image_tag resource.cover.url
+      f.input :cover, as: :file, hint: f.template.image_tag(f.object.cover)
       f.input :url
       f.input :widget, as: :text, input_html: { rows: 5 }
     end
@@ -34,6 +44,12 @@ ActiveAdmin.register TopicVideo do
       row :widget do
         raw video.widget
       end
+    end
+  end
+
+  controller do
+    def resource
+      @topic_video ||= parent.topic_videos.find_by_sid(params[:id])
     end
   end
 end

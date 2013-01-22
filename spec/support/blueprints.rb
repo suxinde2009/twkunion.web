@@ -44,8 +44,7 @@ TopicVideo.blueprint do
   title { Faker::LoremCN.sentence }
   source { "source_#{sn}" }
   url { Faker::Internet.http_url }
-  # cover { Pathname.glob(Rails.root.join('lib/assets/images/*')).sample.open }
-  cover { "/assets/examples/02.jpg" }
+  cover { Pathname.glob(Rails.root.join('lib/assets/images/*')).sample.open }
   widget { '<embed src="http://www.tudou.com/v/sEZiugaHS9g/&resourceId=0_05_05_99/v.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="opaque" width="480" height="400"></embed>' }
   topic { Topic.make! }
 end
