@@ -18,7 +18,7 @@ board.children.create(name: '发布专区', description: '其他吞食游戏的�
 board.children.create(name: '玩家交流', description: '其他吞食游戏的提问,交流,心得,攻略', logo: file)
 
 board = Board.create(name: '周边相关', description: '周边相关', logo: file)
-board.children.make!(name: '灌水闲聊', description: '吞迷灌水圣地', logo: file)
+board.children.create(name: '灌水闲聊', description: '吞迷灌水圣地', logo: file)
 
 board = Board.create(name: '站务', description: '站务', logo: file)
 board.children.create(name: '版务专区', description: '版务专区', logo: file)
