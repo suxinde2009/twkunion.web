@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-ActiveAdmin.register BbsPost do
+ActiveAdmin.register Post do
   menu label: '论坛帖子', priority: 5
 
   scope :all, default: true

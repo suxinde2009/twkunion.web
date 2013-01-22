@@ -24,7 +24,7 @@ TopicPost.blueprint do
   topic { Topic.make! }
 end
 
-BbsPost.blueprint do
+Post.blueprint do
   title { Faker::LoremCN.sentence }
   content { Faker::LoremCN.paragraphs(5).join('.') }
   board { Board.make! }
@@ -56,8 +56,7 @@ end
 
 Board.blueprint do
   name { Faker::LoremCN.word }
-  # logo { Pathname.glob(Rails.root.join('lib/assets/images/*')).sample.open }
-  logo { "/assets/examples/02.jpg" }
+  logo { Pathname.glob(Rails.root.join('lib/assets/images/*')).sample.open }
   description { Faker::LoremCN.paragraph }
 end
 
@@ -71,17 +70,13 @@ end
 Reply.blueprint do
   user { User.all.sample }
   content { Faker::LoremCN.paragraphs(2).join(',') }
-  bbs_post { BbsPost.all.sample }
-end
-
-Asset.blueprint do
-  # Attributes here
-end
-
-AssetPhoto.blueprint do
-  # Attributes here
+  post { Post.all.sample }
 end
 
 Feedback.blueprint do
+  # Attributes here
+end
+
+TopicResource.blueprint do
   # Attributes here
 end

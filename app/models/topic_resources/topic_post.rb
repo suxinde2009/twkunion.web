@@ -1,13 +1,15 @@
-class TopicPost < Post
+class TopicPost < TopicResource
+  include Mongoid::MagicCounterCache
 
   field :author
   field :source
   field :category, type: Integer
-  field :replies_count, type: Integer, default: 0
+  field :content
 
   validates :category, presence: true
 
-  belongs_to :topic
+  # There will be a field 'posts_count' in post attributes
+  counter_cache :topic, using: 'posts'
 
   def self.category_mappings
     categories = Settings.topic.article_categories

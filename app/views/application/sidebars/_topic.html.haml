@@ -1,0 +1,9 @@
+.page-header
+  %h1
+    精品文章
+    %small 这里放啥呢
+
+%ul.media-list
+  - posts.each do |post|
+    %li.media
+      = link_to post.title, '#'

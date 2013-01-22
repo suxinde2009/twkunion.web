@@ -6,7 +6,7 @@
         %p.poem.last 那些不曾忘却的佳作，重拾起来又何尝不是另外一番滋味......
       .span4.clearfix
         - if user_signed_in?
-          = link_to t('views.layout.my_profile').html_safe, user_path(uid: current_user.uid), class: 'btn btn-large'
+          = link_to t('views.layout.my_profile').html_safe, user_path(current_user), class: 'btn btn-large'
         - else
           %h3 用以下帐号登录：
           %ul.social-connections

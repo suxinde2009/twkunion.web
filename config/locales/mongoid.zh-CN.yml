@@ -28,6 +28,10 @@ zh-CN:
         confirmed_at: 激活时间
         avatar: 头像
         bio: 个性签名
+        current_sign_in_ip: 当前登录IP
+        last_sign_in_at: 上次登录时间
+        sign_in_count: 登录次数
+        posts_count: 话题数量
       topic:
         title: 标题
         slug: 英文标识
@@ -44,10 +48,7 @@ zh-CN:
         videos_count: 视频
         photos_count: 图片
         downloads_count: 资源下载
-      post:
-        title: 标题
-        content: 内容
-        is_recommended: 推荐
+        posts_count: 攻略数量
       topic_post:
         category: 分类
         author: 作者
@@ -69,7 +70,7 @@ zh-CN:
         bbs_posts_count: 帖子数量
         depth: 目录层次
         sid: 序号
-      bbs_post:
+      post:
         title: 标题
         content: 内容
         user_id: 发布人

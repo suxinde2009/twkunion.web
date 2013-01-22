@@ -11,14 +11,14 @@ class UsersController < InheritedResources::Base
 
   def notifications; end
   def friends; end
+  def favorites; end
+  def followers; end
 
   protected
 
   def resource
     if params.key?(:id)
-      super
-    elsif params.key?(:uid)
-      end_of_association_chain.find_by_uid(params[:uid])
+      end_of_association_chain.find_by_uid(params[:id])
     else
       current_user
     end

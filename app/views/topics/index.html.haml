@@ -1,52 +1,38 @@
-- content_for :full do
-  .full.home_banner
+- content_for :jumbotron do
+  .jumbotron.masthead.topic
 
+.row
+  .span9
+    %section#topics
+      .page-header
+        %h1
+          吞食专题
+          %small 推荐专题的简介信息，大家都想一下方案如何写。
+      %ul.thumbnails
+        %li
+          .thumbnail
+            = link_to '#' do
+              %img{:alt => "", "data-src" => "holder.js/300x200"}
+            .caption
+              %h3= link_to '吞食天地2nd Evolution 进化', '#'
+              %p.desc 在本作中玩家扮演刘备，从第一章“黄巾之乱”开始，一直到最后篡改历史一统天下，总共分为八章。战斗过程除了普通攻击之外还有总攻击 和策略选项，体现了一定的战术性。
+              %ul.state_bar.clearfix
+                %li.rate.clearfix
+                  推荐指数：
+                  .raty{ data: { rate: 3 } }
+                %li
+                  关注：
+                  %span 29001
+                %li
+                  发布了100篇文章、10个视频、58个图片和20个下载信息
+                %li= link_to t('views.layout.topic_detail').html_safe, '#'
 
-%ul.tabs
-  %li.active= link_to '全部专题', '#'
-  %li= link_to '按照更新时间', '#'
-  %li= link_to '按照人气指数', '#'
+  .span3= render '/application/sidebars/topic', posts: @posts
 
-.group.highlights.topics
-  - collection.each do |resource|
-    .multi.group
-      %h3.special
-        %span.special-flag.special-featured= resource.title
-        = link_to '进入专题', resource, class: 'date-more'
-      %ol.dribbbles.group
-        %li.group
-          .dribbble
-            .dribbble-shot
-              .dribbble-img
-                = link_to image_tag(resource.logo)
-              .tools.group
-              %ul.tools.group
-                %li.fav
-                  %a{:href => "/shots/692365-Sketch/fans", :title => "See fans of this screenshot"} 158
-                %li.cmnt
-                  %a{:href => "/shots/692365-Sketch#comments", :title => "View comments on this screenshot"} 19
-                %li.views
-                  915
-            .extras
-              %span.attachments-mark{"original-title" => "This shot has attachments", :rel => "tipsy"}
-                %img{:alt => "Attachments", :src => "/assets/icon-attach-16.png"}
-      .multi-meta
-        %ul.bucket-meta
-          %li.bucket-title-meta.bucket-title
-            %strong= link_to resource.title, resource
-          / %li.bucket-title-meta.bucket-title-attr
-          /   By
-          /   %a.url{:href => "/bieleib", :rel => "contact", :title => "Felix, Gabriel"}
-          /     %img.photo.fn{:alt => "Twitter_avatar", :src => "http://dribbble.s3.amazonaws.com/users/49464/avatars/original/Twitter_Avatar.png?1340287646"} Felix, Gabriel
-          %li.bucket-title-meta= resource.description
-          %li.bucket-title-meta.bucket-title-time.project-title-time
-            %strong #{resource.posts_count} 篇文章
-            %span.sep= '|'
-            %strong #{resource.videos_count} 个视频
-            %span.sep= '|'
-            %strong #{resource.photos_count} 张图片
-            %span.sep= '|'
-            %strong #{resource.downloads_count} 个资源
-          %li.bucket-title-meta
-            12分钟前更新
-
+- content_for :js do
+  :coffeescript
+    $ ->
+      $('.raty').raty
+        readOnly: true
+        score: ->
+          $(this).attr 'data-rate'

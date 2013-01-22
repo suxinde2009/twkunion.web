@@ -1,7 +1,7 @@
 class User
   include Mongoid::Document
   include Mongoid::Timestamps
-  include Concerns::SocialConnection
+  include SocialConnection
   
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
@@ -56,7 +56,7 @@ class User
   ## Token authenticatable
   field :authentication_token
 
-  field :bbs_posts_count, type: Integer, default: 0
+  field :posts_count, type: Integer, default: 0
 
   # Since we don't have username, so we will display uid in the url, just like twkunion.com/u/2012
   auto_increment :uid, seed: 2012
@@ -80,7 +80,7 @@ class User
   validates :name, presence: true
 
   has_many :activities, dependent: :destroy
-  has_many :bbs_posts
+  has_many :posts
   has_many :authentications, autosave: true, dependent: :destroy
   has_and_belongs_to_many :liked_topics, class_name: 'Topic', inverse_of: :fans
 

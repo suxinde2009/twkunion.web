@@ -7,12 +7,12 @@
             %img{ data: { src: 'holder.js/80x80' } }
           .head-line
             %h1
-              = current_user.name
+              = resource.name
               的吞食天地          
             %ul.nav.nav-pills
-              %li.active= link_to '我的话题', '#'
-              %li= link_to '我的收藏', '#'
-              %li= link_to '我的关注', '#'
+              %li.active= link_to '话题', user_path(resource)
+              %li= link_to '收藏', favourites_user_path(resource)
+              %li= link_to '关注', followers_user_path(resource)
         .span4
           - if resource == current_user
             %p
@@ -25,19 +25,20 @@
                 - else
                   %li= link_to provider, '#', class: "#{provider} disabled", title: t("views.auth.#{provider}")
           - else
-            %p 喜欢他/她，就了解他/她更多吧
-            %ul.social-authentications.cleafix
-              - resource.authentications.each do |auth|
-                %li= link_to auth.provider, '#', class: auth.provider, title: t("views.auth.#{auth.provider}")
+            - if resource.authentications.any?
+              %p 喜欢他/她，就了解他/她更多吧
+              %ul.social-authentications.cleafix
+                - resource.authentications.each do |auth|
+                  %li= link_to auth.provider, '#', class: auth.provider, title: t("views.auth.#{auth.provider}")
   .bs-docs-social.profile
     .container
       .row 
         .span6
           %h3
             %i.icon-list
-            我发起的话题
+            发起的话题
           - if resource.bbs_posts.empty?
-            %p 这家伙在社区里面很懒，从没发布或者参与过话题
+            %p 这里空空荡荡
           - else
             %ul.my-created-posts.clearfix
               - resource.bbs_posts.page(params[:page]).each do |post|
@@ -55,15 +56,15 @@
                       %span.replies-num
                         %i.ico{ title: '回复条数' }
                         %strong 9
-          %ul.pager
-            %li= link_to t('views.pager.prev').html_safe, '#'
-            %li= link_to t('views.pager.next').html_safe, '#'
+            %ul.pager
+              %li= link_to t('views.pager.prev').html_safe, '#'
+              %li= link_to t('views.pager.next').html_safe, '#'
         .span6
           %h3
             %i.icon-list
-            我参与的话题
+            参与的话题
           - if resource.bbs_posts.empty?
-            %p 这家伙在社区里面很懒，从没发布或者参与过话题
+            %p 这里空空荡荡
           - else
             %ul.my-replied-posts.clearfix
               - resource.bbs_posts.page(params[:page]).each do |post|

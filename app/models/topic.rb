@@ -1,9 +1,9 @@
 class Topic
   include Mongoid::Document
   include Mongoid::Timestamps
+  include AutoIncrementSid
 
   field :title
-  field :slug
   field :description
   field :rating, type: Integer, default: 0
   field :is_published, type: Boolean, default: false
@@ -16,20 +16,22 @@ class Topic
   field :downloads_count, type: Integer, default: 0
 
   # photo columns
-  field :icon
   field :logo
   field :banner
-  # field :full_screen
+
+  mount_uploader :logo, PhotoUploader
+  mount_uploader :banner, PhotoUploader
 
   validates :title, :slug, :description, presence: true
-  validates :slug, uniqueness: true
 
-  has_many :topic_posts
-  has_many :topic_videos
-  has_many :topic_photos
-  has_many :topic_downloads
+  has_many :topic_posts, dependent: :destroy
+  has_many :topic_videos, dependent: :destroy
+  has_many :topic_photos, dependent: :destroy
+  has_many :topic_downloads, dependent: :destroy
 
   def publish!
-    update_attributes(is_published: true, published_at: Time.zone.now)
+    self.is_published = true
+    self.published_at = Time.zone.now
+    save(validate: false)
   end
 end

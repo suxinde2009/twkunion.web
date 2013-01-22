@@ -25,10 +25,11 @@ Twkunion::Application.routes.draw do
     put 'profile/update' => 'users#update', as: :users
   end
 
-  resources :users
-
-  scope '/u' do
-    get ':uid' => 'users#show', as: :user
+  resources :users do
+    member do
+      get :favourites
+      get :followers
+    end
   end
   
   namespace :bbs do
@@ -40,8 +41,7 @@ Twkunion::Application.routes.draw do
       end
     end
   end
-
-  get 'bbs_home' => 'pages#bbs_home'
+  
   post 'valums/create' => 'valums#create'
 
   ActiveAdmin.routes(self)

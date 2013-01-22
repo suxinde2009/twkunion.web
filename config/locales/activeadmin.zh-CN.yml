@@ -42,3 +42,9 @@ zh-CN:
       link: "新建一个"
 
     create_model: "%{model}"
+  formtastic:
+    :yes: 'Yes'
+    :no: 'No'
+    :create: '创建 %{model}'
+    :update: '更新 %{model}'
+    :submit: '提交 %{model}'

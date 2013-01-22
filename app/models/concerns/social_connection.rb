@@ -1,4 +1,4 @@
-module Concerns::SocialConnection
+module SocialConnection
   extend ActiveSupport::Concern
 
   CONNECTIONS = %w(weibo qq_connect douban)

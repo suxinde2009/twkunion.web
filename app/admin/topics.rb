@@ -6,7 +6,7 @@ ActiveAdmin.register Topic do
 
   ## Customizing index screen for topic
   index do
-    column :id
+    column :sid
     column :logo do |topic|
       image_tag topic.logo, height: 20
     end

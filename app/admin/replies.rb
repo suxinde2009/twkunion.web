@@ -1,5 +1,5 @@
 # encoding: utf-8
 ActiveAdmin.register Reply do
-  belongs_to :bbs_post
+  belongs_to :post
   
 end

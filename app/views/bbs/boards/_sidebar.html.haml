@@ -11,7 +11,7 @@
             当前论坛积分： 1000
         %li.media
           %ul.nav.nav-pills
-            %li.active= link_to "#{current_user.bbs_posts_count}<br/>话题".html_safe, '#'
+            %li.active= link_to "#{current_user.posts_count}<br/>话题".html_safe, '#'
             %li.active= link_to '10<br/>粉丝'.html_safe, '#'
             %li.active= link_to '9<br/>关注'.html_safe, '#'
         %li.media.notifications

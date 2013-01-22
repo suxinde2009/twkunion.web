@@ -35,7 +35,20 @@ ActiveAdmin.register Board do
   end
 
   ## Customizing form screen for bbs boards
-  form partial: 'form'
+  form do |f|
+    f.inputs '基本信息' do
+      f.input :ancestry,
+              as: :select,
+              collection: Board.roots,
+              prompt: true,
+              input_html: { disabled: (!resource.new_record? && resource.is_root?) ? true : false },
+              hint: '主板块无须修改此项。'
+      f.input :name
+      f.input :logo, as: :file, hint: f.template.image_tag(f.object.logo)
+    end
+
+    f.actions
+  end
 
   ## Customizing show screen for bbs boards
   show do |board|
@@ -47,7 +60,13 @@ ActiveAdmin.register Board do
       row :logo do
         image_tag board.logo
       end
-      row :bbs_posts_count
+      row :posts_count
+    end
+  end
+
+  controller do
+    def resource
+      @board ||= end_of_association_chain.find_by_sid(params[:id])
     end
   end
 end

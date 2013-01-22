@@ -1,14 +1,13 @@
 class Bbs::PostsController < Bbs::BaseController
   before_filter :authenticate_user!, only: [:new, :create]
 
-  defaults resource_class: BbsPost, collection_name: 'bbs_posts', instance_name: 'bbs_post'
   belongs_to :board, finder: :find_by_sid, param: :board_id
 
   actions :index, :show, :new, :create
 
   def create
-    @bbs_post = end_of_association_chain.new(params[:bbs_post])
-    @bbs_post.user = current_user
+    @post = end_of_association_chain.new(params[:post])
+    @post.user = current_user
 
     create! { resource_path }
   end
@@ -16,6 +15,6 @@ class Bbs::PostsController < Bbs::BaseController
   protected
 
   def resource
-    @bbs_post ||= end_of_association_chain.find_by_sid(params[:id])  
+    @post ||= end_of_association_chain.find_by_sid(params[:id])  
   end
 end

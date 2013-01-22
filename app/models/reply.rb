@@ -8,8 +8,8 @@ class Reply
   validates :content, presence: true
 
   belongs_to :user
-  belongs_to :bbs_post
-  counter_cache :bbs_post, using: 'replies'
+  belongs_to :post
+  counter_cache :post, using: 'replies'
   
   delegate :name, to: :user, prefix: true
 end
