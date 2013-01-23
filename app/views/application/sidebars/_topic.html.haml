@@ -6,4 +6,5 @@
 %ul.media-list
   - posts.each do |post|
     %li.media
-      = link_to post.title, '#'
+      %i.dot
+      = link_to post.title.truncate(17), '#'

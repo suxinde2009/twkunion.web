@@ -1,0 +1,17 @@
+%li
+  .thumbnail
+    = link_to topic_path(resource) do
+      %img{:alt => "", "data-src" => "holder.js/300x200"}
+    .caption
+      %h3= link_to resource.title, topic_path(resource)
+      %p.desc= resource.description
+      %ul.state_bar.clearfix
+        %li.rate.clearfix
+          推荐指数：
+          .raty{ data: { rate: resource.rating } }
+        %li
+          关注：
+          %span 29001
+        %li
+          发布了100篇文章、10个视频、58个图片和20个下载信息
+        %li= link_to t('views.layout.topic_detail').html_safe, topic_path(resource)

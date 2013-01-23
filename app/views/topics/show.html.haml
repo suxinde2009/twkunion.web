@@ -1,51 +1,37 @@
-- content_for :sidebar do
-  = render '/application/sidebars/topic_show'
+- content_for :topic_wrapper do
+  .span9
+    .top-inner
+      .span4.sliders
+        .images
+          - 5.times do
+            %img{ data: { src: 'holder.js/380x250' } }
+        .slidetabs
+          - 5.times do |i|
+            = link_to (i + 1), '#'
+      .span5
+        %ul.nav.nav-tabs
+          %li.active= link_to '最新更新', '#latest-posts', data: { toggle: 'tab' }
+          %li= link_to '精华推荐', '#recommended-posts', data: { toggle: 'tab' }
+        .tab-content
+          #latest-posts.tab-pane.fade.in.active
+            %ul.activity
+              - 7.times do
+                %li
+                  %i.dot
+                  = link_to '#' do
+                    【碍事地方】
+                    这个攻略很帮呀。。。哈哈哈
+                    %span 【02-03】
+          #recommended-posts.tab-pane.fade
 
-.group.highlights
-  .multi.group
-    %h3.special
-      %span.special-flag.special-featured 专题摘要 >>
-      吞食天地2nd Evolution 进化
-    .topic_info.group
-      .cover= image_tag('examples/02.jpg')
-      .desc
-        在本作中玩家扮演刘备，从第一章“黄巾之乱”开始，一直到最后篡改历史一统天下，总共分为八章。战斗过程除了普通攻击之外还有总攻击
-        和策略选项，体现了一定的战术性。
-    %ul.stats_bar.group
-      %li= link_to '下载', '#', class: 'download_btn'
-      %li.raty
-        推荐指数：
-        #fixed
-      %li
-        关注：
-        %span 27581
+= render 'context_main', topic: resource, posts: @posts
 
-%h3.special
-  %span.special-flag.special-featured 推荐文章 >>
-  %ul.tabs.group
-    %li= settings_link_to '全部文章', topic_topic_articles_path(@topic)
-    - TopicArticle.category_mappings.each do |category|
-      %li= settings_link_to category[0], topic_topic_articles_path(@topic, category: category[1])
 
-%ul.topic_articles
-  - @articles.each do |article|
-    %li.group
-      = link_to [@topic, :topic_articles] do
-        %span.category [#{article.category_name}]
-        = article.title
-        %span.time= article.created_at.to_date
-
-%h3.special.group
-  %span.special-flag.special-featured 推荐文章 >>
-
-%ol.multi-grid.full.photos.group
-  - @photos.each do |photo|
-    %li.multi-thumb
-      %a.zoom{:href => "/shots/687211-iPhone-App", "original-title" => ""}
-        %strong{:style => "opacity: 0;"}
-          %span 98
-        %img{:alt => "iPhone App", :src => "http://dribbble.s3.amazonaws.com/users/124059/screenshots/687211/400_teaser.png"}
-      .tipsy-player
-        %span.tipsy-player-link
-          %a.url{:href => "/virgilpana", :rel => "contact", :title => "Virgil Pana"}
-            %img.photo.fn{:alt => "Untitled-3", :src => "http://dribbble.s3.amazonaws.com/users/124059/avatars/original/Untitled-3.png?1333130134"} Virgil Pana
+- content_for :js do
+  :coffeescript
+    $ ->
+      $('.slidetabs').tabs('.images > img',
+        effect: 'fade'
+        fadeOutSpeed: 'slow'
+        rotate: true
+      ).slideshow({autoplay: true, interval: 3000, clickable: false})

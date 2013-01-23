@@ -94,3 +94,11 @@ ul.social-connections {
     }
   }
 }
+
+i.dot {
+  background-image: image-url("icons/dot.png");
+  height: 14px;
+  width: 14px;
+  display: inline-block;
+  vertical-align: middle;
+}

@@ -9,23 +9,8 @@
           吞食专题
           %small 推荐专题的简介信息，大家都想一下方案如何写。
       %ul.thumbnails
-        %li
-          .thumbnail
-            = link_to '#' do
-              %img{:alt => "", "data-src" => "holder.js/300x200"}
-            .caption
-              %h3= link_to '吞食天地2nd Evolution 进化', '#'
-              %p.desc 在本作中玩家扮演刘备，从第一章“黄巾之乱”开始，一直到最后篡改历史一统天下，总共分为八章。战斗过程除了普通攻击之外还有总攻击 和策略选项，体现了一定的战术性。
-              %ul.state_bar.clearfix
-                %li.rate.clearfix
-                  推荐指数：
-                  .raty{ data: { rate: 3 } }
-                %li
-                  关注：
-                  %span 29001
-                %li
-                  发布了100篇文章、10个视频、58个图片和20个下载信息
-                %li= link_to t('views.layout.topic_detail').html_safe, '#'
+        - collection.each do |resource|
+          = render 'entry', resource: resource
 
   .span3= render '/application/sidebars/topic', posts: @posts
 

@@ -9,10 +9,10 @@ end
 
 Topic.blueprint do
   title { Faker::LoremCN.sentence }
-  slug { "topic#{sn}" }
   description { Faker::LoremCN.paragraph }
   rating { rand(1..10) }
-  logo { "/assets/examples/02.jpg" }
+  logo { Pathname.glob(Rails.root.join('lib/assets/images/*')).sample.open }
+  banner { Pathname.glob(Rails.root.join('lib/assets/images/*')).sample.open }
 end
 
 TopicPost.blueprint do

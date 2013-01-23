@@ -14,6 +14,4 @@ feedbackFancyboxOptions =
       closeClick: false
 
 $ ->
-  $('#slider').nivoSlider()
-
   $('[rel=feedback]').fancybox feedbackFancyboxOptions

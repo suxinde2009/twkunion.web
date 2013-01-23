@@ -18,5 +18,6 @@
  *= require auth
  *= require bbs
  *= require profile
+ *= require topic
  *= require popup
  */

@@ -2,6 +2,7 @@ class Topic
   include Mongoid::Document
   include Mongoid::Timestamps
   include AutoIncrementSid
+  include Recommendable
 
   field :title
   field :description
@@ -22,7 +23,7 @@ class Topic
   mount_uploader :logo, PhotoUploader
   mount_uploader :banner, PhotoUploader
 
-  validates :title, :slug, :description, presence: true
+  validates :title, :description, presence: true
 
   has_many :topic_posts, dependent: :destroy
   has_many :topic_videos, dependent: :destroy

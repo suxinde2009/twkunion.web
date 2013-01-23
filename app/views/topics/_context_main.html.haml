@@ -1,0 +1,29 @@
+- content_for :jumbotron do
+  .jumbotron.masthead.topic
+
+.row#topic-zone
+  = yield :topic_wrapper
+
+  .span3
+    %ul.nav.nav-list.bs-docs-sidenav.affix
+      %li.active
+        %a{:href => "#typography"}
+          %i.icon-chevron-right
+          专题首页
+      %li
+        %a{:href => "#code"}
+          %i.icon-chevron-right
+          专题攻略
+      %li
+        %a{:href => "#tables"}
+          %i.icon-chevron-right
+          资源下载
+      %li
+        %a{:href => "#forms"}
+          %i.icon-chevron-right
+          视频前瞻
+      %li
+        %a{:href => "#buttons"}
+          %i.icon-chevron-right
+          视觉盛宴
+    = render '/application/sidebars/topic', posts: posts
