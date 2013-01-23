@@ -32,6 +32,7 @@ class Post
   symbolize :sticky, in: STICKY_TYPES, scopes: true, methods: true, validates: false, allow_blank: true
 
   scope :default_order, desc(:updated_at)
+  scope :recommend, where(:sticky.ne => nil)
 
   # Here you can use three methods to set sticky for a single topic
   ## mark_sticky_under_global
