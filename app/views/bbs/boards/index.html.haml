@@ -16,7 +16,10 @@
               %li
                 .thumbnail
                   = link_to bbs_board_posts_path(child) do
-                    %img{:alt => "", "data-src" => "holder.js/350x200"}
+                    - if Rails.env.production?
+                      = image_tag(child.logo.url) if child.logo
+                    - else
+                      %img{:alt => "", "data-src" => "holder.js/350x200"}
                   .cover
                     %h3 【#{child.name}】
                     %p.desc= child.description
