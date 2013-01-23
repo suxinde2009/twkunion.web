@@ -69,6 +69,7 @@ end
 desc "after finish deploy (synmbolic link...etc)"
 after "deploy:create_symlink", :roles => :app do
   run "ln -s #{shared_path}/config/#{database_yml} #{current_path}/config/mongoid.yml"
+  run "ln -s #{shared_path}/uploads #{current_path}/public/uploads"
 end
 # ==
 
