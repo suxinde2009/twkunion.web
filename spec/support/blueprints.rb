@@ -79,3 +79,7 @@ end
 TopicResource.blueprint do
   # Attributes here
 end
+
+Wiki.blueprint do
+  # Attributes here
+end

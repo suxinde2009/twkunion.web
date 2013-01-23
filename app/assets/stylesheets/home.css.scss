@@ -55,3 +55,121 @@ ul.media-list {
     }
   }
 }
+
+section#home {
+  margin-top: 20px;
+  .span4 {
+    height: 320px;
+    position: relative;
+    &.left {
+    }
+    &.middle {
+      width: 360px;
+      background-color: whiteSmoke;
+      margin-left: 0;
+      .middle-inner {
+        height: 318px;
+        border-bottom: 1px solid #ddd;
+        border-top: 1px solid #ddd;
+      }
+    }
+    &.right {
+      background-color: #464B58;
+      margin-left: 0;
+      width: 300px;
+
+      .wiki {
+        color: white;
+        padding: 10px 15px;
+        ul {
+          list-style: none;
+          li {
+            width: 120px;
+            float: left;
+            margin-bottom: 10px;
+
+            i {
+              background-image: image-url("icons/dot.png");
+              height: 14px;
+              width: 14px;
+              display: inline-block;
+              vertical-align: middle;
+            }
+
+            a {
+              color: #ddd;
+              text-decoration: none;
+              line-height: 20px;
+            }
+          }
+        }
+      }
+      .follow-us {
+        padding: 20px;
+        margin: 0 auto;
+        position: relative; 
+        a {
+          float: left;
+          display: block;
+          text-align: center;
+          line-height: 53px;
+          color: white;
+          text-decoration: none;
+          margin-left: 8px;
+        }
+
+        a.sina-weibo-follow-btn {
+          width: 120px;
+          height: 53px;
+          background-image: image-url('btns/sina-weibo-follow-btn.png');
+          &:hover {
+            background-image: image-url('btns/sina-weibo-follow-btn-hover.png');
+          }
+        }
+
+        a.qq-weibo-follow-btn {
+          width: 120px;
+          height: 53px;
+          display: block;
+          background-image: image-url('btns/qq-weibo-follow-btn.png');
+          &:hover {
+            background-image: image-url('btns/qq-weibo-follow-btn-hover.png');
+          }
+        }
+      }
+    }
+    ul {
+      margin: 0 0 10px 20px;
+
+      li {
+        padding: 2px 0;
+        a {
+          // color: #424242;
+          &:hover { color: black; }
+          span { float: right; }
+        }
+      }
+    }
+    img.video-cover {
+      display:block;
+      width: 330px;
+      height: 306px;
+    }
+    a.head-title {
+      position: absolute;
+      top: 250px;
+      left: 0;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 5px 10px;
+      width: 144px;
+    }
+
+    .feature {
+      padding: 10px 20px 0 20px;
+      &.top {
+        border-bottom: 1px solid #ddd;
+      }
+    }
+  }
+}
