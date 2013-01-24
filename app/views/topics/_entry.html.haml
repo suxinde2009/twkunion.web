@@ -1,7 +1,7 @@
 %li
   .thumbnail
     = link_to topic_path(resource) do
-      %img{:alt => "", "data-src" => "holder.js/300x200"}
+      = image_tag resource.logo.url
     .caption
       %h3= link_to resource.title, topic_path(resource)
       %p.desc= resource.description
