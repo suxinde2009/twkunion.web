@@ -37,11 +37,11 @@
           %h3
             %i.icon-list
             发起的话题
-          - if resource.bbs_posts.empty?
+          - if resource.posts.empty?
             %p 这里空空荡荡
           - else
             %ul.my-created-posts.clearfix
-              - resource.bbs_posts.page(params[:page]).each do |post|
+              - resource.posts.page(params[:page]).each do |post|
                 %li.cleaffix
                   %h3= link_to post.title, bbs_board_post_path(post.board, post), title: post.title 
                   .meta.clearfix
@@ -63,11 +63,11 @@
           %h3
             %i.icon-list
             参与的话题
-          - if resource.bbs_posts.empty?
+          - if resource.posts.empty?
             %p 这里空空荡荡
           - else
             %ul.my-replied-posts.clearfix
-              - resource.bbs_posts.page(params[:page]).each do |post|
+              - resource.posts.page(params[:page]).each do |post|
                 %li.clearfix
                   %h3= link_to post.title, bbs_board_post_path(post.board, post), title: post.title 
                   .meta.clearfix

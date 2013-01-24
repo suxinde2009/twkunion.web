@@ -79,7 +79,7 @@ zh-CN:
         logo: Logo
         description: 简介
         admin_id: 版主
-        bbs_posts_count: 帖子数量
+        posts_count: 帖子数量
         depth: 目录层次
         sid: 序号
       post:

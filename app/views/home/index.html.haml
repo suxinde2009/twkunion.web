@@ -17,6 +17,7 @@
           - 4.times do
             %li
               = link_to '#' do
+                %i.dot
                 吞食天地2nd终于发布了...
                 %span 2013-01-01
       .feature.bottom
@@ -26,11 +27,12 @@
           - 4.times do
             %li
               = link_to '#' do
+                %i.dot
                 吞食天地2nd终于发布了...
                 %span 2013-01-01
   .span4.right
     .wiki
-      %h3 关于平台
+      %h3 最新播报
       %ul.clearfix
         - 6.times do
           %li
@@ -39,9 +41,9 @@
               应用接入流程
     .follow-us.clearfix
       = link_to '#', class: 'sina-weibo-follow-btn first' do
-        关注微博
+        %span 关注
       = link_to '#', class: 'qq-weibo-follow-btn' do
-        关注微博
+        %span 关注
 %section#home-banner.row
   .span12
     %img{ data: { src: 'holder.js/1000x160' } }
