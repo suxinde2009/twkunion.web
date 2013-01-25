@@ -15,3 +15,4 @@ feedbackFancyboxOptions =
 
 $ ->
   $('[rel=feedback]').fancybox feedbackFancyboxOptions
+  $('[rel=gallary]').fancybox()

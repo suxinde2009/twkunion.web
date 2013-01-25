@@ -1,6 +1,42 @@
 #topic-zone {
   .span9 {
     margin-top: 10px;
+    ul.thumbnails {
+      margin-left: auto;
+      li.span3 {
+        width: 230px;
+        margin: 0 0 10px 0;
+
+        .caption > p {
+          margin-bottom: 5px;
+        }
+
+        .meta {
+          padding-top: 5px;
+          border-top: 1px solid #ddd;
+          p { padding: 0; margin: 0; float: left; }
+          .counter { float: right; }
+          .counter span {
+            display: inline-block;
+            margin-right: 5px;
+            strong { display: inline-block; }
+            i.ico {
+              background-image: image-url("icos-post-counter.png");
+              width: 18px;
+              height: 16px;
+              margin: 0;
+              display: inline-block;
+              vertical-align: middle;
+            }
+            &.views-num i.ico { background-position: 0 0; }
+            &.likes-num i.ico { background-position: -24px 0; }
+            &.replies-num i.ico { background-position: -48px 0; }
+          }
+        }
+
+        img{ margin: 0; }
+      }
+    }
     .top-inner {
       height: 250px;
       width: 100%;

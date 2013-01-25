@@ -29,16 +29,8 @@ class TopicPhotoUploader < CarrierWave::Uploader::Base
   # Process files as they are uploaded:
   # process :scale => [200, 300]
 
-  version :small do
-    process :resize_to_fill => [48, 48]
-  end
-
-  version :medium do
-    process :resize_to_fill => [200, 150]
-  end
-
-  version :small do
-    process :resize_to_fill => [400, 300]
+  version :gallary do
+    process resize_to_fit: [225, nil]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

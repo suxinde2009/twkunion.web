@@ -3,13 +3,17 @@ class TopicPhotosController < InheritedResources::Base
   sec_nav_highlight :photos
   actions :index, :show
 
-  belongs_to :topic
+  belongs_to :topic, finder: :find_by_sid, param: :topic_id
 
-  before_filter :get_topic
+  before_filter :get_recommended_posts
 
   protected
 
-  def get_topic
-    @topic ||= parent
+  def collection
+    @topic_photos ||= end_of_association_chain.page(params[:page])
+  end
+
+  def get_recommended_posts
+    @posts ||= parent.topic_posts.recommended.limit(10)
   end
 end

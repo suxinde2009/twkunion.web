@@ -23,7 +23,7 @@
           %i.icon-chevron-right
           视频前瞻
       %li
-        %a{:href => "#buttons"}
+        = link_to topic_topic_photos_path(topic) do
           %i.icon-chevron-right
           视觉盛宴
     = render '/application/sidebars/topic', posts: posts
