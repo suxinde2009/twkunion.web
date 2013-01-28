@@ -31,3 +31,9 @@ root.initInfiniteScrollFeed = ->
 $ ->
   fixedAlertPosition()
   initInfiniteScrollFeed()
+
+  $('#totemticker').totemticker
+    row_height: '55px'
+    direction: 'up'
+    interval: 3000
+    mousestop: true

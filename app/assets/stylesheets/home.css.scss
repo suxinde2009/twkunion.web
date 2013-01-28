@@ -64,42 +64,82 @@ section#home {
     &.left {
     }
     &.middle {
-      width: 360px;
-      background-color: whiteSmoke;
+      width: 420px;
+      // background-color: whiteSmoke;
       margin-left: 0;
       .middle-inner {
         height: 318px;
         border-bottom: 1px solid #ddd;
         border-top: 1px solid #ddd;
+        position: relative;
+        a { text-decoration: none; }
+        a:hover { color: #4B941E; }
+        span.type { color: #4B941E; float: none; }
+        span.title { float: none; }
+
+        .hot-corner {
+          background-image: image-url("icons/hot.png");
+          background-repeat: none;
+          width: 43px;
+          height: 43px;
+          top: 0;
+          right: 0;
+          position: absolute;
+        }
       }
     }
     &.right {
       background-color: #464B58;
       margin-left: 0;
-      width: 300px;
+      width: 240px;
+      position: relative;
 
-      .wiki {
-        color: white;
-        padding: 10px 15px;
-        ul {
-          list-style: none;
-          li {
-            width: 120px;
-            float: left;
-            margin-bottom: 10px;
+      .today-forum {
+        padding: 20px;
+        h1 {
+          color: #83CB2E;
+          font-size: 20px;
+        }
+        h3 {
+          margin-top: 10px;
+          font-size: 16px;
+          line-height: 23px;
+          a {
+            color: white;
+            &:hover { color: #83CB2E; }
+          }
+        }
 
-            a {
-              color: #ddd;
-              text-decoration: none;
-              line-height: 20px;
+        p {
+          color: #ddd;
+          i {
+            width: 14px;
+            height: 13px;
+            display: inline-block;
+            &.l-dot {
+              background-image: image-url("icons/quote_1.png");
             }
+            &.r-dot {
+              background-image: image-url("icons/quote_2.png");
+            }
+          }
+        }
+        .bbs-btns {
+          margin-top: 10px;
+          a.add-reply-btn {
+            width: 110px;
+            height: 33px;
+            background-image: image-url("btns/add-reply-btn.png");
+            display: block;
+            &:hover { background-image: image-url("btns/add-reply-btn-hover.png"); }
           }
         }
       }
       .follow-us {
-        padding: 20px;
+        bottom: 0;
+        padding: 10px;
         margin: 0 auto;
-        position: relative; 
+        position: absolute; 
         a {
           float: left;
           display: block;
@@ -108,25 +148,23 @@ section#home {
           color: white;
           text-decoration: none;
           margin-left: 8px;
-          span { padding-left: 10px; }
-        }
-
-        a.sina-weibo-follow-btn {
-          width: 120px;
+          width: 100px;
           height: 53px;
-          background-image: image-url('btns/sina-weibo-follow-btn.png');
-          &:hover {
-            background-image: image-url('btns/sina-weibo-follow-btn-hover.png');
+          span { padding-left: 20px; }
+          &.sina-weibo-follow-btn {
+            background-image: image-url('btns/sina-weibo-follow-btn.png');
+            &:hover {
+              background-image: image-url('btns/sina-weibo-follow-btn-hover.png');
+            }
           }
-        }
-
-        a.qq-weibo-follow-btn {
-          width: 120px;
-          height: 53px;
-          display: block;
-          background-image: image-url('btns/qq-weibo-follow-btn.png');
-          &:hover {
-            background-image: image-url('btns/qq-weibo-follow-btn-hover.png');
+          &.qq-weibo-follow-btn {
+            width: 100px;
+            height: 53px;
+            display: block;
+            background-image: image-url('btns/qq-weibo-follow-btn.png');
+            &:hover {
+              background-image: image-url('btns/qq-weibo-follow-btn-hover.png');
+            }
           }
         }
       }
@@ -136,7 +174,8 @@ section#home {
       list-style: none;
 
       li {
-        padding: 2px 0;
+        padding: 3px 0;
+        border-bottom: 1px dashed #ddd;
         a {
           color: #424242;
           &:hover { color: black; }
@@ -146,23 +185,94 @@ section#home {
     }
     img.video-cover {
       display:block;
-      width: 330px;
-      height: 306px;
+      width: 320px;
+      height: 320px;
     }
     a.head-title {
       position: absolute;
-      top: 250px;
+      top: 225px;
       left: 0;
       color: white;
       background-color: rgba(0, 0, 0, 0.7);
-      padding: 5px 10px;
-      width: 144px;
+      padding: 15px 30px;
+      width: 210px;
+      font-size: 18px;
+      text-decoration: none;
+      span { line-height: 33px; display: inline-block; }
+      i.play {
+        background-image: image-url("icons/play.png");
+        height: 33px;
+        width: 33px;
+        display: block;
+        display: inline-block;
+        vertical-align: bottom;
+      }
+      &:hover { color: #83CB2E; }
     }
 
     .feature {
       padding: 10px 20px 0 20px;
       &.top {
-        border-bottom: 1px solid #ddd;
+        // border-bottom: 1px solid #ddd;
+      }
+      &.bottom {
+        padding-top: 2px;
+      }
+    }
+  }
+}
+
+section#activities {
+  margin-top: 15px;
+  margin-left: 0;
+  border: 1px solid #ddd;
+
+  .span6 {
+    margin-left: 0;
+    padding: 0 20px;
+    width: 449px;
+    height: 100px;
+
+    a { color: #424242; }
+    a:hover { color: #83CB2E; }
+
+    &.bbs-hot {
+      background: #FAF9F9 image-url("icons/spuare_jc_y.png") repeat-y left top;
+      ul {
+        list-style: none;
+        margin: 0;
+        li {
+          color: #AEAEAE;
+          margin-bottom: 5px;
+          display: inline-block;
+          margin-right: 5px;
+        }
+      }
+    }
+    &.activities_feed {
+      ul {
+        list-style: none;
+        margin-left: 0;
+        font-size: 14px;
+        height: 55px;
+        overflow: hidden;
+        li {
+          color: #AEAEAE;
+          margin-bottom: 5px;
+        }
+      }
+    }
+
+    .page-header {
+      border: none;
+      margin: 0;
+      i {
+        background: url('http://img.xlpan.kanimg.com/2_7/images/square/tips.png ') no-repeat;
+        width: 22px;
+        height: 12px;
+        display: inline-block;
+        &.new { background-position: 0 0; }
+        &.hot { background-position: 0 -16px; }
       }
     }
   }

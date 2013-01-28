@@ -2,6 +2,11 @@ zh-CN:
   notifications:
     profile_updated: 您的个人信息已经成功更新！
     fill_your_email: 请输入您的Email地址，以便成为正版吞迷。
+  topic_resources:
+    topic_post: 专题攻略
+    topic_photo: 视觉盛宴
+    topic_download: 资源下载
+    topic_video: 视频前瞻
   views:
     layout:
       sign_up: 新用户注册

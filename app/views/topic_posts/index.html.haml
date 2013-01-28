@@ -1,0 +1,15 @@
+- content_for :topic_wrapper do
+  .span9
+    %ul.nav.nav-tabs
+      %li.active= link_to '热门推荐', '#'
+      %li= link_to '按更新时间', '#'
+      %li= link_to '按浏览次数', '#'
+    %ul.posts-list
+      %li
+        = link_to '#' do
+          %i.dot
+          %span 【游戏新闻】
+          %span.time 3小时前发布
+
+
+= render '/topics/context_main', topic: parent, posts: @posts

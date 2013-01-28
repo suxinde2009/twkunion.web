@@ -4,46 +4,74 @@
 
 %section#home.row
   .span4.left
-    %img.video-cover{ data: { src: 'holder.js/320x320' } }
+    = image_tag 'examples/video_cover.jpg', class: 'video-cover'
     = link_to '#', class: 'head-title' do
       %span.left 吞食天地2nd
       %span.right 资料片
+      %i.play
   .span4.middle
     .middle-inner
+      .hot-corner
       .feature.top
         %h3.head-title
           平台动态
         %ul
-          - 4.times do
+          - @latest_topic_resources.each do |resource|
             %li
-              = link_to '#' do
+              = link_to topic_resource_path(resource) do
                 %i.dot
-                吞食天地2nd终于发布了...
+                %span.type【#{resource.human_type}】
+                %span.title= resource.title.truncate(16)
                 %span 2013-01-01
       .feature.bottom
         %h3.head-title
           论坛新帖
         %ul
-          - 4.times do
+          - @latest_bbs_posts.each do |post|
             %li
               = link_to '#' do
                 %i.dot
-                吞食天地2nd终于发布了...
+                %span.type 【#{post.board_name}】
+                %span.title= post.title.truncate(16)
                 %span 2013-01-01
   .span4.right
-    .wiki
-      %h3 最新播报
-      %ul.clearfix
-        - 6.times do
-          %li
-            = link_to '#' do
-              %i.dot
-              应用接入流程
+    .today-forum
+      %h1 本周话题
+      %h3= link_to '三国里面哪个武将最有潜力?', '#'
+      %p.content
+        %i.l-dot
+        游戏的世界总是那么虚幻，你曾想过是否它能变为现实？说说你认为哪部游戏应该拍成电影！
+        %i.r-dot
+      .bbs-btns
+        = link_to '', '#', class: 'add-reply-btn'
     .follow-us.clearfix
       = link_to '#', class: 'sina-weibo-follow-btn first' do
         %span 关注
       = link_to '#', class: 'qq-weibo-follow-btn' do
         %span 关注
+%section#activities.row
+  .span6.activities_feed
+    .page-header
+      %h1
+        大家正在忙
+        %i.new
+    %ul#totemticker
+      - 20.times do
+        %li
+          = link_to '#' do
+            %img{ data: { src: 'holder.js/25x25' } }
+          = link_to '西唯-Jerry', '#'
+          添加了话题
+          = link_to '这个游戏值得收藏吗?', '#'
+          (3小时前)
+  .span6.bbs-hot
+    .page-header
+      %h1
+        热门讨论区
+        %i.hot
+    %ul
+      - 10.times do
+        %li= link_to '三国赵云', '#'
 %section#home-banner.row
   .span12
     %img{ data: { src: 'holder.js/1000x160' } }

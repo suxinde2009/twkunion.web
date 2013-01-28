@@ -1,5 +1,10 @@
 module ApplicationHelper
 
+  def topic_resource_path(topic_resource)
+    resource_name = topic_resource.class.name.underscore
+    return send("topic_#{resource_name}_path", topic_resource.topic, topic_resource)
+  end
+
   def settings_link_to(text, url_options = {}, html_options = {})
     if current_page?(url_options)
       html_options[:class] = 'active'

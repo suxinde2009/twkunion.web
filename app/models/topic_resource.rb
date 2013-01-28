@@ -12,4 +12,10 @@ class TopicResource
   belongs_to :topic, index: true
   
   delegate :title, to: :topic, prefix: true
+
+  scope :order_by_timeline, order_by([:created_at, :desc])
+
+  def human_type
+    I18n.t("topic_resources.#{_type.underscore}")
+  end
 end
