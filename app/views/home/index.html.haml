@@ -72,18 +72,17 @@
     %ul
       - 10.times do
         %li= link_to '三国赵云', '#'
-%section#home-banner.row
-  .span12
-    %img{ data: { src: 'holder.js/1000x160' } }
 %section#topics.row
   .span9
     .page-header
       %h1
         推荐专题
         %small 推荐专题的简介信息，大家都想一下方案如何写。
-    %ul.thumbnails
-      - @topics.each do |topic|
-        = render '/topics/entry', resource: topic
+        %span.more= link_to '查看更多', '#'
+    %ul.thumbnails.topics
+      - 2.times do
+        - @topics.each do |topic|
+          = render '/topics/entry', resource: topic
   .span3= render '/application/sidebars/home'
 
 

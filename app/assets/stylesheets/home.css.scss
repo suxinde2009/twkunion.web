@@ -1,37 +1,37 @@
-section {
-  &#topics, &#bbs-boards {
-    ul.thumbnails > li { width: 97%; }
-    ul.thumbnails {
-      .thumbnail {
-        overflow: hidden;
+// section {
+//   &#topics, &#bbs-boards {
+//     ul.thumbnails > li { width: 97%; }
+//     ul.thumbnails {
+//       .thumbnail {
+//         overflow: hidden;
 
-        img { float: left; }
-        .caption {
-          overflow: hidden;
+//         img { float: left; }
+//         .caption {
+//           overflow: hidden;
 
-          h3 { margin: 0 0 10px 0; border-bottom: 1px dashed #eee; padding-bottom: 5px; }
-          p { font-size: 13px; }
-          p.desc { text-indent: 20px; }
+//           h3 { margin: 0 0 10px 0; border-bottom: 1px dashed #eee; padding-bottom: 5px; }
+//           p { font-size: 13px; }
+//           p.desc { text-indent: 20px; }
 
-          ul.state_bar {
-            list-style: none;
-            margin: 0 0 0 5px;
-            border-top: 1px dashed #eee;
+//           ul.state_bar {
+//             list-style: none;
+//             margin: 0 0 0 5px;
+//             border-top: 1px dashed #eee;
 
-            li {
-              &.rate { width: 175px; }
-              float: left;
-              line-height: 25px;
-              margin-bottom: 0;
+//             li {
+//               &.rate { width: 175px; }
+//               float: left;
+//               line-height: 25px;
+//               margin-bottom: 0;
 
-              .raty { float: right; padding-top: 5px; }
-            }
-          }
-        }
-      }
-    }
-  }
-}
+//               .raty { float: right; padding-top: 5px; }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
 
 ul.media-list {
   li.media {
@@ -112,17 +112,6 @@ section#home {
 
         p {
           color: #ddd;
-          i {
-            width: 14px;
-            height: 13px;
-            display: inline-block;
-            &.l-dot {
-              background-image: image-url("icons/quote_1.png");
-            }
-            &.r-dot {
-              background-image: image-url("icons/quote_2.png");
-            }
-          }
         }
         .bbs-btns {
           margin-top: 10px;
@@ -278,7 +267,75 @@ section#activities {
   }
 }
 
-section#home-banner {
+section#topics {
   margin-top: 15px;
   .span12 { width: 980px; }
+
+  .span9 {
+    padding-right: 10px;
+    width: 710px;
+    .page-header {
+      span.more a { color: #AEAEAE; font-size: 13px; float: right; }
+    }
+  }
+
+  .span3 {
+    ul.weekly-leadboard { margin-bottom: 5px; }
+    ul.media-list { padding-left: 5px; }
+    li.media {
+      position: relative;
+      padding-left: 28px;
+      padding-bottom: 0;
+      h4 { margin: 3px 0 0 0; }
+
+      a { line-height: 29px; }
+
+      span {
+        width: 18px;
+        height: 18px;
+        line-height: 18px;
+        background-color: #A0A0A0;
+        color: #fff;
+        font-weight: normal;
+        zoom: 1;
+        left: 3px;
+        text-align: center;
+        font-size: 14px;
+        top: 5px;
+        padding: 1px;
+        position: absolute;
+
+        &.num-list-1 {
+          background-image: image-url("icons/list_num_spr.png");
+          background-color: white;
+          background-position: 0 0;
+          font-size: 0;
+          height: 29px;
+          width: 23px;
+          left: 0;
+          padding: 0;
+        }
+        &.num-list-2 {
+         background-image: image-url("icons/list_num_spr.png");
+         background-color: white;
+         background-position: -22px 0;
+         font-size: 0;
+         height: 29px;
+         width: 23px;
+         left: 0;
+         padding: 0;
+        }
+        &.num-list-3 {
+         background-image: image-url("icons/list_num_spr.png");
+         background-color: white;
+         background-position: -44px 0;
+         font-size: 0;
+         height: 29px;
+         width: 23px;
+         left: 0;
+         padding: 0;
+        }
+      }
+    }
+  }
 }

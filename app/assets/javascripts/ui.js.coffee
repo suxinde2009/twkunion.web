@@ -32,6 +32,14 @@ $ ->
   fixedAlertPosition()
   initInfiniteScrollFeed()
 
+  $('ul.thumbnails.topics li:nth-child(2n)').addClass('even')
+
+  $(document).on 'mouseover', 'li:not(.active) a[data-toggle=tab]', () ->
+    $(this).trigger 'click'
+
+  $('a[rel=popover]').popover
+    trigger: 'hover'
+
   $('#totemticker').totemticker
     row_height: '55px'
     direction: 'up'

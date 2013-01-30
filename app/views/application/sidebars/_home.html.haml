@@ -1,14 +1,22 @@
 .page-header
   %h1
-    用户动态
-    %small 活跃用户游戏达人
+    一周榜单
+    %small 帖子啥的，这里谁写点东西
 
-%ul.media-list
-  - 5.times do
-    %li.media
-      = link_to '#', class: 'pull-left' do
-        %img{:alt => "", "data-src" => "holder.js/48x48"}
-      .media-body
-        %p
-          西唯-Jerry赞了吞食天地大同盟
-          不到一小时前
+%ul.nav.nav-tabs.weekly-leadboard
+  %li.active= link_to '神一样的帖子', '#weekly-posts', data: { toggle: :tab }
+  %li= link_to '活跃帝', '#weekly-stylists', data: { toggle: :tab }
+
+.tab-content
+  #weekly-posts.tab-pane.fade.active.in
+    %ul.media-list
+      - Post.limit(10).each_with_index do |post, index|
+        %li.media
+          %span{ class: "num-list-#{index + 1}" }= index + 1
+          = link_to post.title.truncate(16), '#'
+  #weekly-stylists.tab-pane.fade
+    %ul.media-list
+      - User.limit(10).each_with_index do |user, index|
+        %li.media
+          %span{ class: "num-list-#{index + 1}" }= index + 1
+          %h4= link_to user.name, '#', rel: :popover

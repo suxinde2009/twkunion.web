@@ -1,4 +1,5 @@
 $.fn.raty.defaults.path = '/assets/raty'
+$.fn.raty.defaults.size = 24
 
 feedbackFancyboxOptions =
   fitToView: false

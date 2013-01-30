@@ -102,3 +102,59 @@ i.dot {
   display: inline-block;
   vertical-align: middle;
 }
+
+ul.thumbnails.topics {
+  list-style: none;
+  li.topic {
+    width: 345px;
+    float: left;
+
+    &.even {
+      background: #FAF9F9 image-url("icons/spuare_jc_y.png") repeat-y left top;
+      margin-left: 7px;
+      padding-left: 13px;
+    }
+    .thumbnail {
+      border: none;
+      box-shadow: none;
+      padding: 0;
+      .caption {
+        padding: 10px 0;
+
+        h3 { font-size: 18px; }
+        p { padding: 0 10px; }
+        ul.state_bar {
+          padding: 0 10px;
+          list-style: none;
+          margin: 0;
+
+          li {
+            .raty {
+              display: inline-block; height: 26px;
+              img { width: 24px; height: 24px; display: inline-block; }
+            }
+
+            span {
+              margin-right: 5px;
+              border-right: 1px solid #ddd;
+              &.last { border-right: none; }
+              strong { font-size: 16px; }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+i {
+  width: 14px;
+  height: 13px;
+  display: inline-block;
+  &.l-dot {
+    background-image: image-url("icons/quote_1.png");
+  }
+  &.r-dot {
+    background-image: image-url("icons/quote_2.png");
+  }
+}
