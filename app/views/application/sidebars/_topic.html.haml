@@ -1,10 +1,22 @@
-.page-header
+.page-header.top
   %h1
-    精品文章
-    %small 这里放啥呢
+    一周榜单
+    %small 帖子啥的，这里谁写点东西
 
-%ul.media-list
-  - posts.each do |post|
-    %li.media
-      %i.dot
-      = link_to post.title.truncate(17), '#'
+%ul.nav.nav-tabs.weekly-leadboard
+  %li.active= link_to '精品文章', '#recommended-posts', data: { toggle: :tab }
+  %li= link_to '最新文章', '#latest-posts', data: { toggle: :tab }
+
+.tab-content
+  #recommended-posts.tab-pane.fade.active.in
+    %ul.media-list
+      - Post.limit(10).each_with_index do |post, index|
+        %li.media
+          %span{ class: "num-list-#{index + 1}" }= index + 1
+          = link_to post.title.truncate(16), '#'
+  #latest-posts.tab-pane.fade
+    %ul.media-list
+      - Post.limit(10).each_with_index do |post, index|
+        %li.media
+          %span{ class: "num-list-#{index + 1}" }= index + 1
+          = link_to post.title.truncate(16), '#'

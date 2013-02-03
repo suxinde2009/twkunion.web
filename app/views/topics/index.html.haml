@@ -1,16 +1,63 @@
 - content_for :jumbotron do
   .jumbotron.masthead.topic
 
-.row
+%section#topic_zone.row
   .span9
-    %section#topics
-      .page-header
-        %h1
-          吞食专题
-          %small 推荐专题的简介信息，大家都想一下方案如何写。
-      %ul.thumbnails
+    .topics.overview
+      %ul.thumbnails.topics
         - collection.each do |resource|
-          = render 'entry', resource: resource
+          %li.topic
+            .page-header.clearfix
+              %h1
+                = link_to resource_path(resource) do
+                  %i.topic-header
+                  = resource.title
+              %ul.state_bar.clearfix
+                %li
+                  推荐指数：
+                  .raty{ data: { rate: resource.rating } }
+                %li
+                  %span
+                    关注
+                    %strong= 10
+                  %span
+                    文章
+                    %strong= resource.posts_count
+                  %span
+                    视频
+                    %strong= resource.videos_count
+                  %span
+                    图片
+                    %strong= resource.photos_count
+                  %span.last
+                    资源
+                    %strong= resource.downloads_count
+            .page-content.clearfix
+              .thumbnail
+                = link_to topic_path(resource) do
+                  = image_tag resource.logo.url
+                .caption
+                  %p.desc
+                    %i.l-dot
+                    = resource.description
+                    %i.r-dot
+                .posts
+                  %h3 热门文章
+                  %ul
+                    - resource.topic_posts.limit(4).each do |post|
+                      %li
+                        = link_to '#' do
+                          %i.dot
+                          【#{ post.category_name }】
+                          = post.title.truncate(20)
+              .topic_resources
+                %ul.clearfix
+                  - resource.topic_photos.limit(6).each do |photo|
+                    %li
+                      = link_to '#' do
+                        %img{ data: { src: 'holder.js/150x110' } }
+                      = link_to photo.title, '#', class: 'title'
+
 
   .span3= render '/application/sidebars/topic', posts: @posts
 

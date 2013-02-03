@@ -74,15 +74,17 @@
         %li= link_to '三国赵云', '#'
 %section#topics.row
   .span9
-    .page-header
-      %h1
-        推荐专题
-        %small 推荐专题的简介信息，大家都想一下方案如何写。
-        %span.more= link_to '查看更多', '#'
-    %ul.thumbnails.topics
-      - 2.times do
-        - @topics.each do |topic|
-          = render '/topics/entry', resource: topic
+    .topics
+      .page-header
+        %h1
+          推荐专题
+          %small 推荐专题的简介信息，大家都想一下方案如何写。
+          %span.more= link_to '查看更多', '#'
+      %ul.thumbnails.topics
+        - 2.times do
+          - @topics.each do |topic|
+            = render '/topics/entry', resource: topic
+
   .span3= render '/application/sidebars/home'
 
 

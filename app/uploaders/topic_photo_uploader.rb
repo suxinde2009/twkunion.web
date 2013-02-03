@@ -29,6 +29,10 @@ class TopicPhotoUploader < CarrierWave::Uploader::Base
   # Process files as they are uploaded:
   # process :scale => [200, 300]
 
+  version :small do
+    process resize_to_fill: [150, 110]
+  end
+
   version :gallary do
     process resize_to_fit: [225, nil]
   end

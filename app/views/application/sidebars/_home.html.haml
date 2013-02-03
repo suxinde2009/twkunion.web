@@ -19,4 +19,4 @@
       - User.limit(10).each_with_index do |user, index|
         %li.media
           %span{ class: "num-list-#{index + 1}" }= index + 1
-          %h4= link_to user.name, '#', rel: :popover
+          = link_to user.name, '#'

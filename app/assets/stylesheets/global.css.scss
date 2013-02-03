@@ -17,24 +17,23 @@ section { padding-top: 0; }
 
 // different .jumbotron background image for each page
 .jumbotron {
+  height: 220px;
+  padding: 20px 0 0 0;
   &.home {
     // background-image: image-url("jumbotron/banner-home.jpg");
     // background-repeat: none;
     background: image-url("jumbotron/banner-home.jpg") center center no-repeat;
-    padding: 212px 0 0;
     margin: 0 auto;
   }
 
   &.bbs {
     background: image-url("jumbotron/banner-bbs.jpg") center center no-repeat;
     background-repeat: none;
-    padding: 212px 0 0;
   }
 
   &.topic {
     background: image-url("jumbotron/banner-topic.jpg") center center no-repeat;
     background-repeat: none;
-    padding: 212px 0 0;
   }
 
   p { text-align: left; margin-left: 160px; margin-bottom: 5px; }
@@ -49,6 +48,9 @@ section { padding-top: 0; }
 
 .span3 {
   // margin-top: 15px;
+  .page-header.top {
+    margin-top: 0;
+  }
   .box {
     border: 1px solid #DDD;
     padding: 10px;
@@ -148,13 +150,21 @@ ul.thumbnails.topics {
 }
 
 i {
-  width: 14px;
-  height: 13px;
   display: inline-block;
   &.l-dot {
+    width: 14px;
+    height: 13px;
     background-image: image-url("icons/quote_1.png");
   }
   &.r-dot {
+    width: 14px;
+    height: 13px;
     background-image: image-url("icons/quote_2.png");
+  }
+  &.topic-header {
+    width: 21px;
+    height: 21px;
+    background-image: image-url("icons/ico_21x21_qt.png");
+    vertical-align: middle;
   }
 }

@@ -1,29 +1,33 @@
 - content_for :jumbotron do
   .jumbotron.masthead.topic
+    .container
+      %ul
+        %li 专题首页
 
-.row#topic-zone
+
+%section#topic_zone.row
   = yield :topic_wrapper
 
   .span3
-    %ul.nav.nav-list.bs-docs-sidenav.affix
-      %li.active
-        = link_to topic_path(topic) do
-          %i.icon-chevron-right
-          专题首页
-      %li
-        = link_to topic_topic_posts_path(topic) do
-          %i.icon-chevron-right
-          专题攻略
-      %li
-        %a{:href => "#tables"}
-          %i.icon-chevron-right
-          资源下载
-      %li
-        %a{:href => "#forms"}
-          %i.icon-chevron-right
-          视频前瞻
-      %li
-        = link_to topic_topic_photos_path(topic) do
-          %i.icon-chevron-right
-          视觉盛宴
+    / %ul.nav.nav-list.bs-docs-sidenav.affix
+    /   %li.active
+    /     = link_to topic_path(topic) do
+    /       %i.icon-chevron-right
+    /       专题首页
+    /   %li
+    /     = link_to topic_topic_posts_path(topic) do
+    /       %i.icon-chevron-right
+    /       专题攻略
+    /   %li
+    /     %a{:href => "#tables"}
+    /       %i.icon-chevron-right
+    /       资源下载
+    /   %li
+    /     %a{:href => "#forms"}
+    /       %i.icon-chevron-right
+    /       视频前瞻
+    /   %li
+    /     = link_to topic_topic_photos_path(topic) do
+    /       %i.icon-chevron-right
+    /       视觉盛宴
     = render '/application/sidebars/topic', posts: posts

@@ -1,49 +1,94 @@
-#topic-zone {
+#topic_zone {
   .span9 {
-    margin-top: 10px;
-    ul.thumbnails {
-      margin-left: auto;
-      li.span3 {
-        width: 230px;
-        margin: 0 0 10px 0;
-
-        .caption > p {
-          margin-bottom: 5px;
-        }
-
-        .meta {
-          padding-top: 5px;
-          border-top: 1px solid #ddd;
-          p { padding: 0; margin: 0; float: left; }
-          .counter { float: right; }
-          .counter span {
+    ul.thumbnails.topics {
+      li.topic {
+        display: block;
+        float: none;
+        width: 710px;
+        border: 1px solid #eee;
+        padding-bottom: 10px;
+        .page-header {
+          border: none;
+          padding-left: 10px;
+          margin: 10px 0 0 0;
+          h1{ display: inline-block; margin: 0; float: left; }
+          ul.state_bar {
             display: inline-block;
-            margin-right: 5px;
-            strong { display: inline-block; }
-            i.ico {
-              background-image: image-url("icos-post-counter.png");
-              width: 18px;
-              height: 16px;
-              margin: 0;
-              display: inline-block;
-              vertical-align: middle;
+            list-style: none;
+            line-height: 25px;
+            vertical-align: middle;
+            float: right;
+            color: #8A8A8A;
+            margin-right: 20px;
+            li {
+              float: left;
+              .raty { display: inline-block; }
             }
-            &.views-num i.ico { background-position: 0 0; }
-            &.likes-num i.ico { background-position: -24px 0; }
-            &.replies-num i.ico { background-position: -48px 0; }
+          }
+          a {
+            font-size: 20px;
+            line-height: 25px;
           }
         }
-
-        img{ margin: 0; }
+        .page-content {
+          position: relative;
+        }
+        .thumbnail {
+          width: 340px;
+          padding-left: 10px;
+          float: left;
+          p { padding: 0; }
+          .posts {
+            h3 {
+              background: #F4F4F4;
+              padding: 10px 5px;
+              position: relative;
+            }
+            ul {
+              list-style: none;
+              margin-left: 0;
+              li { padding: 3px 0; }
+            }
+          }
+        }
+        .topic_resources {
+          margin-left: 10px;
+          // display: inline-block;
+          float: left;
+          width: 340px;
+          ul {
+            list-style: none;
+            margin-left: 10px;
+            li {
+              float: left;
+              margin-bottom: 15px;
+              margin-right: 20px;
+              width: 150px;
+              a { display: block; }
+              &.even {
+                margin-right: 0;
+              }
+              a.title {
+                margin-top: 5px;
+                height: 20px;
+                overflow: hidden;
+              }
+            }
+          }
+        }
       }
     }
+
     .top-inner {
       height: 250px;
       width: 100%;
       position: relative;
 
       .span4 { margin-left: 0; position: relative; }
-      .span5 { width: 380px; }
+      .span5 {
+        width: 370px;
+        ul.nav-tabs { margin-bottom: 10px; }
+      }
 
       ul.activity {
         list-style: none;

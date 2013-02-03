@@ -267,7 +267,7 @@ section#activities {
   }
 }
 
-section#topics {
+section#topics, section#topic_zone {
   margin-top: 15px;
   .span12 { width: 980px; }
 
@@ -301,7 +301,7 @@ section#topics {
         left: 3px;
         text-align: center;
         font-size: 14px;
-        top: 5px;
+        // top: 3px;
         padding: 1px;
         position: absolute;
 
